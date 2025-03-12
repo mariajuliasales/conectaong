@@ -1,42 +1,53 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+As organizações sem fins lucrativos desempenham um papel fundamental na sociedade, promovendo impactos positivos em áreas como educação, saúde, meio ambiente e direitos humanos. No entanto, a captação e a gestão de voluntários continuam sendo grandes desafios para muitas dessas instituições, comprometendo sua capacidade de atuação e ampliação do impacto social.
+
+Embora **34% dos brasileiros atuem como voluntários**, totalizando aproximadamente **57 milhões de pessoas**, muitas ONGs ainda encontram dificuldades na mobilização e retenção desses colaboradores ([IDIS](https://www.idis.org.br/o-brasil-conta-com-57-milhoes-de-voluntarios-ativos-segundo-pesquisa-voluntariado-no-brasil-2021/)). Pequenas e médias organizações, em especial, carecem de estrutura adequada para atrair voluntários e manter um fluxo contínuo de engajamento, o que pode prejudicar sua credibilidade e acesso a novas parcerias.
+
+Para superar esses desafios, torna-se essencial a adoção de estratégias eficazes de captação e gestão, apoiadas por tecnologia e planejamento estruturado. O investimento em comunicação clara, programas de treinamento e reconhecimento pode fortalecer o engajamento voluntário e garantir maior estabilidade para as ONGs.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Apesar do grande número de pessoas dispostas a se voluntariar, muitas ONGs enfrentam dificuldades para conectar essas pessoas às suas oportunidades, resultando em baixa adesão e alta rotatividade. Os principais desafios incluem:
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+- **Falta de visibilidade** – Muitas ONGs não possuem canais eficientes para divulgar oportunidades de voluntariado, limitando seu alcance.
+- **Ausência de infraestrutura** – A gestão de voluntários é frequentemente realizada de forma manual, dificultando o acompanhamento de atividades e a retenção de colaboradores.
+- **Baixo engajamento e alta rotatividade** – Voluntários podem perder o interesse por falta de incentivo, acompanhamento adequado ou alinhamento com suas expectativas.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Sem uma abordagem estruturada, as ONGs enfrentam dificuldades na continuidade de seus projetos e na ampliação de seu impacto social. Assim, é necessário um mecanismo que facilite a captação, a gestão e o engajamento de voluntários de forma eficiente e sustentável.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+A plataforma **ConectaOng+** visa solucionar esses desafios ao fornecer um ambiente digital centralizado para facilitar a conexão entre ONGs e voluntários. Seus objetivos principais incluem:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- **Facilitar a captação de voluntários** – Criar um sistema intuitivo para divulgação de oportunidades e recrutamento de voluntários.
+- **Otimizar a gestão de voluntariado** – Oferecer ferramentas para acompanhamento, comunicação e engajamento contínuo.
+- **Reduzir a rotatividade** – Implementar estratégias para retenção de voluntários, como capacitação e reconhecimento.
+- **Promover acessibilidade digital** – Desenvolver uma interface responsiva e inclusiva, acessível para ONGs de diferentes portes.
 
 ## Justificativa
 
-O voluntariado é um pilar essencial para o funcionamento e impacto das Organizações Não Governamentais (ONGs), contribuindo diretamente para a transformação social. No entanto, muitas dessas organizações enfrentam desafios estruturais que dificultam a captação e manutenção de voluntários, bem como a gestão eficiente de seus projetos. De acordo com pesquisa realizada pela Iniciativa PIPA em parceria com a Phomenta, 59% das ONGs de pequeno porte (nano) não obtêm sucesso na captação de recursos via editais, enquanto esse número reduz para 20% em organizações de médio e grande porte <a href="./13-Referências.md">(Impacta Nordeste)</a>.
+O voluntariado desempenha um papel crucial no funcionamento das ONGs, mas a falta de estrutura para captação e gestão limita seu potencial. Muitas organizações enfrentam dificuldades para atrair e manter voluntários ativos, o que compromete a continuidade de suas ações.
 
-Além disso, essas organizações dedicam, em média, 120 horas na tentativa de captação de recursos por meio de editais, muitas vezes sem sucesso proporcional ao esforço investido <a href="./13-Referências.md">(Observatório 3 Setor)</a>.
+Apesar de **57 milhões de brasileiros** atuarem como voluntários, muitas ONGs não conseguem transformar esse potencial em força de trabalho ativa devido a desafios operacionais e falta de estratégias eficazes ([IDIS](https://www.idis.org.br/o-brasil-conta-com-57-milhoes-de-voluntarios-ativos-segundo-pesquisa-voluntariado-no-brasil-2021/)). Além disso, pequenas e médias organizações frequentemente enfrentam dificuldades na divulgação de oportunidades e na retenção de voluntários devido à falta de ferramentas adequadas ([Fonte](https://www.filantropia.ong/informacao/pequenas-ongs-enfrentam-mais-dificuldades-para-obter-recursos-por-meio-de-editais)).
 
-A falta de estrutura administrativa e experiência na elaboração de projetos são fatores que contribuem para essas dificuldades, especialmente em ONGs menores que dependem de voluntários para essas funções.
+A ausência de processos estruturados para recrutamento e gestão de voluntários compromete a eficiência e a credibilidade das ONGs, dificultando a ampliação de seu impacto social ([Fonte](https://squipp.com.br/conheca-as-principais-dificuldades-das-ongs/)).
 
-## Público-Alvo
+Diante desse cenário, a implementação de uma solução tecnológica capaz de facilitar a conexão entre ONGs e voluntários torna-se essencial para garantir maior engajamento, retenção e impacto social sustentável.
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+## Público-alvo
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+A plataforma **ConectaOng+** foi desenvolvida para atender diferentes agentes do ecossistema de voluntariado, incluindo:
+
+- **ONGs e instituições sociais** que buscam aumentar sua capacidade de recrutamento e gestão de voluntários.
+- **Indivíduos** interessados em oportunidades de voluntariado, mas que enfrentam dificuldades para encontrar iniciativas alinhadas aos seus interesses.
+- **Empresas socialmente responsáveis** que desejam incentivar o voluntariado corporativo e fortalecer suas ações de impacto social.
+
+📌 **Descrição:** Um sistema web que centraliza oportunidades de voluntariado, facilitando o recrutamento e a gestão de voluntários para ONGs e instituições sociais.
+
+📌 **CRUDs (3 CRUDs)**
+- **Usuários** – Cadastro e gerenciamento de ONGs, voluntários, empresas e administradores.
+- **Vagas de voluntariado** – Registro, divulgação e gestão de oportunidades de voluntariado.
+- **Atividades** – Acompanhamento e organização de atividades realizadas pelos voluntários.
+
+A plataforma visa reduzir as barreiras enfrentadas pelas ONGs no recrutamento de voluntários, tornando o processo mais acessível, estruturado e eficiente.
