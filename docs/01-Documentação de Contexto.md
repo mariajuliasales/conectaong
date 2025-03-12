@@ -25,12 +25,11 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+O voluntariado é um pilar essencial para o funcionamento e impacto das Organizações Não Governamentais (ONGs), contribuindo diretamente para a transformação social. No entanto, muitas dessas organizações enfrentam desafios estruturais que dificultam a captação e manutenção de voluntários, bem como a gestão eficiente de seus projetos. De acordo com pesquisa realizada pela Iniciativa PIPA em parceria com a Phomenta, 59% das ONGs de pequeno porte (nano) não obtêm sucesso na captação de recursos via editais, enquanto esse número reduz para 20% em organizações de médio e grande porte <a href="./13-Referências.md">(Impacta Nordeste)</a>.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo. Ou, o grupo poderá consultar e justificar o impacto do problema para o público-alvo por meio de pesquisas em outras fontes. Neste caso, é essencial que todos os dados apresentados estejam acompanhados de suas fontes (conforme padrão ABNT).
+Além disso, essas organizações dedicam, em média, 120 horas na tentativa de captação de recursos por meio de editais, muitas vezes sem sucesso proporcional ao esforço investido <a href="./13-Referências.md">(Observatório 3 Setor)</a>.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A falta de estrutura administrativa e experiência na elaboração de projetos são fatores que contribuem para essas dificuldades, especialmente em ONGs menores que dependem de voluntários para essas funções.
 
 ## Público-Alvo
 
