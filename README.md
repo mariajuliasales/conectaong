@@ -6,7 +6,9 @@
 
 `Eixo 2`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+
+As organizações sem fins lucrativos desempenham um papel essencial na sociedade, atuando em áreas como educação, saúde, meio ambiente e direitos humanos. No entanto, a captação de voluntários é um dos principais desafios enfrentados por essas entidades, impactando diretamente sua capacidade de operar e cumprir sua missão social. De acordo com a [Pesquisa Voluntariado no Brasil 2021](https://www.idis.org.br/o-brasil-conta-com-57-milhoes-de-voluntarios-ativos-segundo-pesquisa-voluntariado-no-brasil-2021/?utm_source=chatgpt.com), 34% dos brasileiros atuam de alguma forma no voluntariado, representando aproximadamente 57 milhões de pessoas. Apesar desse número expressivo, muitas ONGs ainda enfrentam desafios na mobilização e gestão eficaz de voluntários. Pequenas organizações frequentemente dependem do apoio da comunidade local para arrecadar doações e manter seus projetos em funcionamento, o que pode limitar sua capacidade de atrair e reter voluntários ([Fonte](https://www.filantropia.ong/informacao/pequenas-ongs-enfrentam-mais-dificuldades-para-obter-recursos-por-meio-de-editais?utm_source=chatgpt.com)). A falta de estrutura adequada para a gestão de voluntários pode prejudicar a credibilidade dessas organizações e seu acesso a novas fontes de recursos ([Fonte](https://squipp.com.br/conheca-as-principais-dificuldades-das-ongs/?utm_source=chatgpt.com)). Sendo assim, a captação eficiente de voluntários exige planejamento, estratégias bem definidas e ferramentas adequadas para engajamento e retenção. Portanto, ONGs que investem em comunicação clara, programas de treinamento e reconhecimento de voluntários tendem a ter melhores resultados em sua missão social.
+
 
 ## Integrantes
 
