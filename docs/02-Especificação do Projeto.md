@@ -7,25 +7,22 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
 ## Personas
+### Persona 01
+![Persona Mariana](https://github.com/user-attachments/assets/7bd4b7b6-1678-4536-9b98-0a6597631a23)
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
+### Persona 02
+![Persona Carlos](https://github.com/user-attachments/assets/302989eb-def9-4c40-889e-2c863c7aed16)
 
-Utilize também como referência o exemplo abaixo:
+### Persona 03 
+![Persona Ricardo](https://github.com/user-attachments/assets/9d91a38f-1e24-46f7-8f38-27600235bc91)
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
+### Persona 04 
+![Persona Roberto](https://github.com/user-attachments/assets/d900eebd-814f-437c-9859-1ee989aeca29)
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+### Persona 05 
+![Persona Idalina](https://github.com/user-attachments/assets/23ac42d3-f8c0-4934-8225-2ab327412175)
 
-> **Links Úteis**:
-> 
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+As imagens de perfil das personas foram criadas usando o site [https://this-person-does-not-exist.com/pt](https://this-person-does-not-exist.com/pt)
 
 ## Histórias de Usuários
 
