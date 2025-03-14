@@ -1,39 +1,39 @@
 # Introdução
 
-As organizações sem fins lucrativos desempenham um papel fundamental na sociedade, promovendo impactos positivos em áreas como educação, saúde, meio ambiente e direitos humanos. No entanto, a captação e a gestão de voluntários continuam sendo grandes desafios para muitas dessas instituições, comprometendo sua capacidade de atuação e ampliação do impacto social.
+O voluntariado desempenha um papel fundamental no fortalecimento da sociedade civil, promovendo a solidariedade e o desenvolvimento comunitário. No entanto, muitas organizações não governamentais (ONGs) enfrentam desafios para atrair e engajar voluntários, seja por dificuldades na divulgação de suas iniciativas ou na gestão eficiente do voluntariado.
 
-Embora **34% dos brasileiros atuem como voluntários**, totalizando aproximadamente **57 milhões de pessoas**, muitas ONGs ainda encontram dificuldades na mobilização e retenção desses colaboradores ([IDIS](https://www.idis.org.br/o-brasil-conta-com-57-milhoes-de-voluntarios-ativos-segundo-pesquisa-voluntariado-no-brasil-2021/)). Pequenas e médias organizações, em especial, carecem de estrutura adequada para atrair voluntários e manter um fluxo contínuo de engajamento, o que pode prejudicar sua credibilidade e acesso a novas parcerias.
-
-Para superar esses desafios, torna-se essencial a adoção de estratégias eficazes de captação e gestão, apoiadas por tecnologia e planejamento estruturado. O investimento em comunicação clara, programas de treinamento e reconhecimento pode fortalecer o engajamento voluntário e garantir maior estabilidade para as ONGs.
+Para endereçar essa lacuna, o ConectaONG surge como uma plataforma digital inovadora, conectando ONGs a voluntários de forma simplificada e eficaz. A iniciativa está alinhada aos princípios do Objetivo de Desenvolvimento Sustentável (ODS) 17 da ONU, que enfatiza a importância das parcerias para a implementação dos objetivos globais. Segundo a ONU, "o ODS 17 busca fortalecer os meios de implementação e revitalizar a parceria global para o desenvolvimento sustentável" (ONU Brasil, 2023).
 
 ## Problema
 
 Apesar do grande número de pessoas dispostas a se voluntariar, muitas ONGs enfrentam dificuldades para conectar essas pessoas às suas oportunidades, resultando em baixa adesão e alta rotatividade. Os principais desafios incluem:
 
-- **Falta de visibilidade** – Muitas ONGs não possuem canais eficientes para divulgar oportunidades de voluntariado, limitando seu alcance.
-- **Ausência de infraestrutura** – A gestão de voluntários é frequentemente realizada de forma manual, dificultando o acompanhamento de atividades e a retenção de colaboradores.
-- **Baixo engajamento e alta rotatividade** – Voluntários podem perder o interesse por falta de incentivo, acompanhamento adequado ou alinhamento com suas expectativas.
-
-Sem uma abordagem estruturada, as ONGs enfrentam dificuldades na continuidade de seus projetos e na ampliação de seu impacto social. Assim, é necessário um mecanismo que facilite a captação, a gestão e o engajamento de voluntários de forma eficiente e sustentável.
+- **Dificuldade de visibilidade das ONGs** – Muitas organizações enfrentam desafios na ampliação de sua rede de voluntários por falta de canais eficientes de divulgação.
+- **Baixa adesão de voluntários** – Pessoas dispostas a ajudar nem sempre encontram oportunidades compatíveis com suas habilidades e disponibilidade.
+- **Gestão ineficaz do voluntariado** – A falta de ferramentas adequadas torna desafiadora a organização de eventos, seleção e acompanhamento de voluntários.
+  
+Segundo uma pesquisa da Charities Aid Foundation (CAF, 2022), "o voluntariado global tem diminuído devido à falta de infraestrutura digital para conectar voluntários e organizações". Isso reforça a necessidade de soluções tecnológicas para otimizar o engajamento social.
 
 ## Objetivos
 
-A plataforma **ConectaOng+** visa solucionar esses desafios ao fornecer um ambiente digital centralizado para facilitar a conexão entre ONGs e voluntários. Seus objetivos principais incluem:
+1. Facilitar a conexão entre ONGs e voluntários: Criar um ambiente digital intuitivo onde ONGs possam se cadastrar, descrever suas atividades e divulgar eventos.
+2. Aumentar a adesão ao voluntariado: Permitir que voluntários busquem oportunidades compatíveis com suas habilidades e interesses.
+3. Otimizar a gestão de eventos e voluntários: Oferecer ferramentas para organização de eventos, seleção de voluntários e monitoramento de atividades.
+4. Promover parcerias sustentáveis: Incentivar colaborações entre ONGs, empresas e voluntários para maximizar o impacto social.
 
-- **Facilitar a captação de voluntários** – Criar um sistema intuitivo para divulgação de oportunidades e recrutamento de voluntários.
-- **Otimizar a gestão de voluntariado** – Oferecer ferramentas para acompanhamento, comunicação e engajamento contínuo.
-- **Reduzir a rotatividade** – Implementar estratégias para retenção de voluntários, como capacitação e reconhecimento.
-- **Promover acessibilidade digital** – Desenvolver uma interface responsiva e inclusiva, acessível para ONGs de diferentes portes.
+O ConectaONG se posiciona como um catalisador para a cooperação intersetorial, fortalecendo o ODS 17 ao proporcionar uma infraestrutura digital para a mobilização de voluntários e o fortalecimento de ONGs. A tecnologia pode ser uma grande aliada para ampliar o impacto das organizações sociais, conforme destaca a UNESCO: "O uso da tecnologia na sociedade civil tem o potencial de transformar comunidades e promover a inclusão social" (UNESCO, 2022).
+
+Dessa forma, o ConectaONG visa criar uma rede colaborativa onde voluntários e ONGs possam interagir de maneira mais eficaz, impulsionando a solidariedade e a construção de um futuro mais sustentável.
 
 ## Justificativa
 
-O voluntariado desempenha um papel crucial no funcionamento das ONGs, mas a falta de estrutura para captação e gestão limita seu potencial. Muitas organizações enfrentam dificuldades para atrair e manter voluntários ativos, o que compromete a continuidade de suas ações.
+O engajamento voluntário tem um impacto significativo na construção de sociedades mais justas e equitativas. No entanto, a desconexão entre voluntários e organizações que necessitam de apoio dificulta a maximização desse impacto. De acordo com um relatório do Programa das Nações Unidas para o Desenvolvimento (PNUD), "o voluntariado fortalece a coesão social e promove o desenvolvimento sustentável ao incentivar a participação cidadã ativa" (PNUD, 2021).
 
-Apesar de **57 milhões de brasileiros** atuarem como voluntários, muitas ONGs não conseguem transformar esse potencial em força de trabalho ativa devido a desafios operacionais e falta de estratégias eficazes ([IDIS](https://www.idis.org.br/o-brasil-conta-com-57-milhoes-de-voluntarios-ativos-segundo-pesquisa-voluntariado-no-brasil-2021/)). Além disso, pequenas e médias organizações frequentemente enfrentam dificuldades na divulgação de oportunidades e na retenção de voluntários devido à falta de ferramentas adequadas ([Fonte](https://www.filantropia.ong/informacao/pequenas-ongs-enfrentam-mais-dificuldades-para-obter-recursos-por-meio-de-editais)).
+A transformação digital no terceiro setor tem sido apontada como um fator essencial para o sucesso de iniciativas sociais. Um estudo do Fórum Econômico Mundial (2022) destacou que "organizações que adotam tecnologias digitais ampliam sua capacidade de atuação, tornando suas ações mais eficazes e alcançando um público maior".
 
-A ausência de processos estruturados para recrutamento e gestão de voluntários compromete a eficiência e a credibilidade das ONGs, dificultando a ampliação de seu impacto social ([Fonte](https://squipp.com.br/conheca-as-principais-dificuldades-das-ongs/)).
+O ConectaONG se justifica como uma solução inovadora para a promoção do voluntariado, fornecendo uma plataforma centralizada que reduz barreiras de comunicação e otimiza a gestão do engajamento social. Com um modelo acessível e intuitivo, a aplicação facilitará a criação de parcerias estratégicas entre ONGs, voluntários e empresas, potencializando a colaboração e o impacto social positivo.
 
-Diante desse cenário, a implementação de uma solução tecnológica capaz de facilitar a conexão entre ONGs e voluntários torna-se essencial para garantir maior engajamento, retenção e impacto social sustentável.
+Ao promover a aproximação entre indivíduos dispostos a ajudar e organizações que necessitam desse apoio, o ConectaONG se alinha aos princípios do ODS 17, criando um ecossistema digital sustentável para o fortalecimento das ações voluntárias.
 
 ## Público-alvo
 
