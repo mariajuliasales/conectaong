@@ -30,17 +30,16 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana Clara  | Uma forma de identificar se uma agência é realmente confiável           | Me sentir mais segura ao contratar seus serviços               |
-|Ana Clara       | Ter um mecanismo eficiente e rápido de comunicação                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+| Mariana  | Encontrar projetos confiáveis e bem organizados de voluntariado | Participar de ações sem perder tempo com buscas difíceis e evitar experiências negativas |
+| Mariana | Ter acesso a informações claras sobre datas, horários e programação| Conseguir organizar sua rotina e participar sem imprevistos |
+| Carlos | Encontrar projetos de voluntariado próximos à minha cidade | Atuar em mais projetos sociais e ajudar mais pessoas |
+| Carlos | Conhecer outras pessoas engajadas em causas sociais | Trocar experiências|
+| Ricardo | Encontrar professores voluntários dispostos a ajudar | Garantir a continuidade da ONG|
+| Ricardo | Aumentar a visibilidade da ONG | Atrair mais voluntários |
+| Roberto | Ter uma plataforma para divulgar os eventos realizado pela ONG| Aumentar a participação das pessoas |
+| Roberto | Gerar relatórios sobre cada evento da ONG | Melhorar a transparência da ONG |
+| Idalina | Recrutar voluntários comprometidos e interessados em causas ambientais | Ter apoio de pessoas realmente comprometidas com a causa |
+| Idalina | Ter um canal eficiente de comunicação com os voluntários | Garantir a permanência em ações de longo prazo |
 
 ## Requisitos
 
