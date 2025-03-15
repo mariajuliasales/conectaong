@@ -48,32 +48,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| ALTA | 
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio    | ALTA |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas | ALTA |
+|--------|-----------------------------------------|----|
+|RF-001   | O sistema deve permitir o cadastro, edição e exclusão de ONGs| ALTA | 
+|RF-002   | O sistema deve permitir o cadastro, edição e exclusão de voluntários. | ALTA |
+|RF-003   | O sistema deve permitir a criação, edição e exclusão de eventos pelas ONGs, podendo definir data, horário, local e descrição de cada evento.| ALTA |
+|RF-004   | O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse.| ALTA |
+|RF-005   | O sistema deve permitir que os usuários busquem ONGs e voluntários cadastrados.| MÉDIA |
+|RF-006   | O sistema deve permitir que as ONGs gerem relatórios de impacto, mostrando o número de voluntários envolvidos, horas de trabalho e resultados alcançados.| BAIXA |
+|RF-007   | O sistema deve permitir notificações automáticas para eventos e novas oportunidades.| MÉDIA |
+|RF-008   | O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | BAIXA |
+|RF-009   | O sistema deve permitir que os voluntários avaliem os eventos, fornecendo feedback sobre a experiência.| MÉDIA |
+|RF-010   | O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento.| MÉDIA |
+|RF-011   | O sistema deve ter uma área de comunicação entre ONGs e voluntários para facilitar a comunicação entre os interessados.| MÉDIA |
+|RF-012   | O sistema deve permitir login com autenticação segura.| ALTA |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|----------|-------------------------|----|
+|RNF-001| O sistema deve ter um tempo de resposta inferior a 5 segundos para consultas. | MÉDIA | 
+|RNF-002| O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro). |  BAIXA | 
+|RNF-003| O sistema deve ser acessível em navegadores web e dispositivos móveis. |  BAIXA | 
+|RNF-004| A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.|  BAIXA | 
+|RNF-005| O sistema deve utilizar HTTPS para segurança nas transações. |  BAIXA | 
+|RNF-006| O sistema deve ser implementado na linguagem C#.|  BAIXA | 
+|RNF-007| O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos. |  BAIXA | 
+|RNF-008| O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado. |  BAIXA | 
+|RNF-009| O sistema deve ter um código que siga padrões de qualidade e boas práticas para facilitar manutenção e expansão. |  BAIXA | 
 
 ## Restrições
 
