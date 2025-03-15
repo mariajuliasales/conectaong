@@ -80,10 +80,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
+|ID| Restrição de gestão                                   |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O sistema deve ser desenvolvido e entregue em até 6 meses |
+|02| A equipe de desenvolvimento será composta por apenas 6 desenvolvedores. |
+|03| O projeto deve seguir a metodologia Agile (Scrum) |
+|04|  O código deve ser armazenado e versionado em um repositório privado no GitHub para garantir rastreabilidade e segurança |
+
+|ID| Restrição de negócio                                  |
+|--|-------------------------------------------------------|
+|01|  A plataforma deve ser gratuita para ONGs e voluntários |
+|02| A equipe de desenvolvimento será composta por apenas 6 desenvolvedores. |
 
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
