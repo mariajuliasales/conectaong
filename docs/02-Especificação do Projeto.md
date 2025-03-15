@@ -53,28 +53,32 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002   | O sistema deve permitir o cadastro, edição e exclusão de voluntários. | ALTA |
 |RF-003   | O sistema deve permitir a criação, edição e exclusão de eventos pelas ONGs, podendo definir data, horário, local e descrição de cada evento.| ALTA |
 |RF-004   | O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse.| ALTA |
-|RF-005   | O sistema deve permitir que os usuários busquem ONGs e voluntários cadastrados.| MÉDIA |
-|RF-006   | O sistema deve permitir que as ONGs gerem relatórios de impacto, mostrando o número de voluntários envolvidos, horas de trabalho e resultados alcançados.| BAIXA |
-|RF-007   | O sistema deve permitir notificações automáticas para eventos e novas oportunidades.| MÉDIA |
-|RF-008   | O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | BAIXA |
-|RF-009   | O sistema deve permitir que os voluntários avaliem os eventos, fornecendo feedback sobre a experiência.| MÉDIA |
-|RF-010   | O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento.| MÉDIA |
-|RF-011   | O sistema deve ter uma área de comunicação entre ONGs e voluntários para facilitar a comunicação entre os interessados.| MÉDIA |
-|RF-012   | O sistema deve permitir login com autenticação segura.| ALTA |
+|RF-005   | O sistema deve permitir login com autenticação segura.| ALTA |
+|RF-006   | O sistema deve permitir que os voluntários avaliem os eventos, fornecendo feedback sobre a experiência.| MÉDIA |
+|RF-007   | O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento.| MÉDIA |
+|RF-008   | O sistema deve ter uma área de comunicação entre ONGs e voluntários para facilitar a comunicação entre os interessados.| MÉDIA |
+|RF-009   | O sistema deve permitir que os usuários busquem ONGs e voluntários cadastrados.| MÉDIA |
+|RF-010   | O sistema deve permitir notificações automáticas para eventos e novas oportunidades.| MÉDIA |
+|RF-011   | O sistema deve permitir que as ONGs gerem relatórios de impacto, mostrando o número de voluntários envolvidos, horas de trabalho e resultados alcançados.| BAIXA |
+|RF-012   | O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | BAIXA |
+
+
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |----------|-------------------------|----|
-|RNF-001| O sistema deve ter um tempo de resposta inferior a 5 segundos para consultas. | MÉDIA | 
-|RNF-002| O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro). |  ALTA | 
-|RNF-003| O sistema deve ser acessível em navegadores web e dispositivos móveis. |  ALTA | 
-|RNF-004| A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.|  ALTA | 
-|RNF-005| O sistema deve utilizar HTTPS para segurança nas transações. |  MÉDIA | 
-|RNF-006| O sistema deve ser implementado na linguagem C#.|  ALTA | 
-|RNF-007| O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos. |  ALTA | 
-|RNF-008| O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado. |  MÉDIA | 
-|RNF-009| O sistema deve ter um código que siga padrões de qualidade e boas práticas para facilitar manutenção e expansão. |  ALTA | 
+|RNF-001| O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro). |  ALTA | 
+|RNF-002| O sistema deve ser acessível em navegadores web e dispositivos móveis. |  ALTA | 
+|RNF-003| A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.|  ALTA |
+|RNF-004| O sistema deve ser implementado na linguagem C#.|  ALTA | 
+|RNF-005| O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos. |  ALTA |
+|RNF-006| O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado. |  ALTA | 
+|RNF-007| O sistema deve ter um código que siga padrões de qualidade e boas práticas para facilitar manutenção e expansão. |  ALTA | 
+|RNF-008| O sistema deve ter um tempo de resposta inferior a 5 segundos para consultas. | MÉDIA | 
+|RNF-009| O sistema deve utilizar HTTPS para segurança nas transações. |  MÉDIA | 
+
+
 
 ## Restrições
 
@@ -90,7 +94,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição de negócio                                  |
 |--|-------------------------------------------------------|
 |01|  A plataforma deve ser gratuita para ONGs e voluntários |
-|02| A equipe de desenvolvimento será composta por apenas 6 desenvolvedores. |
+|02|  ONGs e voluntários devem aceitar os termos de uso e política de privacidade para utilizar o sistema. |
+|03|  Apenas ONGs com CNPJ válido podem se cadastrar na plataforma. |
+
 
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
