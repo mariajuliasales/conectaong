@@ -37,17 +37,31 @@ Ao promover a aproximação entre indivíduos dispostos a ajudar e organizaçõe
 
 ## Público-alvo
 
-A plataforma **ConectaOng+** foi desenvolvida para atender diferentes agentes do ecossistema de voluntariado, incluindo:
+O ConectaONG é destinado a diferentes perfis de usuários envolvidos em ações voluntárias e na gestão de organizações sociais. Os principais públicos incluem:
 
-- **ONGs e instituições sociais** que buscam aumentar sua capacidade de recrutamento e gestão de voluntários.
-- **Indivíduos** interessados em oportunidades de voluntariado, mas que enfrentam dificuldades para encontrar iniciativas alinhadas aos seus interesses.
-- **Empresas socialmente responsáveis** que desejam incentivar o voluntariado corporativo e fortalecer suas ações de impacto social.
+ - ONGs e instituições sociais que necessitam de voluntários para suas iniciativas e eventos.
+ - Voluntários que desejam contribuir com causas sociais, mas encontram dificuldades para acessar oportunidades.
+ - Empresas que promovem programas de voluntariado corporativo e desejam facilitar o engajamento de seus colaboradores.
+ - Órgãos públicos e instituições acadêmicas que apoiam e incentivam ações sociais.
+ - Pessoas interessadas em impactar positivamente a sociedade, mas que não sabem como começar.
 
-📌 **Descrição:** Um sistema web que centraliza oportunidades de voluntariado, facilitando o recrutamento e a gestão de voluntários para ONGs e instituições sociais.
+## Descrição Resumida
 
-📌 **CRUDs (3 CRUDs)**
-- **Usuários** – Cadastro e gerenciamento de ONGs, voluntários, empresas e administradores.
-- **Vagas de voluntariado** – Registro, divulgação e gestão de oportunidades de voluntariado.
-- **Atividades** – Acompanhamento e organização de atividades realizadas pelos voluntários.
+O ConectaONG é uma plataforma digital que conecta ONGs e voluntários, facilitando a busca por oportunidades de trabalho voluntário e a gestão de eventos sociais. A aplicação permite que ONGs se cadastrem, divulguem suas iniciativas e recrutem voluntários para eventos específicos, enquanto voluntários podem se registrar, explorar oportunidades alinhadas aos seus interesses e habilidades e se inscrever para contribuir. A plataforma visa otimizar o impacto social por meio da tecnologia, promovendo o ODS 17 da ONU ao fortalecer parcerias para o desenvolvimento sustentável.
 
-A plataforma visa reduzir as barreiras enfrentadas pelas ONGs no recrutamento de voluntários, tornando o processo mais acessível, estruturado e eficiente.
+## CRUDs Necessários
+
+A aplicação contará com pelo menos três CRUDs essenciais para garantir sua funcionalidade:
+
+1. CRUD de ONGs
+ - Criar, listar, atualizar e excluir perfis de ONGs.
+ - Gerenciar descrições, áreas de atuação e informações de contato.
+
+2. CRUD de Voluntários
+ - Criar, listar, atualizar e excluir perfis de voluntários.
+ - Permitir que os voluntários informem suas habilidades e interesses.
+
+3. CRUD de Eventos
+ - Criar, listar, atualizar e excluir eventos publicados pelas ONGs.
+ - Permitir que voluntários se candidatem a eventos e acompanhem suas inscrições.
+
