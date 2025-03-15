@@ -67,14 +67,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID     | Descrição do Requisito  |Prioridade |
 |----------|-------------------------|----|
 |RNF-001| O sistema deve ter um tempo de resposta inferior a 5 segundos para consultas. | MÉDIA | 
-|RNF-002| O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro). |  BAIXA | 
-|RNF-003| O sistema deve ser acessível em navegadores web e dispositivos móveis. |  BAIXA | 
-|RNF-004| A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.|  BAIXA | 
-|RNF-005| O sistema deve utilizar HTTPS para segurança nas transações. |  BAIXA | 
-|RNF-006| O sistema deve ser implementado na linguagem C#.|  BAIXA | 
-|RNF-007| O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos. |  BAIXA | 
-|RNF-008| O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado. |  BAIXA | 
-|RNF-009| O sistema deve ter um código que siga padrões de qualidade e boas práticas para facilitar manutenção e expansão. |  BAIXA | 
+|RNF-002| O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro). |  ALTA | 
+|RNF-003| O sistema deve ser acessível em navegadores web e dispositivos móveis. |  ALTA | 
+|RNF-004| A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.|  ALTA | 
+|RNF-005| O sistema deve utilizar HTTPS para segurança nas transações. |  MÉDIA | 
+|RNF-006| O sistema deve ser implementado na linguagem C#.|  ALTA | 
+|RNF-007| O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos. |  ALTA | 
+|RNF-008| O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado. |  MÉDIA | 
+|RNF-009| O sistema deve ter um código que siga padrões de qualidade e boas práticas para facilitar manutenção e expansão. |  ALTA | 
 
 ## Restrições
 
