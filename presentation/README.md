@@ -1,3 +1,6 @@
-# Apresentação da Solução
+# Apresentação da 1º Etapa
+PDF da apresentação
+Apresentação SGO
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+Vídeo da apresentação 
+Video de Apresentação
