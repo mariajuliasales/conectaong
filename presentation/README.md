@@ -1,6 +1,8 @@
 # Apresentação da 1º Etapa
-PDF da apresentação
-Apresentação SGO
 
-Vídeo da apresentação 
-Video de Apresentação
+## PDF da Apresentação
+[Apresentação SGO](./presentation/apresentacao-etapa1.pdf)
+
+## Vídeo da Apresentação
+[Vídeo de Apresentação](./presentation/video-etapa1.mp4)
+
