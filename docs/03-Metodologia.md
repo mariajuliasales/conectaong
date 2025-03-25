@@ -30,6 +30,7 @@ etiquetas:
 - `design`: tarefas que se relacionam a desenvolvimento de interfaces, wireframes, etc
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
+- `development`: tarefas relacionadas ao desenvolvimento de software
 - `priority: high/medium/low`: define prioridade para a demanda
 
 Para padronização de commits, seguiremos a seguinte estrutura:
@@ -56,17 +57,30 @@ Após alinhamento da equipe, ficou definido a seguinte estrutura:
 
 Realizaremos <strong>Daily's (Daily scrum)</strong> para a distribuição e organização das tarefas. O time está utilizando o `Github Projects` que possui um quadro Kanban. As reuniões diárias tem duração de no <strong>máximo 15 minutos</strong> e devem ser o mais objetivas possíveis. Detalhando o que foi feito, o que será feito e se existe alguma dificuldade em que o `scrum master` possa ajudar para viabilizar a entrega das tarefas.
 
+As reuniões acontecem todas as quartas, às 20:30. Podendo haver reuniões em casos específicos aos finais de semana, aos domingos as 16:00.
+
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- <strong>Editor de código</strong>: Visual Studio Community e Visual Studio Code
+- <strong>Editor de código</strong>: Visual Studio Community
 - <strong>Ferramentas de comunicação</strong>: Whatsapp e Teams
 - <strong>Ferramentas de desenho de tela</strong>: Figma
 
-O editor de código <strong>Visual Studio Community/Code</strong> foi selecionado por ter suporte completo ao ambiente .net e por ser uma IDE gratuita para uso.
+O editor de código <strong>Visual Studio Community</strong> foi selecionado por ter suporte completo ao ambiente .net e por ser uma IDE gratuita para uso.
 Para comunicação, foram selecionadas ferramentas que são bastante utilizadas no mercado atualmente, como o <strong>Whatsapp e Teams</strong>.
 Por fim, o <strong>Figma</strong> foi selecionado por ter funcionalidades como: colaborações em tempo real, recursos avançados de design e gratuito para pequenas equipes e projetos.
+
+### Backlog e Plano de Sprints
+
+Abaixo, podemos observar a divisão de sprints relacionados ao projeto.
+Para este caso, as sprints foram configuradas de acordo com as datas de início e data de entrega das etapas correspondentes.
+
+![image](https://github.com/user-attachments/assets/5c990ced-7fe1-4b75-a0cf-ee62f5be6b75)
+
+Sobre o backlog, configuramos da seguinte maneira: para cada tarefa a ser desenvolvida, deve-se criar um draft no github projects e categorizá-lo corretamente, informando também em qual sprint ele pertence.
+
+![image](https://github.com/user-attachments/assets/df922758-6bed-4d70-b476-f9a1573158aa)
 
 ### Tabela de ferramentas
 
@@ -74,7 +88,7 @@ Por fim, o <strong>Figma</strong> foi selecionado por ter funcionalidades como: 
 | --------------------------- | --------------- | ------------------------------------------------------------------------------------------------- |
 | Repositório de código fonte | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e2-proj-int-t1-conectaong                |
 | Documentos do projeto       | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e2-proj-int-t1-conectaong/tree/main/docs |
-| Projeto de Interface        | Figma           | TBD                                                                                               |
+| Projeto de Interface        | Figma           | https://www.figma.com/design/ciYST6HKH0QDj7jo5Ltsbg/Untitled?node-id=0-1&p=f&t=7Z5AVvqUT6cpApda-0 |
 | Gerenciamento do Projeto    | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1824/views/1                              |
 | Hospedagem                  | GitHub Pages    | TBD                                                                                               |
 | Visual Studio Code          | Microsoft       | https://code.visualstudio.com/Download                                                            |
