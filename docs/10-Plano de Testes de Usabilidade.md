@@ -59,7 +59,7 @@ Os testes serão baseados em situações reais que usuários enfrentarão na pla
 - Caso não existam eventos correspondentes à palavra buscada, o sistema exibe uma mensagem clara e informativa, sugerindo alternativas ou incentivando o usuário a explorar outras oportunidades.
 
 
-- **Cenário 3:  Cadastro e Gerenciamento de Eventos pela ONG**
+**Cenário 3:  Cadastro e Gerenciamento de Eventos pela ONG**
 
 **Objetivo:** Verificar a facilidade de uso para ONGs criarem e gerenciarem eventos.
 
@@ -74,6 +74,40 @@ Os testes serão baseados em situações reais que usuários enfrentarão na pla
 **Critério(s) de Sucesso(s):**
 - O usuário ONG consegue cadastrar um novo evento e visualizar suas informações sem dificuldades
 - O usuário ONG consegue gerenciar seus eventos sem dificuldades
+
+
+**Cenário 4:  Gerenciamento de Voluntários**
+
+**Objetivo:** Avaliar como as ONGs interagem com voluntários cadastrados.
+
+**Contexto:** Uma ONG deseja verificar e confirmar a presença de voluntários inscritos.
+
+**Tarefa(s):** 
+- Fazer o login e acessar a plataforma.
+- Acessar a lista de eventos cadastrados e clicar no evento desejado
+- Acessar a lista de inscritos e verificar o status de participação
+
+**Critério(s) de Sucesso(s):**
+- A ONG consegue visualizar as informações do evento.
+- A ONG consegue visualizar as informações dos inscritos com sucesso
+
+
+**Cenário 5: Atualização de Perfil**
+
+**Objetivo:**  Testar a usabilidade da funcionalidade de edição de perfil.
+
+**Contexto:** Um voluntário deseja atualizar suas informações.
+
+**Tarefa(s):** 
+- Fazer o login e acessar a plataforma.
+- Acessar o perfil e visualizar suas informações cadastradas
+- Modificar as informações desejadas e clicar em salvar
+- Verificar se as informações foram salvas corretamente
+
+**Critério(s) de Sucesso(s):**
+- O usuário consegue visualizar suas informações cadastradas
+- O usuário consegue cadastrar as informações cadastradas
+
 
 ## Métodos de coleta de dados
 
