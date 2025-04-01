@@ -1,31 +1,789 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+### Caso de teste - Requisitos funcionais
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+- CT-001 - **Cadastro, Edição e Exclusão de ONGs**
+    
+    **Requisito Associado**: RF-001 - O sistema deve permitir o cadastro, edição e exclusão de ONGs
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar autenticado no sistema com permissões adequadas.
+    - O sistema deve estar funcionando em sua plenitude.
+    
+    **Objetivo do teste:**
+    
+    Validar as funcionalidades de cadastro, edição e exclusão de ONGs
+    
+    **Critérios de Aceitação:**
+    
+    - O usuário consegue cadastrar, editar e excluir ONGs sem erros.
+    - O sistema impede o cadastro de ONGs sem preencher os campos obrigatórios.
+    - O sistema exibe mensagens de erro claras em caso de falha.
+    - Apenas usuários autorizados podem realizar essas ações.
+    
+    **Cenários:**
+    
+    - **Cenário 1: Cadastro de uma ONG**
+        
+        **Passos:**
+        
+        1. Acessar a tela de cadastro de ONGs.
+        2. Preencher os campos obrigatórios (Nome, CNPJ, Endereço, Contato, etc.).
+        3. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - A ONG cadastrada deve ser exibida na lista de ONGs.
+    - **Cenário 2: Edição de uma ONG**
+        
+        **Passos:**
+        
+        1. Acessar a lista de ONGs cadastradas.
+        2. Selecionar uma ONG para edição.
+        3. Modificar algum dos campos (exemplo: telefone de contato).
+        4. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - As alterações devem ser refletidas na listagem de ONGs.
+    - **Cenário 3: Exclusão de uma ONG**
+        
+        **Passos:**
+        
+        1. Acessar a lista de ONGs cadastradas.
+        2. Selecionar uma ONG para exclusão.
+        3. Clicar no botão "Excluir".
+        4. Confirmar a exclusão.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de confirmação.
+        - A ONG deve ser removida da listagem de ONGs.
+    
+- CT-002 - **Cadastro, Edição e Exclusão de Voluntários**
+    
+    **Requisito Associado**: RF-002 - O sistema deve permitir o cadastro, edição e exclusão de voluntários.
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar autenticado no sistema com permissões adequadas.
+    - O sistema deve estar funcionando corretamente.
+    
+    **Objetivo do teste:**
+    
+    Validar as funcionalidades de cadastro, edição e exclusão de voluntários.
+    
+    **Critérios de Aceitação:**
+    
+    - O usuário consegue cadastrar, editar e excluir voluntários sem erros.
+    - O sistema impede o cadastro de voluntários sem preencher os campos obrigatórios.
+    - O sistema exibe mensagens de erro claras em caso de falha.
+    - Apenas usuários autorizados podem realizar essas ações.
+    
+    **Cenários**
+    
+    - **Cenário 1: Cadastro de um voluntário**
+        
+        **Passos:**
+        
+        1. Acessar a tela de cadastro de voluntários.
+        2. Preencher os campos obrigatórios (Nome, CPF, Contato, Endereço, Disponibilidade, etc.).
+        3. Clicar no botão "Salvar".
+    - **Cenário 2: Edição de um voluntário**
+        
+        **Passos:**
+        
+        1. Acessar a lista de voluntários cadastrados.
+        2. Selecionar um voluntário para edição.
+        3. Modificar algum dos campos (exemplo: telefone de contato).
+        4. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - As alterações devem ser refletidas na listagem de voluntários.
+    - **Cenário 3: Exclusão de um voluntário**
+        
+        **Passos:**
+        
+        1. Acessar a lista de voluntários cadastrados.
+        2. Selecionar um voluntário para exclusão.
+        3. Clicar no botão "Excluir".
+        4. Confirmar a exclusão.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de confirmação.
+        - O voluntário deve ser removido da listagem de voluntários.
+- CT-003 - **Criação, Edição e Exclusão de Eventos pelas ONGs**
+    
+    **Requisito Associado**: RF-003 - O sistema deve permitir a criação, edição e exclusão de eventos pelas ONGs, podendo definir data, horário, local e descrição de cada evento.
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar autenticado no sistema com permissões adequadas.
+    - O sistema deve estar funcionando corretamente.
+    
+    **Objetivo do teste:**
+    
+    Validar as funcionalidades de criação, edição e exclusão de eventos pelas ONGs.
+    
+    - **Critérios de Aceitação:**
+        - O usuário consegue criar, editar e excluir eventos sem erros.
+        - O sistema impede o cadastro de eventos sem preencher os campos obrigatórios.
+        - O sistema exibe mensagens de erro claras em caso de falha.
+        - Apenas usuários autorizados podem realizar essas ações.
+    
+    **Cenários**
+    
+    - **Cenário 1: Criação de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a tela de criação de eventos.
+        2. Preencher os campos obrigatórios (Nome do evento, Data, Horário, Local, Descrição).
+        3. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - O evento criado deve ser exibido na lista de eventos.
+    - **Cenário 2: Edição de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos cadastrados.
+        2. Selecionar um evento para edição.
+        3. Modificar algum dos campos (exemplo: local do evento).
+        4. Clicar no botão "Salvar".
+    - **Cenário 3: Exclusão de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos cadastrados.
+        2. Selecionar um evento para exclusão.
+        3. Clicar no botão "Excluir".
+        4. Confirmar a exclusão.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de confirmação.
+        - O evento deve ser removido da listagem de eventos.
+- CT-004 - O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse
+    
+    **Requisito Associado**: RF-004 - O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse.
+    
+    **Pré-condições:**
+    
+    - O voluntário deve estar autenticado no sistema.
+    - Deve haver eventos cadastrados no sistema.
+    
+    **Objetivo do teste:**
+    
+    Validar a funcionalidade de inscrição de voluntários em eventos.
+    
+    **Critérios de Aceitação:**
+    
+    - O voluntário consegue se inscrever em eventos disponíveis sem erros.
+    - O sistema impede inscrições em eventos lotados.
+    - O voluntário pode cancelar sua inscrição quando desejar.
+    - O sistema exibe mensagens de erro claras em caso de falha.
+    - Apenas usuários autenticados podem se inscrever em eventos.
+    
+    **Cenários**
+    
+    - **Cenário 1: Inscrição bem-sucedida em um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos disponíveis.
+        2. Selecionar um evento de interesse.
+        3. Clicar no botão "Inscrever-se".
+        4. Confirmar a inscrição.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - O evento deve aparecer na lista de eventos inscritos do voluntário.
+    - **Cenário 2: Inscrição em um evento já lotado**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos disponíveis.
+        2. Selecionar um evento que já atingiu o limite de participantes.
+        3. Clicar no botão "Inscrever-se".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem informando que o evento está lotado e não permitir a inscrição.
+    - **Cenário 3: Cancelamento de inscrição em um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos inscritos.
+        2. Selecionar um evento e clicar no botão "Cancelar Inscrição".
+        3. Confirmar o cancelamento.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - O evento deve ser removido da lista de eventos inscritos do voluntário
+- CT-005 - O sistema deve permitir login com autenticação segura
+    
+    **Requisito Associado**: RF-005 - O sistema deve permitir login com autenticação segura.
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar registrado no sistema.
+    - O sistema deve estar operante e conectado ao banco de dados.
+    
+    **Objetivo do teste:**
+    Validar o funcionamento do login com autenticação segura.
+    
+    **Critérios de Aceitação:**
+    
+    - O login deve ser realizado apenas com credenciais corretas.
+    - O sistema deve proteger contra ataques de força bruta e exibir mensagens adequadas.
+    - As senhas devem ser armazenadas de forma segura utilizando hashing.
+    
+    **Cenários**
+    
+    - **Cenário 1: Login com credenciais corretas**
+        
+        **Passos:**
+        
+        1. Acessar a página de login.
+        2. Inserir um e-mail e senha válidos.
+        3. Clicar no botão "Entrar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve autenticar o usuário com sucesso.
+        - O usuário deve ser redirecionado para a página inicial do sistema.
+    - **Cenário 2: Login com credenciais incorretas**
+        
+        **Passos:**
+        
+        1. Acessar a página de login.
+        2. Inserir um e-mail ou senha inválidos.
+        3. Clicar no botão "Entrar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de erro informando que as credenciais são inválidas.
+        - O usuário não deve ser autenticado.
+- CT-006 - Avaliação de Eventos pelos Voluntários
+    
+    **Requisito Associado:** RF-006 - O sistema deve permitir que os voluntários avaliem os eventos, fornecendo feedback sobre a experiência.
+    
+    **Pré-condições:**
+    
+    - O voluntário deve estar autenticado no sistema.
+    - O evento avaliado deve ter sido finalizado.
+    - O voluntário deve ter participado do evento.
+    
+    **Objetivo do Teste:**
+    
+    Validar a funcionalidade de avaliação de eventos pelos voluntários.
+    
+    **Critérios de Aceitação:**
+    
+    - O voluntário pode avaliar apenas eventos que participou.
+    - O sistema impede o envio de avaliações sem informações obrigatórias.
+    - As avaliações ficam acessíveis aos organizadores dos eventos.
+    - O sistema exibe mensagens de erro e sucesso conforme o resultado das ações do usuário.
+    
+    **Cenários**
+    
+    - **Cenário 1: Avaliação bem-sucedida de um evento**
+        
+        **Passos:**
+        
+        1. O voluntário acessa a página de histórico de eventos.
+        2. Seleciona um evento que participou.
+        3. Insere uma nota e/ou comentário sobre o evento.
+        4. Clica no botão "Enviar Avaliação".
+        
+        **Resultado Esperado:**
+        
+        - O sistema exibe uma mensagem de sucesso.
+        - A avaliação fica registrada no banco de dados.
+        - A avaliação pode ser visualizada pelos organizadores do evento.
+    - **Cenário 2: Tentativa de avaliar um evento sem participar**
+        
+        **Passos:**
+        
+        1. O voluntário acessa a página de histórico de eventos.
+        2. Seleciona um evento em que não participou.
+        3. Tenta inserir uma avaliação e enviar.
+        
+        **Resultado Esperado:**
+        
+        - O sistema exibe uma mensagem de erro informando que apenas participantes podem avaliar o evento.
+        - Nenhuma avaliação é registrada.
+    - **Cenário 3: Avaliação sem preenchimento dos campos obrigatórios**
+        
+        **Passos:**
+        
+        1. O voluntário acessa a página de histórico de eventos.
+        2. Seleciona um evento em que participou.
+        3. Tenta enviar a avaliação sem preencher nenhum campo.
+        
+        **Resultado Esperado:**
+        
+        - O sistema exibe uma mensagem de erro informando que é necessário fornecer uma nota e/ou comentário.
+        - Nenhuma avaliação é registrada.
 
-Não deixe de enumerar os casos de teste de forma sequencial e de garantir que o(s) requisito(s) associado(s) a cada um deles está(ão) correto(s) - de acordo com o que foi definido na seção "2 - Especificação do Projeto". 
+### Caso de teste - Requisitos não funcionais
 
-Por exemplo:
- 
-| **Caso de Teste** 	| **CT01 – Cadastrar perfil** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-| Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar em "Criar conta" <br> - Preencher os campos obrigatórios (e-mail, nome, sobrenome, celular, CPF, senha, confirmação de senha) <br> - Aceitar os termos de uso <br> - Clicar em "Registrar" |
-|Critério de Êxito | - O cadastro foi realizado com sucesso. |
-|  	|  	|
-| Caso de Teste 	| CT02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
+- CT-001 -  O sistema deve oferecer feedback visual para ações do usuário
+    
+    **Requisito Associado:** RNF-001 - O sistema deve oferecer feedback visual para ações do usuário (exemplo: carregamento, sucesso, erro).
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar autenticado no sistema.
+    - O sistema deve estar operacional e responsivo.
+    
+    **Objetivo do teste:**
+    
+    Validar se o sistema fornece feedback visual adequado para diferentes ações do usuário.
+    
+    **Critérios de Aceitação:**
+    
+    - O sistema exibe feedback visual para ações de carregamento, sucesso e erro.
+    - O feedback visual deve ser claro e perceptível.
+    - O feedback desaparece de forma apropriada após um tempo ou interação do usuário.
+    
+    **Cenários:** 
+    
+    - Cenário 1: Indicação de Carregamento
+        
+        **Passos:**
+        
+        1. O usuário realiza uma ação que requer processamento (exemplo: envio de um formulário).
+        2. O sistema deve exibir um indicador de carregamento (exemplo: spinner, barra de progresso).
+        3. O sistema conclui o processamento.
+        
+        **Resultado Esperado:**
+        
+        - O indicador de carregamento é exibido corretamente durante o processamento.
+        - O indicador desaparece quando a ação é concluída.
+    - Cenário 2: Confirmação de Sucesso
+        
+        **Passos:**
+        
+        1. O usuário conclui uma ação bem-sucedida (exemplo: salvar um formulário).
+        2. O sistema exibe uma mensagem de sucesso (exemplo: “Salvo com sucesso”).
+        
+        **Resultado Esperado:**
+        
+        - A mensagem de sucesso deve ser visível e clara.
+        - O feedback visual desaparece após um tempo ou quando o usuário interage com ele.
+    - Cenário 3: Exibição de Erro
+        
+        **Passos:**
+        
+        1. O usuário tenta realizar uma ação inválida (exemplo: enviar um formulário sem preencher um campo obrigatório).
+        2. O sistema exibe um feedback visual de erro (exemplo: borda vermelha no campo, mensagem de erro).
+        
+        **Resultado Esperado:**
+        
+        - O erro é claramente indicado ao usuário.
+        - A mensagem deve explicar como corrigir o erro.
+- CT-002 - Acessibilidade em navegadores web e dispositivos móveis
+    
+    **Requisito Associado:** RNF-002 - O sistema deve ser acessível em navegadores web e dispositivos móveis.
+    
+    **Pré-condições:**
+    
+    - O sistema deve estar implantado e acessível via internet.
+    - O usuário deve ter um navegador compatível instalado.
+    - O dispositivo deve estar conectado à internet.
+    
+    **Objetivo do teste:**
+    
+    Validar se o sistema pode ser acessado e utilizado corretamente em diferentes navegadores e dispositivos móveis.
+    
+    **Critérios de Aceitação:**
+    
+    - O sistema deve ser acessível nos navegadores mais comuns (Chrome, Firefox, Edge, Safari).
+    - O sistema deve ser responsivo e funcional em dispositivos móveis.
+    - Nenhuma funcionalidade crítica deve ser comprometida pelo tipo de navegador ou dispositivo.
+    
+    **Cenários:**
+    
+    - Cenário 1: Acesso via Navegadores Web
+        
+        **Passos:**
+        
+        1. Abrir o sistema em diferentes navegadores (Chrome, Firefox, Edge, Safari).
+        2. Navegar pelas principais funcionalidades do sistema.
+        
+        **Resultado Esperado:**
+        
+        - O sistema carrega corretamente em todos os navegadores testados.
+        - Nenhum erro crítico de interface ou funcionalidade ocorre em navegadores compatíveis.
+    - Cenário 2: Acesso via Dispositivos Móveis
+        
+        **Passos:**
+        
+        1. Abrir o sistema em um smartphone e um tablet (Android e iOS).
+        2. Testar a navegação e as funcionalidades principais.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve ser responsivo e ajustar-se corretamente ao tamanho da tela.
+        - Os botões e elementos interativos devem ser utilizáveis sem dificuldades.
+    - Cenário 3: Compatibilidade com diferentes resoluções
+        
+        **Passos:**
+        
+        1. Redimensionar a janela do navegador para diferentes larguras de tela.
+        2. Verificar se o layout e os elementos se adaptam corretamente.
+        
+        **Resultado Esperado:**
+        
+        - O layout do sistema deve permanecer funcional e organizado em diferentes resoluções.
+        - Nenhum elemento essencial deve ficar inacessível ou desconfigurado.
+- CT-003 - Interface Responsiva para diferentes tamanhos de tela
+    
+    **Requisito Associado:** RNF-003 - A aplicação deve ter uma interface responsiva para diferentes tamanhos de tela.
+    
+    **Pré-condições:**
+    
+    - O sistema deve estar implantado e acessível via internet.
+    - O dispositivo de teste deve estar conectado à internet.
+    - As principais funcionalidades devem estar implementadas.
+    
+    **Objetivo do teste:**
+    
+    Validar se a interface do sistema se adapta corretamente a diferentes tamanhos de tela, garantindo uma experiência de uso adequada em cada dispositivo.
+    
+    **Critérios de Aceitação:**
+    
+    - A interface deve ser responsiva e adaptar-se corretamente a telas grandes e pequenas.
+    - O sistema deve permanecer usável e organizado em diferentes resoluções.
+    - A experiência do usuário não deve ser comprometida por problemas de layout.
+    
+    **Cenários:**
+    
+    - Cenário 1: Teste em Diferentes Resoluções de Tela (Desktop, Tablet e Mobile)
+        
+        **Passos:**
+        
+        1. Acessar o sistema em um computador (resolução Full HD ou superior).
+        2. Acessar o sistema em um tablet (resolução entre 768px e 1024px).
+        3. Acessar o sistema em um smartphone (resolução menor que 768px).
+        4. Verificar se os elementos da interface se ajustam corretamente em cada caso.
+        
+        **Resultado Esperado:**
+        
+        - O layout deve ser adaptável, sem quebras ou sobreposição de elementos.
+        - O conteúdo deve ser reorganizado conforme o tamanho da tela.
+        - A experiência do usuário deve ser fluida e intuitiva em todas as resoluções.
+    - Cenário 2: Teste de Redimensionamento do Navegador
+        
+        **Passos:**
+        
+        1. Abrir o sistema em um navegador desktop.
+        2. Redimensionar a janela do navegador para tamanhos diferentes (maior, menor, estreito, largo).
+        3. Observar se os elementos da interface se ajustam corretamente.
+        
+        **Resultado Esperado:**
+        
+        - Os elementos da interface devem ser reposicionados conforme necessário.
+        - O sistema deve manter a usabilidade sem exigir rolagem excessiva ou zoom manual.
+    - Cenário 3: Teste de Usabilidade em Dispositivos Móveis
+        
+        **Passos:**
+        
+        1. Acessar o sistema via smartphone.
+        2. Verificar se os menus, botões e formulários são facilmente utilizáveis por toque.
+        
+        **Resultado Esperado:**
+        
+        - Botões e menus devem estar acessíveis e fáceis de clicar.
+        - O usuário não deve precisar ampliar a tela para utilizar funcionalidades básicas.
+- CT-004 - Implementação linguagem C#
+    
+    **Requisito Associado**: RF-004 - O sistema deve ser implementado na linguagem C#.
+    
+    **Pré-condições:**
+    
+    - O ambiente de desenvolvimento deve estar configurado corretamente com suporte para C#.
+    - O repositório de código-fonte deve conter arquivos desenvolvidos em C#.
+    - As ferramentas de compilação e execução devem estar instaladas.
+    
+    **Objetivo do teste:**
+    
+    Garantir que o sistema seja desenvolvido e executado integralmente na linguagem C#.
+    
+    - **Cenário 1: Verificação da linguagem de implementação**
+        - **Passos:**
+            1. Acessar o repositório de código-fonte.
+            2. Verificar se os arquivos principais estão escritos em C# (.cs).
+            3. Identificar a presença de arquivos de projeto compatíveis com .NET (exemplo: .csproj).
+            
+            **Resultado Esperado:**
+            
+            - O repositório deve conter apenas arquivos de implementação em C#.
+            - O projeto deve possuir arquivos de configuração e dependências do .NET.
+    - **Cenário 2: Compilação e execução do sistema**
+        
+        **Passos:**
+        
+        1. Abrir o projeto em um ambiente de desenvolvimento compatível (exemplo: Visual Studio, JetBrains Rider, VS Code com extensão C#).
+        2. Realizar a compilação do código-fonte.
+        3. Executar o sistema.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve compilar sem erros.
+        - O sistema deve ser executado corretamente.
+    - **Cenário 3: Teste de integração com funcionalidades específicas do C#**
+        
+        **Passos:**
+        
+        1. Avaliar se o sistema utiliza recursos nativos do C#, como LINQ, Entity Framework e ASP.NET (se aplicável).
+        2. Testar funcionalidades que dependam desses recursos.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve apresentar compatibilidade com as bibliotecas e recursos do C#.
+        - As funcionalidades devem operar corretamente sem erros de compatibilidade.
+    
+    **Critérios de Aceitação:**
+    
+    - Todo o código-fonte principal deve estar escrito em C#.
+    - O sistema deve ser compilado e executado com sucesso em um ambiente .NET.
+    - Não devem existir dependências de outras linguagens para a implementação principal.
+    - O sistema deve fazer uso adequado dos recursos da linguagem C#.
 
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+- CT-002 - Acessibilidade do Sistema em Navegadores Web e Dispositivos Móveis
+    
+    **Requisito Associado:** RF-002 - O sistema deve ser acessível em navegadores web e dispositivos móveis.
+    
+    **Pré-condições:**
+    
+    - O sistema deve estar disponível para acesso.
+    - O usuário deve possuir um navegador web ou dispositivo móvel compatível.
+    - Conexão com a internet estável.
+    
+    **Objetivo do teste:**
+    Validar se o sistema é acessível em diferentes navegadores web e dispositivos móveis.
+    
+    **Critérios de Aceitação:**
+    
+    - O sistema deve estar funcional em navegadores web e dispositivos móveis sem perda de usabilidade.
+    - O layout responsivo deve se adaptar corretamente a diferentes tamanhos de tela. — Verificar
+    - Todas as funcionalidades principais devem estar acessíveis e utilizáveis nos diferentes dispositivos.
+    - O sistema não deve apresentar erros de carregamento ou de interface em diferentes plataformas.
+    
+    **Cenários**:
+    
+    - **Cenário 1: Acesso ao sistema via navegador desktop**
+        - **Passos:**
+            1. Abrir um navegador web compatível (Chrome, Firefox, Edge, Safari).
+            2. Acessar a URL do sistema.
+            3. Realizar login com credenciais válidas.
+            4. Navegar pelas funcionalidades principais do sistema.
+            
+            **Resultado Esperado:**
+            
+            - O sistema deve carregar corretamente sem erros.
+            - O layout e funcionalidades devem ser apresentados adequadamente.
+            - As interações devem ocorrer sem falhas ou travamentos.
+    - **Cenário 2: Acesso ao sistema via navegador móvel**
+        - **Passos:**
+            1. Abrir um navegador móvel (Chrome, Safari, Firefox) em um smartphone ou tablet.
+            2. Acessar a URL do sistema.
+            3. Realizar login com credenciais válidas.
+            4. Navegar pelas funcionalidades principais do sistema.
+            
+            **Resultado Esperado:**
+            
+            - O sistema deve carregar corretamente sem erros.
+            - As funcionalidades devem estar acessíveis e funcionais em dispositivos móveis.
+- CT-003 - Criação, edição e exclusão de eventos pelas ONGs
+    
+    **Requisito Associado:** RF-003 - O sistema deve permitir a criação, edição e exclusão de eventos pelas ONGs, podendo definir data, horário, local e descrição de cada evento.
+    
+    **Pré-condições:**
+    
+    - O usuário deve estar autenticado no sistema como representante de uma ONG.
+    - O sistema deve estar funcionando corretamente.
+    
+    **Objetivo do teste:**
+    Validar as funcionalidades de criação, edição e exclusão de eventos pelas ONGs.
+    
+    **Critérios de Aceitação:**
+    
+    - O usuário consegue criar, editar e excluir eventos sem erros.
+    - O sistema impede a criação de eventos sem preencher os campos obrigatórios.
+    - O sistema exibe mensagens de erro claras em caso de falha.
+    - Apenas representantes de ONGs podem realizar essas ações - validar essa informação
+    
+    **Cenários:**
+    
+    - **Cenário 1: Criação de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a tela de criação de eventos.
+        2. Preencher os campos obrigatórios (Nome, Data, Horário, Local e Descrição) - validar estes campos
+        3. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - O evento criado deve aparecer na listagem de eventos da ONG.
+    - **Cenário 2: Edição de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos cadastrados.
+        2. Selecionar um evento para edição.
+        3. Modificar algum dos campos (exemplo: alterar a data do evento).
+        4. Clicar no botão "Salvar".
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de sucesso.
+        - As alterações devem ser refletidas na listagem de eventos da ONG.
+    - **Cenário 3: Exclusão de um evento**
+        
+        **Passos:**
+        
+        1. Acessar a lista de eventos cadastrados.
+        2. Selecionar um evento para exclusão.
+        3. Clicar no botão ou ícone "Excluir".
+        4. Confirmar a exclusão.
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve exibir uma mensagem de confirmação.
+        - O evento deve ser removido da listagem de eventos da ONG.
+- 
+- CT-005 - Interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos.
+    
+    **Requisito Associado**: RF-005 - O sistema deve ter uma interface intuitiva e fácil de usar, sem necessidade de treinamentos complexos.
+    
+    **Pré-condições:**
+    
+    - O sistema deve estar disponível e acessível para testes.
+    - O usuário deve possuir credenciais para acessar o sistema, caso necessário.
+    
+    **Objetivo do teste:**
+    
+    Validar se a interface do sistema é intuitiva e pode ser utilizada sem necessidade de treinamentos complexos.
+    
+    **Critérios de Aceitação:**
+    
+    - O usuário consegue utilizar o sistema sem necessidade de treinamentos complexos.
+    - Os elementos da interface são bem organizados e seguem padrões de usabilidade.
+    - O sistema fornece orientações básicas quando necessário.
+    - Usuários sem experiência prévia conseguem realizar tarefas comuns sem dificuldades.
+    
+    **Cenários:**
+    
+    - **Cenário 1: Navegação intuitiva**
+        
+        **Passos:**
+        
+        1. Acessar o sistema através de um navegador web ou dispositivo móvel.
+        2. Navegar pelos principais menus e funcionalidades sem suporte externo.
+        3. Buscar informações específicas dentro do sistema.
+        
+        **Resultado Esperado:**
+        
+        - O usuário consegue navegar pelo sistema sem dificuldades.
+        - Os menus e botões são autoexplicativos e seguem um padrão intuitivo.
+    - **Cenário 2: Uso de funcionalidades sem treinamento prévio**
+        
+        **Passos:**
+        
+        1. Criar um novo cadastro de usuário ou entidade.
+        2. Editar informações previamente cadastradas.
+        3. Excluir um cadastro.
+        
+        **Resultado Esperado:**
+        
+        - O usuário consegue realizar as ações sem necessidade de instruções detalhadas.
+        - O sistema fornece mensagens de ajuda quando necessário.
+    - **Cenário 3: Feedback e usabilidade**
+        
+        **Passos:**
+        
+        1. Realizar testes com usuários sem experiência prévia com o sistema.
+        2. Observar a interação dos usuários e coletar feedbacks.
+        3. Avaliar se o usuário consegue completar tarefas sem suporte externo.
+        
+        **Resultado Esperado:**
+        
+        - A maioria dos usuários consegue realizar tarefas sem dificuldades.
+        - O sistema exibe mensagens de erro e sucesso de forma clara e objetiva
+- CT-006 - Acessibilidade a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado
+    
+    **Requisito Associado**: RF-006 - O sistema deve ser acessível a pessoas com deficiência e cumprir as normas de acessibilidade WCAG, como textos alternativos para imagens, contrastes de cores adequados, navegação por teclado.
+    
+    **Pré-condições:**
+    
+    - O sistema deve estar em funcionamento e acessível a partir de um navegador web.
+    - O usuário deve possuir um ambiente de testes configurado para avaliar acessibilidade, incluindo ferramentas como leitores de tela e validadores WCAG.
+    
+    **Objetivo do teste:**
+    
+    Validar se o sistema atende aos critérios de acessibilidade estabelecidos pelas diretrizes WCAG, garantindo uma experiência inclusiva para usuários com deficiência.
+    
+    **Critérios de Aceitação:**
+    
+    - O sistema atende aos critérios de acessibilidade WCAG 2.1 no mínimo no nível AA.
+    - O usuário consegue navegar sem dificuldades utilizando tecnologias assistivas (leitor de tela, teclado, alto contraste).
+    - Todas as imagens informativas possuem descrições adequadas.
+    - O contraste de cores está adequado para garantir boa visibilidade a usuários com baixa visão.
+    - O sistema pode ser utilizado sem necessidade de dispositivos apontadores (mouse ou touchscreen).
+    
+    **Cenários:**
+    
+    - **Cenário 1: Verificação de textos alternativos para imagens**
+        
+        **Passos:**
+        
+        1. Acessar uma página do sistema que contenha imagens.
+        2. Utilizar uma ferramenta de inspeção para verificar a presença de textos alternativos (atributo "alt" em imagens).
+        3. Testar a leitura dos textos alternativos utilizando um leitor de tela (ex.: NVDA, JAWS).
+        
+        **Resultado Esperado:**
+        
+        - Todas as imagens informativas possuem descrições adequadas no atributo "alt".
+        - Imagens meramente decorativas possuem um "alt" vazio para evitar distração.
+        - O leitor de tela consegue interpretar corretamente os textos alternativ
+    - **Cenário 2: Verificação do contraste de cores adequado**
+        
+        **Passos:**
+        
+        1. Utilizar uma ferramenta de verificação de contraste (ex.: Wave, Axe, Lighthouse) para analisar os elementos visuais do sistema.
+        2. Identificar se há textos ou botões com baixo contraste em relação ao fundo.
+        3. Testar a legibilidade dos conteúdos com diferentes modos de exibição (ex.: modo escuro, modo alto contraste do sistema operacional).
+        
+        **Resultado Esperado:**
+        
+        - O sistema deve atender ao nível AA de contraste recomendado pelo WCAG (razão de contraste mínima de 4.5:1 para textos normais e 3:1 para textos grandes).
+        - Não há dificuldades de leitura para usuários com daltonismo ou baixa visão.
+    - **Cenário 3: Navegação por teclado sem dependência de mouse**
+        
+        **Passos:**
+        
+        1. Acessar o sistema e navegar utilizando apenas o teclado (Tab, Shift+Tab, Enter, Espaço, Setas direcionais, Esc).
+        2. Verificar se todos os elementos interativos (botões, links, formulários) podem ser acessados e acionados sem uso do mouse.
+        3. Avaliar se há foco visível para indicar a navegação pelo teclado.
+        
+        **Resultado Esperado:**
+        
+        - Todos os elementos interativos podem ser acessados e utilizados sem necessidade do mouse.
+        - O foco de navegação é claramente visível e segue uma ordem lógica.
+        - Nenhum elemento essencial fica inacessível pelo teclado.
