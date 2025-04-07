@@ -33,6 +33,72 @@
 - **Estrutura básica:** Seções padronizadas para títulos, subtítulos e conteúdos diversos.
  ![Estrutura básica](img/estrutura-basica.png)
 
+## Wireframes
+
+Cada tela apresentada no fluxo possui um Wireframe detalhado, disponível na plataforma Figma:
+
+> [📌 Acesse o Wireframe Interativo no Figma](https://www.figma.com/design/ciYST6HKH0QDj7jo5Ltsbg/ConectaOng?node-id=0-1&p=f&t=Iyexzzs9k4ntBTnk-0)
+
+Todas as telas compartilham uma estrutura padrão composta por três blocos:
+
+- **Cabeçalho:** logo do ConectaOng e menu principal (menu “hambúrguer”).
+   ![Cabeçalho](img/header.png)
+- **Conteúdo:** área principal para interação e apresentação das informações.
+   ![Conteúdo](img/conteudo-home.png)
+- **Rodapé:** informações da equipe e contato.
+    ![Rodapé](img/footer.png)
+
+## Telas do Sistema
+
+### Home
+Cabeçalho, Conteúdo e rodapé.
+
+ ![home](img/home-desktop.png)
+
+### Validação
+Valida qual o tipo de registro
+
+ ![Validação](img/validação.png)
+ 
+### Cadastro de Voluntário
+Conteúdo: campos para preenchimento de "Nome", "CPF", "E-mail", "Senha", "Sexo", "Descrição" e botão de “Registrar”.
+
+ ![Cadastro de Voluntário](img/registrar-voluntario.png)
+
+### Cadastro de ONG
+Conteúdo: campos para preenchimento de "Título", "CNPJ", "Categoria", "Descrição", "Email", "Senha" e botão de “Registrar”.
+
+ ![Cadastro de Voluntário](img/registrar-ong.png)
+
+ ### Cadastro de Eventos
+Conteúdo: campos para preenchimento de "Evento", "Descrição", "Data", "Local" e “Registrar”.
+
+ ![Cadastro de Eventos](img/registro-evento.png)
+
+### Login
+Cabeçalho, Conteúdo e rodapé.
+
+ ![Login](img/login.png)
+
+### Lista de Ongs
+**Conteúdo:** tabela com detalhes de ongs cadastradas com Título, Descrição e Causa, barra de pesquisa e filtros disponíveis.
+  
+ ![Ongs](img/lista-de-ongs.png)
+
+ ### Lista de Voluntários
+**Conteúdo:** tabela com nome de voluntários cadastrados, descrição e sexo.
+  
+ ![Ongs](img/lista-voluntarios.png)
+
+  ### Lista de Eventos
+**Conteúdo:** tabela com nome de eventos cadastrados, descrição", data", "local" e  barra de pesquisa e filtros disponíveis.
+  
+ ![Ongs](img/lista-eventos.png)
+
+### Suporte
+**Conteúdo:** informações para contato do suporte técnico (telefone, WhatsApp e e-mail).
+
+  ![Contatos](img/contatos.png)
 
 > **Links Úteis**:
 > - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
