@@ -25,30 +25,41 @@ Todas as telas compartilham uma estrutura padrão composta por três blocos:
 
 ## Telas do Sistema
 
-### Cadastro 
-Conteúdo: campos para preenchimento de "Nome", "E-mail", "Data de Nascimento", dados referentes a localização, "Sexo", "Área de interesse" "Senha", botão de “Registrar”.
+### Home
+Cabeçalho, Conteúdo e rodapé.
 
- ![Cadastro](img/cadastro.png)
+ ![home](img/home.png)
 
+### Validação
+Valida qual o tipo de registro
+
+ ![Validação](img/validação.png)
+ 
+### Cadastro de Voluntário
+Conteúdo: campos para preenchimento de "Nome", "CPF", "E-mail", "Senha", "Sexo", "Descrição" e botão de “Registrar”.
+
+ ![Cadastro de Voluntário](img/registrar-voluntario.png)
+
+### Cadastro de ONG
+Conteúdo: campos para preenchimento de "Título", "CNPJ", "Categoria", "Descrição", "Email", "Senha" e botão de “Registrar”.
+
+ ![Cadastro de Voluntário](img/registrar-ong.png)
 
 ### Login
 Cabeçalho, Conteúdo e rodapé.
 
  ![Login](img/login.png)
 
-### Home
-Cabeçalho, Conteúdo e rodapé.
-
- ![home](img/home.png)
-
 ### Lista de Ongs
-**Conteúdo:** tabela com detalhes de ongs cadastradas com Nome, Bairro, Cidade e Causa, Barra de pesquisa e filtros disponíveis.
+**Conteúdo:** tabela com detalhes de ongs cadastradas com Título, Descrição e Causa, Barra de pesquisa e filtros disponíveis.
   
- ![Ongs](img/lista-ongs.png)
+ ![Ongs](img/lista-de-ongs.png)
 
-### Lista de Eventos
- **Conteúdo:** tabela com detalhes dos eventos promovidos pelas ongs, com "Evento", "Localização", "Bairro", "Data" e barra de pesquisa disponível.
-  ![Eventos](img/eventos.png)
+ ### Lista de Voluntários
+**Conteúdo:** tabela com nome de voluntários cadastrados, descrição e sexo.
+  
+ ![Ongs](img/lista-voluntarios.png)
+
 ### Suporte
 **Conteúdo:** informações para contato do suporte técnico (telefone, WhatsApp e e-mail).
 
