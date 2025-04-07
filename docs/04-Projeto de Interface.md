@@ -19,7 +19,7 @@ Todas as telas compartilham uma estrutura padrão composta por três blocos:
 - **Cabeçalho:** logo do ConectaOng e menu principal (menu “hambúrguer”).
    ![Cabeçalho](img/header.png)
 - **Conteúdo:** área principal para interação e apresentação das informações.
-   ![Conteúdo](img/conteudo.png)
+   ![Conteúdo](img/conteudo-home.png)
 - **Rodapé:** informações da equipe e contato.
     ![Rodapé](img/footer.png)
 
@@ -28,7 +28,7 @@ Todas as telas compartilham uma estrutura padrão composta por três blocos:
 ### Home
 Cabeçalho, Conteúdo e rodapé.
 
- ![home](img/home.png)
+ ![home](img/home-desktop.png)
 
 ### Validação
 Valida qual o tipo de registro
@@ -45,13 +45,18 @@ Conteúdo: campos para preenchimento de "Título", "CNPJ", "Categoria", "Descri�
 
  ![Cadastro de Voluntário](img/registrar-ong.png)
 
+ ### Cadastro de Eventos
+Conteúdo: campos para preenchimento de "Evento", "Descrição", "Data", "Local" e “Registrar”.
+
+ ![Cadastro de Eventos](img/registro-evento.png)
+
 ### Login
 Cabeçalho, Conteúdo e rodapé.
 
  ![Login](img/login.png)
 
 ### Lista de Ongs
-**Conteúdo:** tabela com detalhes de ongs cadastradas com Título, Descrição e Causa, Barra de pesquisa e filtros disponíveis.
+**Conteúdo:** tabela com detalhes de ongs cadastradas com Título, Descrição e Causa, barra de pesquisa e filtros disponíveis.
   
  ![Ongs](img/lista-de-ongs.png)
 
@@ -59,6 +64,11 @@ Cabeçalho, Conteúdo e rodapé.
 **Conteúdo:** tabela com nome de voluntários cadastrados, descrição e sexo.
   
  ![Ongs](img/lista-voluntarios.png)
+
+  ### Lista de Eventos
+**Conteúdo:** tabela com nome de eventos cadastrados, descrição", data", "local" e  barra de pesquisa e filtros disponíveis.
+  
+ ![Ongs](img/lista-eventos.png)
 
 ### Suporte
 **Conteúdo:** informações para contato do suporte técnico (telefone, WhatsApp e e-mail).
