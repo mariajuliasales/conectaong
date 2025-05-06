@@ -30,5 +30,7 @@ namespace conectaOng.Models.Entities
 
         [Required(ErrorMessage = "Obrigatório informar a senha!")]
         public string Password { get; set; }
+
+        public int EventId { get; set; }
     }
 }
