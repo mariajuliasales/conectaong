@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conectaOng", "..\..\conectaOng.csproj", "{CAC0F482-E3C9-2D94-2C9D-F550FE29E043}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAC0F482-E3C9-2D94-2C9D-F550FE29E043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC0F482-E3C9-2D94-2C9D-F550FE29E043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC0F482-E3C9-2D94-2C9D-F550FE29E043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC0F482-E3C9-2D94-2C9D-F550FE29E043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {465C3267-A29C-49DF-99B1-A6B59924D1D1}
+	EndGlobalSection
+EndGlobal
