@@ -11,5 +11,7 @@ namespace conectaOng.Data
         }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<Volunteer> Volunteer { get; set; }
     }
 }
