@@ -1,0 +1,6 @@
+﻿# Pastas de build do .NET
+bin/
+obj/
+
+# Configurações locais do Visual Studio
+.vs/

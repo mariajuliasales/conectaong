@@ -46,3 +46,17 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.nav-item {
+    transition: box-shadow 0.3s ease;
+}
+
+.nav-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.nav-item .nav-link.active {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

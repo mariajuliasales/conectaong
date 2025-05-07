@@ -37,6 +37,14 @@ namespace conectaOng.Controllers
             return RedirectToAction("List", "User");
         }
 
+
+        [HttpGet]
+        public IActionResult ChooseRole(Guid userId)
+        {
+            ViewBag.UserId = userId;
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> List()
         {

@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Escolher Tipo de Registro";
+    var userId = ViewBag.userId;
+}
+
+<div class="container text-center mt-5">
+    <h2>Gostaria de se registrar como ONG ou Voluntário?</h2>
+    <div class="mt-4">
+        <a class="btn btn-primary me-2" href="@Url.Action("Add", "Organization", new { userId = userId })">ONG</a>
+        <a class="btn btn-secondary" href="@Url.Action("Add", "Volunteer", new { userId = userId })">Voluntário</a>
+    </div>
+</div>
