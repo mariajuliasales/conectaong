@@ -2,14 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div >
-    <h2 class="display-6 fw-bolder text-left">Conecta ONG</h2>
-    <p class="w-50 text-left">
-      As organizações sem fins lucrativos são essenciais para uma sociedade mais justa, atuando em áreas como educação, saúde, meio ambiente e direitos humanos. Contudo, captar e manter voluntários é um grande desafio que afeta diretamente sua missão social.
-    </p>
-    <p class="w-50 text-left">
-       O ConectaOng é uma plataforma que facilita a conexão entre ONGs e voluntários, oferecendo ferramentas práticas para uma gestão eficaz, programas de treinamento e estratégias de engajamento, contribuindo para fortalecer o impacto positivo dessas entidades.
-    </p>
+    <div >
+        <div class="row align-items-center">
+        <div class="col-md-8">
+            <h2 class="display-6 fw-bolder text-left">Conecta ONG</h2>
+            <p class="text-left">
+                As organizações sem fins lucrativos são essenciais para uma sociedade mais justa, atuando em áreas como educação, saúde, meio ambiente e direitos humanos. Contudo, captar e manter voluntários é um grande desafio que afeta diretamente sua missão social.
+            </p>
+            <p class="text-left">
+                O ConectaOng é uma plataforma que facilita a conexão entre ONGs e voluntários, oferecendo ferramentas práticas para uma gestão eficaz, programas de treinamento e estratégias de engajamento, contribuindo para fortalecer o impacto positivo dessas entidades.
+            </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="~/img/homeconecta.png" alt="Imagem Home ConectaONG" 
+                class="img-fluid rounded-circle shadow" 
+                style="max-width: 200px;" />
+        </div>
+    </div>
 
     <h2 class="display-6 fw-bolder text-left mt-4">Voluntários</h2>
     <p class="w-50 text-left">
@@ -18,11 +28,11 @@
     <p class="w-50 text-left">
         O ConectaOng é uma plataforma que facilita a conexão entre ONGs e voluntários, oferecendo ferramentas práticas para uma gestão eficaz, programas de treinamento e estratégias de engajamento, contribuindo para fortalecer o impacto positivo dessas entidades.
     </p>
-    <button class="btn btn-dark ms-3" asp-action="Add" asp-controller="User">Cadastrar</button>
+    <button class="btn btn-dark ms-3" style="margin-left: -1px !important";" asp-action="Add" asp-controller="User">Cadastrar</button>
 
     <h2 class="display-6 fw-bolder text-left mt-4">Eventos</h2>
     <p class="w-50 text-left">
         No ConectaOng, acreditamos que eventos fortalecem as relações entre voluntários e organizações, criando uma comunidade engajada e inspiradora. Aqui você encontra a divulgação de eventos promovidos por diversas ONGs, com oportunidades para trocar experiências, adquirir novas habilidades e construir conexões significativas. Confira a agenda, participe dos eventos e faça parte de uma rede comprometida com a transformação social.
     </p>
-     <button class="btn btn-dark ms-3" asp-action="Add" asp-controller="User">Veja mais</button>
+     <button class="btn btn-dark ms-3" style="margin-left: -1px !important";" asp-action="Add" asp-controller="User">Veja mais</button>
 </div>

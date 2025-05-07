@@ -13,5 +13,18 @@ namespace conectaOng.Data
         public DbSet<User> User { get; set; }
 
         public DbSet<Volunteer> Volunteer { get; set; }
+
+        public DbSet<Organization> Organization { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Organization>()
+                .HasOne(o => o.User) 
+                .WithOne(u => u.Organization)
+                .HasForeignKey<Organization>(o => o.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }
