@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 90vh;">
+    <h1 class="display-2 fw-bold mb-5 text-center">ConectaOng</h1>
+
+    <div class="card p-4 shadow-sm" style="width: 100%; max-width: 400px; border-radius: 16px; border-bottom: 4px solid #000;">
+        <form method="post" asp-action="Login">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+
+            <p class="mt-3 text-start">
+                <a asp-controller="User" asp-action="RecuperarSenha" class="text-decoration-none text-dark">Esqueceu sua senha?</a>
+            </p>
+
+        </form>
+
+        @if (ViewBag.Erro != null)
+        {
+            <div class="alert alert-danger mt-3">@ViewBag.Erro</div>
+        }
+    </div>
+</div>

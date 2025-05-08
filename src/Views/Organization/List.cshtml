@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<conectaOng.Models.Entities.Organization>
+
+<h1 class="mb-5">Lista de ONGs</h1>
+
+<form method="get" class="row mb-4">
+    <div class="col-md-5">
+        <input type="text" name="searchName" class="form-control" placeholder="Nome da ONG" value="@(Context.Request.Query["searchName"])" />
+    </div>
+    <div class="col-md-5">
+        <input type="text" name="searchCategory" class="form-control" placeholder="Categoria" value="@(Context.Request.Query["searchCategory"])" />
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-dark w-100">Buscar</button>
+    </div>
+</form>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ONG</th>
+                <th>Descriçao</th>
+                <th>Categoria</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var organization in Model)
+            {
+                <tr>
+                    <td>@organization.Name</td>
+                    <td>@organization.Descricao</td>
+                    <td>@organization.Categoria</td>
+                    <td>
+                        <a class="btn btn-info me-2" asp-controller="Organization" asp-action="Details" asp-route-id="@organization.Id">Detalhes</a>
+                        <a class="btn btn-primary" asp-controller="Organization" asp-action="Edit" asp-route-id="@organization.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning d-flex justify-content-center mt-5" role="alert">
+        Nenhuma ONG encontrada.
+    </div>
+}
