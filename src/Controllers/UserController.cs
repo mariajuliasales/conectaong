@@ -34,7 +34,7 @@ namespace conectaOng.Controllers
             await dbContext.User.AddAsync(user);
             await dbContext.SaveChangesAsync();
 
-            return RedirectToAction("List", "User");
+            return RedirectToAction("ChooseRole", "User", new { userId = user.Id });
         }
 
 
@@ -43,6 +43,24 @@ namespace conectaOng.Controllers
         {
             ViewBag.UserId = userId;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChooseRole(Guid userId, string role)
+        {
+            
+            if (role == "Volunteer")
+            {
+                return RedirectToAction("Add", "Volunteer", new { userId = userId });
+            }
+            else if (role == "Organization")
+            {
+                return RedirectToAction("Add", "Organization", new { userId = userId });
+            }
+
+            // Caso inválido:
+            return RedirectToAction("Add");
+
         }
 
         [HttpGet]

@@ -82,11 +82,9 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Cpf")
                         .IsRequired()
@@ -97,22 +95,20 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Sex")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Volunteer");
                 });
@@ -128,9 +124,23 @@ namespace conectaOng.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
+                {
+                    b.HasOne("conectaOng.Models.Entities.User", "User")
+                        .WithOne("Volunteer")
+                        .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>
                 {
                     b.Navigation("Organization")
+                        .IsRequired();
+
+                    b.Navigation("Volunteer")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

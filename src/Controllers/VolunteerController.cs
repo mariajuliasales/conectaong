@@ -26,8 +26,13 @@ namespace conectaOng.Controllers
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult Add(Guid userId)
         {
+            var viewModel = new AddVolunteerViewModel 
+            { 
+                UserId = userId 
+            };
+
             ViewBag.SexOptions = Enum.GetValues(typeof(Sex))
             .Cast<Sex>()
             .Select(e => new SelectListItem { Value = e.ToString(), Text = e.ToString() })
@@ -36,7 +41,9 @@ namespace conectaOng.Controllers
             return View();
         }
 
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(AddVolunteerViewModel viewModel)
         {
 
@@ -46,21 +53,20 @@ namespace conectaOng.Controllers
                 Cpf = viewModel.Cpf,
                 Sex = viewModel.Sex,
                 Description = viewModel.Description,
-                Email = viewModel.Email,
-                Password = viewModel.Password,
+                UserId = viewModel.UserId,
 
             };
 
             await dbContext.Volunteer.AddAsync(volunteer);
             await dbContext.SaveChangesAsync();
 
-            return RedirectToAction("List", "Volunteer");
+            return RedirectToAction("List", "Organization");
 
 
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(Guid id)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(id);
 
@@ -73,7 +79,7 @@ namespace conectaOng.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(int? id, Volunteer viewModel)
+        public async Task<ActionResult> Edit(Guid id, Volunteer viewModel)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(viewModel.Id);
 
@@ -83,8 +89,6 @@ namespace conectaOng.Controllers
                 volunteer.Cpf = viewModel.Cpf;
                 volunteer.Sex = viewModel.Sex;
                 volunteer.Description = viewModel.Description;
-                volunteer.Email = viewModel.Email;
-                volunteer.Password = viewModel.Password;
 
                 await dbContext.SaveChangesAsync();
             }
@@ -93,7 +97,7 @@ namespace conectaOng.Controllers
 
         }
 
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(Guid id)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(id);
 
@@ -101,7 +105,7 @@ namespace conectaOng.Controllers
 
         }
 
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(id);
 
