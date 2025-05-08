@@ -17,10 +17,10 @@ namespace conectaOng.Models
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage = "A localização é obrigatória.")]
-        [StringLength(100, ErrorMessage = "O título deve ter no máximo 100 caracteres.")]
+        [StringLength(100, ErrorMessage = "A localização deve ter no máximo 100 caracteres.")]
         public string Location { get; set; }
 
         [Required(ErrorMessage = "O ID da organização é obrigatório.")]
-        public int OrganizationId { get; set; }
+        public Guid OrganizationId { get; set; } // Alterado para Guid para corresponder ao modelo Organization
     }
 }

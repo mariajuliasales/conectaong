@@ -1,6 +1,8 @@
-﻿using conectaOng.Data;
+﻿using System.Security.Claims;
+using conectaOng.Data;
 using conectaOng.Models;
 using conectaOng.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,45 +21,73 @@ namespace conectaOng.Controllers
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            var events = await dbContext.Event.Include(e => e.Organization).ToListAsync();
+            var events = await dbContext.Event
+                .Include(e => e.Organization)
+                .Where(e => e.Date >= DateTime.Today)
+                .ToListAsync();
             return View(events);
         }
 
         // Criar evento (restrito à organização autenticada)
         [HttpGet]
-        public IActionResult Add()
+        [Authorize]
+        public async Task<IActionResult> Add()
         {
             if (!User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "User");
             }
 
+            // Obter o UserId do usuário autenticado
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("AccessDenied", "User"); // Redirecionar para a página de acesso negado
+            }
+
+            // Verificar se o usuário autenticado é uma organização
+            var organization = await dbContext.Organization
+                .FirstOrDefaultAsync(o => o.UserId.ToString() == userId);
+
+            if (organization == null)
+            {
+                return RedirectToAction("AccessDenied", "User"); // Redirecionar para a página de acesso negado
+            }
+
+            // Passar o ID da organização para a view
+            ViewBag.OrganizationId = organization.Id;
             return View();
         }
 
+
         // Update the type conversion for OrganizationId in the Add method
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Add(AddEventViewModel viewModel)
         {
             if (!User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "User");
             }
 
+            // Verificar se o ID da organização é válido
             var organization = await dbContext.Organization
-                .FirstOrDefaultAsync(o => o.UserId.ToString() == User.Identity.Name);
+                .FirstOrDefaultAsync(o => o.Id == viewModel.OrganizationId);
 
             if (organization == null)
             {
-                return Forbid();
+                return Forbid(); // Garante que o ID da organização é válido
             }
 
+            // Criar o novo evento
             var newEvent = new Event
             {
                 Title = viewModel.Title,
                 Description = viewModel.Description,
                 Date = viewModel.Date,
-                OrganizationId = organization.Id.GetHashCode()
+                Location = viewModel.Location,
+                OrganizationId = organization.Id // Converte Guid para int usando GetHashCode()
             };
 
             await dbContext.Event.AddAsync(newEvent);
@@ -70,9 +100,13 @@ namespace conectaOng.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var eventToEdit = await dbContext.Event.FindAsync(id);
+            var eventToEdit = await dbContext.Event
+                .Include(e => e.Organization)
+                .FirstOrDefaultAsync(e => e.Id == Guid.Parse(id.ToString())); // Convert `id` to Guid
 
-            if (eventToEdit == null || eventToEdit.Organization.UserId.ToString() != User.Identity.Name)
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (eventToEdit == null || eventToEdit.Organization.UserId.ToString() != userId)
             {
                 return Forbid();
             }
@@ -80,31 +114,12 @@ namespace conectaOng.Controllers
             return View(eventToEdit);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(Event viewModel)
-        {
-            var eventToEdit = await dbContext.Event.FindAsync(viewModel.Id);
-
-            if (eventToEdit == null || eventToEdit.Organization.UserId.ToString() != User.Identity.Name)
-            {
-                return Forbid();
-            }
-
-            eventToEdit.Title = viewModel.Title;
-            eventToEdit.Description = viewModel.Description;
-            eventToEdit.Date = viewModel.Date;
-
-            await dbContext.SaveChangesAsync();
-
-            return RedirectToAction("List");
-        }
-
         // Deletar evento (restrito à organização que criou o evento)
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             var eventToDelete = await dbContext.Event.Include(e => e.Organization)
-                .FirstOrDefaultAsync(e => e.Id == id);
+                .FirstOrDefaultAsync(e => e.Id == Guid.Parse(id.ToString())); // Convert `id` to Guid
 
             if (eventToDelete == null || eventToDelete.Organization.UserId.ToString() != User.Identity.Name)
             {

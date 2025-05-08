@@ -9,7 +9,7 @@ namespace conectaOng.Models.Entities
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o nome!")]
 

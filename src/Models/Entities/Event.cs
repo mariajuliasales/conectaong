@@ -5,7 +5,7 @@ namespace conectaOng.Models.Entities
     public class Event
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "O título deve ter no máximo 100 caracteres.")]
@@ -25,7 +25,7 @@ namespace conectaOng.Models.Entities
         public string Location { get; set; }
 
         [Required]
-        public int OrganizationId { get; set; }
+        public Guid OrganizationId { get; set; }
 
         public Organization Organization { get; set; }
 
