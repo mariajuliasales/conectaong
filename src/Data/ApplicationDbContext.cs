@@ -16,6 +16,8 @@ namespace conectaOng.Data
 
         public DbSet<Organization> Organization { get; set; }
 
+        public DbSet<Event> Event { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

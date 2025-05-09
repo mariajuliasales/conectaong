@@ -22,6 +22,40 @@ namespace conectaOng.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("OrganizationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrganizationId");
+
+                    b.ToTable("Event");
+                });
+
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
                 {
                     b.Property<Guid>("Id")
@@ -95,6 +129,12 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("EventId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -106,11 +146,24 @@ namespace conectaOng.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
+                    
                     b.HasIndex("UserId")
                         .IsUnique();
+                        
+                    b.HasIndex("EventId1");
 
                     b.ToTable("Volunteer");
+                });
+
+            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
+                {
+                    b.HasOne("conectaOng.Models.Entities.Organization", "Organization")
+                        .WithMany("Events")
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
@@ -126,13 +179,29 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.HasOne("conectaOng.Models.Entities.User", "User")
+                
+                b.HasOne("conectaOng.Models.Entities.User", "User")
                         .WithOne("Volunteer")
                         .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
+                    
+                b.HasOne("conectaOng.Models.Entities.Event", null)
+                        .WithMany("Volunteers")
+                        .HasForeignKey("EventId1");
+               });                
+
+            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
+                {
+                    b.Navigation("Volunteers");
+                });
+
+            modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
+                {
+                    b.Navigation("Events");
+
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>
