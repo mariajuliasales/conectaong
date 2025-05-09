@@ -1,16 +1,15 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-
 @model AddEventViewModel
 
-<h1>Adicionar Evento</h1>
+<h1>Editar Evento</h1>
 
 <form method="post">
-    <!-- Campo oculto para o ID da organização -->
-    <input type="hidden" asp-for="OrganizationId" value="@ViewBag.OrganizationId" />
+    <input type="hidden" asp-for="OrganizationId" />
 
     <div class="form-group">
         <label for="Title">Título</label>
@@ -38,6 +37,6 @@
 
     <div class="mt-3">
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <a asp-page="/Event/List" class="btn btn-secondary">Cancelar</a>
+        <a asp-action="List" class="btn btn-secondary">Cancelar</a>
     </div>
 </form>

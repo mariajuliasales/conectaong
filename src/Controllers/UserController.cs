@@ -1,6 +1,9 @@
-﻿using conectaOng.Data;
+﻿using System.Security.Claims;
+using conectaOng.Data;
 using conectaOng.Models;
 using conectaOng.Models.Entities;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -101,8 +104,19 @@ namespace conectaOng.Controllers
 
             if (user != null)
             {
-                // Aqui você poderia armazenar o usuário em sessão (exemplo simples)
-                TempData["UsuarioLogado"] = user.Name;
+                // Criar as claims do usuário
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Armazena o UserId como claim
+        };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                // Criar o cookie de autenticação
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
                 return RedirectToAction("Index", "Home");
             }
 

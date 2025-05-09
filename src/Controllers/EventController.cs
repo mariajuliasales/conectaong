@@ -98,11 +98,12 @@ namespace conectaOng.Controllers
 
         // Editar evento (restrito à organização que criou o evento)
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+        [Authorize]
+        public async Task<IActionResult> Edit(Guid id)
         {
             var eventToEdit = await dbContext.Event
                 .Include(e => e.Organization)
-                .FirstOrDefaultAsync(e => e.Id == Guid.Parse(id.ToString())); // Convert `id` to Guid
+                .FirstOrDefaultAsync(e => e.Id == id);
 
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
@@ -111,19 +112,56 @@ namespace conectaOng.Controllers
                 return Forbid();
             }
 
-            return View(eventToEdit);
+            // Converter o objeto Event para AddEventViewModel
+            var viewModel = new AddEventViewModel
+            {
+                Title = eventToEdit.Title,
+                Description = eventToEdit.Description,
+                Date = eventToEdit.Date,
+                Location = eventToEdit.Location,
+                OrganizationId = eventToEdit.OrganizationId
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Edit(Event viewModel)
+        {
+            var eventToEdit = await dbContext.Event
+                .Include(e => e.Organization)
+                .FirstOrDefaultAsync(e => e.Id == viewModel.Id);
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (eventToEdit == null || eventToEdit.Organization.UserId.ToString() != userId)
+            {
+                return Forbid(); // Garante que apenas o criador pode editar
+            }
+
+            // Atualizar os campos do evento
+            eventToEdit.Title = viewModel.Title;
+            eventToEdit.Description = viewModel.Description;
+            eventToEdit.Date = viewModel.Date;
+            eventToEdit.Location = viewModel.Location;
+
+            await dbContext.SaveChangesAsync();
+
+            return RedirectToAction("List");
         }
 
         // Deletar evento (restrito à organização que criou o evento)
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        [Authorize]
+        public async Task<IActionResult> Delete(Guid id)
         {
             var eventToDelete = await dbContext.Event.Include(e => e.Organization)
-                .FirstOrDefaultAsync(e => e.Id == Guid.Parse(id.ToString())); // Convert `id` to Guid
+                .FirstOrDefaultAsync(e => e.Id == id);
 
-            if (eventToDelete == null || eventToDelete.Organization.UserId.ToString() != User.Identity.Name)
+            if (eventToDelete == null || eventToDelete.Organization.UserId.ToString() != User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
             {
-                return Forbid();
+                return Forbid(); // Garante que apenas o criador pode deletar
             }
 
             dbContext.Event.Remove(eventToDelete);
