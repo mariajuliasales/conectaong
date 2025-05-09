@@ -129,10 +129,6 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
@@ -143,15 +139,17 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Sex")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
+                    b.HasKey("Id");
+                    
+                    b.HasIndex("UserId")
+                        .IsUnique();
+                        
                     b.HasIndex("EventId1");
 
                     b.ToTable("Volunteer");
@@ -181,10 +179,19 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.HasOne("conectaOng.Models.Entities.Event", null)
+                
+                b.HasOne("conectaOng.Models.Entities.User", "User")
+                        .WithOne("Volunteer")
+                        .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                    
+                b.HasOne("conectaOng.Models.Entities.Event", null)
                         .WithMany("Volunteers")
                         .HasForeignKey("EventId1");
-                });
+               });                
 
             modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
                 {
@@ -194,11 +201,15 @@ namespace conectaOng.Migrations
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
                 {
                     b.Navigation("Events");
+
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>
                 {
                     b.Navigation("Organization")
+                        .IsRequired();
+
+                    b.Navigation("Volunteer")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

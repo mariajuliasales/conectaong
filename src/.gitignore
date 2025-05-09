@@ -4,3 +4,5 @@ obj/
 
 # Configurações locais do Visual Studio
 .vs/
+
+migrations/

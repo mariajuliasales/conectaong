@@ -4,12 +4,18 @@
 @{
     ViewData["Title"] = "Escolher Tipo de Registro";
     var userId = ViewBag.userId;
+    Console.WriteLine("Esse é o userId " + userId);
 }
 
 <div class="container text-center mt-5">
     <h2>Gostaria de se registrar como ONG ou Voluntário?</h2>
-    <div class="mt-4">
-        <a class="btn btn-primary me-2" href="@Url.Action("Add", "Organization", new { userId = userId })">ONG</a>
-        <a class="btn btn-secondary" href="@Url.Action("Add", "Volunteer", new { userId = userId })">Voluntário</a>
-    </div>
+    <form asp-action="ChooseRole" method="post">
+        <div class="mt-4">
+            <input type="hidden" name="userId" value="@ViewBag.UserId" />
+
+            <button class="btn btn-primary me-2" type="submit" name="role" value="Volunteer">Voluntário</button>
+            <button class="btn btn-secondary" type="submit" name="role" value="Organization">Organização</button>
+        </div>
+        
+    </form>
 </div>

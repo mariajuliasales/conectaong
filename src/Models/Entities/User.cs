@@ -8,5 +8,7 @@
         public string Password { get; set; }
 
         public Organization Organization { get; set; }
+
+        public Volunteer Volunteer { get; set; }
     }
 }
