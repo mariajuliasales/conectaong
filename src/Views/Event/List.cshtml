@@ -30,6 +30,19 @@
                 <td>@evento.Description</td>
                 <td>@evento.Date</td>
                 <td>@evento.Location</td>
+                <td>
+
+                    @if (User.Identity.IsAuthenticated && evento.Organization.UserId.ToString() == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                    {
+                        <!-- Botão para redirecionar para a página de edição -->
+                        <a class="btn btn-primary me-2" asp-controller="Event" asp-action="Edit" asp-route-id="@evento.Id">Editar</a>
+
+                        <!-- Botão para deletar o evento -->
+                        <form method="post" asp-controller="Event" asp-action="Delete" asp-route-id="@evento.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este evento?');">Deletar</button>
+                        </form>
+                    }
+                </td>
             </tr>
         }
     </tbody>
