@@ -27,5 +27,8 @@ namespace conectaOng.Models.Entities
         [ForeignKey("UserId")]
         public User User { get; set; }
 
+        // 🔗 Relação 1:N com Events
+        public ICollection<Event> Events { get; set; } = new List<Event>();
+
     }
 }

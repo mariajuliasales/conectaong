@@ -34,9 +34,8 @@ namespace conectaOng.Controllers
             await dbContext.User.AddAsync(user);
             await dbContext.SaveChangesAsync();
 
-            return RedirectToAction("List", "User");
+            return RedirectToAction("ChooseRole", "User", new { userId = user.Id });
         }
-
 
         [HttpGet]
         public IActionResult ChooseRole(Guid userId)

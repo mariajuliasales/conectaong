@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<conectaOng.Models.Entities.Event>
+
+<h1 class="mb-5">Lista de Eventos</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Local</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var evento in Model)
+        {
+            <tr>
+                <td>@evento.Id</td>
+                <td>@evento.Title</td>
+                <td>@evento.Description</td>
+                <td>@evento.Date</td>
+                <td>@evento.Location</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
