@@ -1,13 +1,28 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<conectaOng.Models.Entities.User>
+
+<!-- Toaster de mensagens de sucesso -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="toast align-items-center text-white bg-success border-0 position-fixed bottom-0 end-0 m-4 show" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 9999;">
+        <div class="d-flex">
+            <div class="toast-body">
+                @TempData["SuccessMessage"]
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const toast = document.querySelector('.toast');
+            if (toast) {
+                toast.classList.remove('show');
+            }
+        }, 3000);
+    </script>
 }
 
-@model List<conectaOng.Models.Entities.User>
-
 <h1 class="mb-5">Lista de Usuários</h1>
-
 
 <table class="table">
     <thead>
@@ -15,11 +30,11 @@
             <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
-            <th></th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var user in Model)
+        @foreach (var user in Model)
         {
             <tr>
                 <td>@user.Id</td>
@@ -27,9 +42,24 @@
                 <td>@user.Email</td>
                 <td>
                     <a class="btn btn-primary" asp-controller="User" asp-action="Edit" asp-route-id="@user.Id">Editar</a>
+
+                    <form asp-action="Delete" asp-controller="User" method="post" class="d-inline delete-form">
+                        <input type="hidden" name="Id" value="@user.Id" />
+                        <button type="submit" class="btn btn-danger ms-2">Deletar</button>
+                    </form>
                 </td>
             </tr>
         }
     </tbody>
-
 </table>
+
+<!-- Script para confirmar exclusão -->
+<script>
+    document.querySelectorAll('.delete-form').forEach(form => {
+        form.addEventListener('submit', function (e) {
+            if (!confirm('Tem certeza que deseja deletar este usuário?')) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>

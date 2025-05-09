@@ -37,6 +37,7 @@ namespace conectaOng.Controllers
             await dbContext.User.AddAsync(user);
             await dbContext.SaveChangesAsync();
 
+            TempData["SuccessMessage"] = "Usuário registrado com sucesso!";
             return RedirectToAction("ChooseRole", "User", new { userId = user.Id });
         }
 
@@ -72,23 +73,26 @@ namespace conectaOng.Controllers
                 user.Password = viewModel.Password;
 
                 await dbContext.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Usuário editado com sucesso!";
             }
 
             return RedirectToAction("List", "User");
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(User viewModel)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            var user = await dbContext.User.AsNoTracking().FirstOrDefaultAsync(x => x.Id == viewModel.Id);
+            var user = await dbContext.User.FindAsync(id);
 
-            if (user is not null)
+            if (user != null)
             {
                 dbContext.User.Remove(user);
                 await dbContext.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Usuário deletado com sucesso!";
             }
 
-            return RedirectToAction("List", "User");
+            return RedirectToAction("List");
         }
 
         [HttpGet]
