@@ -127,5 +127,15 @@ namespace conectaOng.Controllers
             ViewBag.Erro = "Email ou senha inválidos.";
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            // Remove o cookie de autenticação
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Redireciona para a página de login ou home
+            return RedirectToAction("Login", "User");
+        }
     }
 }
