@@ -19,8 +19,18 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 | **Caso de Teste** 	| **CT07 – Realizar cadastro de um Evento** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-001 - O sistema deve permitir o cadastro de ONGs. |
-|Registro de evidência | ![image](img/CriacaoDeEvento.png) |
+|	Requisito Associado 	| RF-007 - O sistema deve permitir o cadastro de Eventos |
+|Registro de evidência | ![image](img/ListaDeEvento.png) ![image](img/CriacaoDeEvento.png) |
+
+| **Caso de Teste** 	| **CT08 – Realizar edição de um Evento** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-008 - O sistema deve permitir editar Eventos |
+|Registro de evidência | ![image](img/EdicaoDeEvento.png) |
+
+| **Caso de Teste** 	| **CT09 – Realizar deleção de um Evento** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009 - O sistema deve permitir a exclusão de Eventos |
+|Registro de evidência | ![image](img/DelecaoDeEvento.png) |
 
 ## Relatório de testes de software
 
