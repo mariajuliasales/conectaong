@@ -20,7 +20,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT07 – Realizar cadastro de um Evento** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-001 - O sistema deve permitir o cadastro de ONGs. |
-|Registro de evidência | ![image](img/CriacaoDeEvento) |
+|Registro de evidência | ![image](img/CriacaoDeEvento.png) |
 
 ## Relatório de testes de software
 
