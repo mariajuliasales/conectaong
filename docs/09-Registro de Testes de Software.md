@@ -17,6 +17,11 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
 |Registro de evidência | www.teste.com.br/drive/ct-02 |
 
+| **Caso de Teste** 	| **CT07 – Realizar cadastro de um Evento** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-001 - O sistema deve permitir o cadastro de ONGs. |
+|Registro de evidência | ![image](img/CriacaoDeEvento) |
+
 ## Relatório de testes de software
 
 Apresente e discuta detalhadamente os resultados obtidos nos testes realizados, destacando tanto os pontos fortes quanto as fragilidades identificadas na solução. Explique como os aspectos positivos contribuem para o desempenho e a usabilidade do sistema, e como os pontos fracos impactam sua eficácia.
