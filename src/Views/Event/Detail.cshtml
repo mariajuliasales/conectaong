@@ -1,0 +1,44 @@
+@model conectaOng.Models.Entities.Event
+
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <h1>Detalhes do Evento</h1>
+    <a class="btn btn-secondary" href="@Url.Action("List", "Event")">Voltar</a>
+</div>
+
+<div>
+    <h3>@Model.Title</h3>
+    <p><strong>Descrição:</strong> @Model.Description</p>
+    <p><strong>Data:</strong> @Model.Date.ToString("dd/MM/yyyy HH:mm")</p>
+    <p><strong>Local:</strong> @Model.Location</p>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    
+    // Verifica se o usuário já está inscrito no evento
+    var isUserInscrito = Model.Volunteers.Any(v => v.UserId == userId);
+    
+    if (!isUserInscrito)
+    {
+        <form method="post" asp-action="RegisterVolunteer" asp-route-eventId="@Model.Id">
+            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+        </form>
+    }
+    else
+    {
+        <button class="btn btn-success" disabled>Inscrito</button>
+    }
+}
+else
+{
+    <p>Você precisa estar logado para se inscrever no evento.</p>
+}
+
+<!-- Mensagem de feedback -->
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info mt-3">
+        @TempData["Message"]
+    </div>
+}

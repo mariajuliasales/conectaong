@@ -42,6 +42,8 @@
                 <td>@evento.Location</td>
                 <td>
 
+                        <a class="btn btn-info me-2" asp-controller="Event" asp-action="Details" asp-route-id="@evento.Id">Detalhes</a>
+
                     @if (User.Identity.IsAuthenticated && evento.Organization.UserId.ToString() == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
                     {
                         <!-- Botão para redirecionar para a página de edição -->
