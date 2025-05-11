@@ -37,7 +37,7 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | | | | | | |  
+| Usuário 1 | 60 | 7 | Sim | Nenhum | Cadastro de um novo evento foi realizado sem nenhum problema, de forma clara e intuitiva | |  
 | Usuário 2 | | | | | | |  
 | Usuário 3 | | | | | | |  
 | Usuário 4 | | | | | | |
@@ -65,6 +65,9 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
 **Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=eBByY-rgnv0)
+
+**Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento 
+**Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=uV_Fmij7gV0)
 
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil  
 **Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=pM5EvpPvExg)
