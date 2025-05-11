@@ -37,6 +37,10 @@
                                        asp-controller="Organization" asp-action="List">ONGs</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Volunteer" && ViewContext.RouteData.Values["action"]?.ToString() == "List" ? "active" : "")"
+                                       asp-controller="Volunteer" asp-action="List">Voluntários</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Event" && ViewContext.RouteData.Values["action"]?.ToString() == "List" ? "active" : "")"
                                        asp-controller="Event" asp-action="List">Eventos</a>
                                 </li>

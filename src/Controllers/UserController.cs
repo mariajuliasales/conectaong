@@ -48,6 +48,24 @@ namespace conectaOng.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult ChooseRole(Guid userId, string role)
+        {
+            
+            if (role == "Volunteer")
+            {
+                return RedirectToAction("Add", "Volunteer", new { userId = userId });
+            }
+            else if (role == "Organization")
+            {
+                return RedirectToAction("Add", "Organization", new { userId = userId });
+            }
+
+            // Caso inválido:
+            return RedirectToAction("Add");
+
+        }
+
         [HttpGet]
         public async Task<IActionResult> List()
         {
@@ -127,5 +145,14 @@ namespace conectaOng.Controllers
             ViewBag.Erro = "Email ou senha inválidos.";
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

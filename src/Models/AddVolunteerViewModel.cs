@@ -12,9 +12,7 @@ namespace conectaOng.Models
 
         public string Description { get; set; }
 
-        public string Email { get; set; }
-
-        public string Password { get; set; }
+        public Guid UserId { get; set; }
 
     }
 }

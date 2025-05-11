@@ -197,7 +197,6 @@ namespace conectaOng.Controllers
             var newVolunteer = new Volunteer
             {
                 Name = volunteer.Name,
-                Email = volunteer.Email,
                 EventId = eventId
             };
 

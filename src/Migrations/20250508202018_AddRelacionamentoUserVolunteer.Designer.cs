@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using conectaOng.Data;
 
@@ -11,9 +12,11 @@ using conectaOng.Data;
 namespace conectaOng.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508202018_AddRelacionamentoUserVolunteer")]
+    partial class AddRelacionamentoUserVolunteer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,40 +24,6 @@ namespace conectaOng.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid>("OrganizationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizationId");
-
-                    b.ToTable("Event");
-                });
 
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
                 {
@@ -116,9 +85,11 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Cpf")
                         .IsRequired()
@@ -129,13 +100,15 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("EventId1")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -147,23 +120,10 @@ namespace conectaOng.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId1");
-
                     b.HasIndex("UserId")
                         .IsUnique();
 
                     b.ToTable("Volunteer");
-                });
-
-            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
-                {
-                    b.HasOne("conectaOng.Models.Entities.Organization", "Organization")
-                        .WithMany("Events")
-                        .HasForeignKey("OrganizationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
@@ -179,10 +139,6 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.HasOne("conectaOng.Models.Entities.Event", null)
-                        .WithMany("Volunteers")
-                        .HasForeignKey("EventId1");
-
                     b.HasOne("conectaOng.Models.Entities.User", "User")
                         .WithOne("Volunteer")
                         .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
@@ -190,16 +146,6 @@ namespace conectaOng.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
-                {
-                    b.Navigation("Volunteers");
-                });
-
-            modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
-                {
-                    b.Navigation("Events");
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>
