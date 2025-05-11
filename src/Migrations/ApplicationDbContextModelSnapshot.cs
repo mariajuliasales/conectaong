@@ -146,11 +146,11 @@ namespace conectaOng.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-                    
+
+                    b.HasIndex("EventId1");
+
                     b.HasIndex("UserId")
                         .IsUnique();
-                        
-                    b.HasIndex("EventId1");
 
                     b.ToTable("Volunteer");
                 });
@@ -179,19 +179,18 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                
-                b.HasOne("conectaOng.Models.Entities.User", "User")
+                    b.HasOne("conectaOng.Models.Entities.Event", null)
+                        .WithMany("Volunteers")
+                        .HasForeignKey("EventId1");
+
+                    b.HasOne("conectaOng.Models.Entities.User", "User")
                         .WithOne("Volunteer")
                         .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
-                    
-                b.HasOne("conectaOng.Models.Entities.Event", null)
-                        .WithMany("Volunteers")
-                        .HasForeignKey("EventId1");
-               });                
+                });
 
             modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
                 {
@@ -201,7 +200,6 @@ namespace conectaOng.Migrations
             modelBuilder.Entity("conectaOng.Models.Entities.Organization", b =>
                 {
                     b.Navigation("Events");
-
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>

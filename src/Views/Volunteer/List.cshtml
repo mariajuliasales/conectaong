@@ -27,12 +27,11 @@
                                     : volunteer.Description)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => volunteer.Description)
+                            @Html.DisplayFor(modelItem => volunteer.Sex)
                         </td>
                         <td>
                             @*<a asp-action="Edit" asp-route-id="@volunteer.Id">Edit</a> |*@                            
                             <a asp-action="Details" asp-route-id="@volunteer.Id">Detalhes</a>
-                            @*<a asp-action="Delete" asp-route-id="@volunteer.Id">Delete</a>*@
                         </td>
                     </tr>
                 }

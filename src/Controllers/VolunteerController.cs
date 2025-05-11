@@ -6,6 +6,8 @@ using conectaOng.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using conectaOng.Models.Enums;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 
 namespace conectaOng.Controllers
@@ -60,8 +62,7 @@ namespace conectaOng.Controllers
             await dbContext.Volunteer.AddAsync(volunteer);
             await dbContext.SaveChangesAsync();
 
-            return RedirectToAction("List", "Organization");
-
+            return RedirectToAction("Index", "Home");
 
         }
 
@@ -74,6 +75,13 @@ namespace conectaOng.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.SexOptions = Enum.GetValues(typeof(Sex))
+                .Cast<Sex>()
+                .Select(e => new SelectListItem { Value = e.ToString(), Text = e.ToString() })
+                .ToList();
+
+            return View();
 
             return View(volunteer);
         }
@@ -105,26 +113,33 @@ namespace conectaOng.Controllers
 
         }
 
+        [HttpGet]
         public async Task<IActionResult> Delete(Guid id)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(id);
-
             return View(volunteer);
-
         }
 
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(Volunteer viewModel)
+        [HttpPost]
+        public async Task<IActionResult> Delete(Volunteer viewModel)
         {
             var volunteer = await dbContext.Volunteer.AsNoTracking().FirstOrDefaultAsync(x => x.Id == viewModel.Id);
+            var user = await dbContext.User.AsNoTracking().FirstOrDefaultAsync(u => u.Id == viewModel.UserId);
 
             if (volunteer is not null)
             {
                 dbContext.Volunteer.Remove(volunteer);
+
+                if (user is not null)
+                {
+                    dbContext.User.Remove(user);    
+                }
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
                 await dbContext.SaveChangesAsync();
             }
 
-            return RedirectToAction("List", "Volunteer");
+            return RedirectToAction("Index", "Home");
 
         }
     }
