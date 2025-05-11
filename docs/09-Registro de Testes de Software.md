@@ -12,10 +12,14 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
  |
 
-| **Caso de Teste** 	| **CT02 – Realizar login** 	|
+| **Caso de Teste** 	| **CT02 – Realizar edição de uma ONG** 	|
 |:---:	|:---:	|
-|	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
-|Registro de evidência | www.teste.com.br/drive/ct-02 |
+|	Requisito Associado 	| RF-002 - O sistema deve permitir a edição de ONGs |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/2a5625eb-a544-4256-8142-ad38603a03f6) ![image](https://github.com/user-attachments/assets/3693bcf0-9b4e-49fb-90f1-bf9b51922852) ![image](https://github.com/user-attachments/assets/829288e7-3546-45a9-873b-1736593098f1) ![image](https://github.com/user-attachments/assets/fa992910-0697-4f33-84ec-2705c9d06275)
+
+
+
+ |
 
 | **Caso de Teste** 	| **CT07 – Realizar cadastro de um Evento** 	|
 |:---:	|:---:	|
