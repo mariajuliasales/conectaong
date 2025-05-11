@@ -17,7 +17,7 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 1**: O usuário deseja se cadastrar na plataforma       
 | **Usuário**   | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1    |                    |                                 |                 |                        |                              |                     |      
+| Usuário 1    |           120         |              12                   |       Sim          |               Nenhum         |                   Passos de cadastro na plataforma fáceis e intuitivos, não tive problema para realizar            |                     |      
 | Usuário 2    |                    |                                 |                 |                        |                              |                     |      
 | Usuário 3    |                    |                                 |                 |                        |                              |                     |  
 | Usuário 4    |                    |                                 |                 |                        |                              |                     | 
@@ -53,11 +53,19 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil         
 | **Usuário**  | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1   |                    |                                 |                 |                        |                              |                     |      
+| Usuário 1   |          60          |                    4            |           Sim      |               Nenhum        |        Foi bem claro e intuitivo encontrar os passoas para atualizar uma ONG registrada, não tive nenhum problema                      |                     |      
 | Usuário 2   |                    |                                 |                 |                        |                              |                     |      
 | Usuário 3   |                    |                                 |                 |                        |                              |                     |  
 | Usuário 4   |                    |                                 |                 |                        |                              |                     | 
 | Usuário 5   |                    |                                 |                 |                        |                              |                     | 
+
+## Registro de testes
+**Cenário 1**: O usuário deseja se cadastrar na plataforma    
+**Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=eBByY-rgnv0)
+
+**Cenário 5**: Um usuário deseja atualizar suas informações de perfil   
+**Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=pM5EvpPvExg)
+
 
 ## Relatório dos testes de usabilidade 
 
