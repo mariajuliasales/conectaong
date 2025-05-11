@@ -7,7 +7,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT01 – Realizar cadastro de uma ONG** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-001 - O sistema deve permitir o cadastro de ONGs. |
-|Registro de evidência | ![image](https://github.com/user-attachments/assets/d737fdbc-7a51-4650-9d3f-0053462df965) ![image](https://github.com/user-attachments/assets/c112044d-50ad-43ca-9102-a9832dd7b4fa) ![image](https://github.com/user-attachments/assets/1ccc09cc-cfb7-4916-bd7f-a4fe817ad334)
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/d737fdbc-7a51-4650-9d3f-0053462df965) ![image](https://github.com/user-attachments/assets/c112044d-50ad-43ca-9102-a9832dd7b4fa) ![image](https://github.com/user-attachments/assets/1ccc09cc-cfb7-4916-bd7f-a4fe817ad334) [Assista ao video no YouTube](https://www.youtube.com/watch?v=eBByY-rgnv0)
 
 
  |
