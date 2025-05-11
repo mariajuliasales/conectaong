@@ -17,6 +17,14 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-002 - O sistema deve permitir a edição de ONGs |
 |Registro de evidência | ![image](https://github.com/user-attachments/assets/2a5625eb-a544-4256-8142-ad38603a03f6) ![image](https://github.com/user-attachments/assets/3693bcf0-9b4e-49fb-90f1-bf9b51922852) ![image](https://github.com/user-attachments/assets/829288e7-3546-45a9-873b-1736593098f1) ![image](https://github.com/user-attachments/assets/fa992910-0697-4f33-84ec-2705c9d06275)
 
+|
+
+| **Caso de Teste** 	| **CT03 – Exclusão de ONG** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	|  RF-003 - O sistema deve permitir a exclusão de ONGs |
+|Registro de evidência |  ![image](https://github.com/user-attachments/assets/0d1ed27d-d4c2-496e-b94b-9267368bc56d)![image](https://github.com/user-attachments/assets/ea8bde55-f8a6-4349-b952-4133f848b94d) ![image](https://github.com/user-attachments/assets/8266ed47-b0a3-4e46-937e-7ec63985ae41)
+
+
 
 
  |
