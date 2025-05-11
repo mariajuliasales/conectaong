@@ -149,10 +149,11 @@ namespace conectaOng.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
+            // Remove o cookie de autenticação
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToAction("Index", "Home");
+            // Redireciona para a página de login ou home
+            return RedirectToAction("Login", "User");
         }
-
     }
 }
