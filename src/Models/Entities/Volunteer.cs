@@ -12,7 +12,6 @@ namespace conectaOng.Models.Entities
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o nome!")]
-
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o CPF!")]
@@ -25,11 +24,11 @@ namespace conectaOng.Models.Entities
         [Required(ErrorMessage = "Obrigatório informar a descrição!")]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o email!")]
-        public string Email{ get; set; }
+        [Required]
+        public Guid UserId { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar a senha!")]
-        public string Password { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
 
         public int EventId { get; set; }
     }

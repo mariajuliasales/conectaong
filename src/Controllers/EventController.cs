@@ -195,7 +195,7 @@ namespace conectaOng.Controllers
             .Include(e => e.Organization)
             .FirstOrDefaultAsync(e => e.Id == eventId);
 
-        if (eventToRegister == null)
+         if (eventToRegister == null)
         {
             return NotFound();
         }

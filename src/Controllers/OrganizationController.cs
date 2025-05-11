@@ -107,5 +107,18 @@ namespace conectaOng.Controllers
 
             return RedirectToAction("List", "Organization");
         }
+        
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var organization = await dbContext.Organization.FindAsync(id);
+            if (organization == null)
+            {
+                return NotFound();
+            }
+
+            return View(organization);
+        }
+
     }
 }

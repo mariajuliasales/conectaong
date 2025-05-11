@@ -1,0 +1,22 @@
+@model conectaOng.Models.Entities.Organization
+
+@{
+    ViewData["Title"] = "Detalhes da ONG";
+}
+
+<div class="container mt-5">
+    <h2 class="fw-bold mb-4">Detalhes da ONG</h2>
+
+    <div class="card p-4 shadow-sm">
+        <h4 class="text-primary">@Model.Name</h4>
+
+        <p class="mt-3"><strong>Categoria:</strong> @Model.Categoria</p>
+        <p><strong>Descrição:</strong> @Model.Descricao</p>
+
+        <div class="mt-4">
+            <a class="btn btn-success" asp-controller="Event" asp-action="RegisterVolunteer" asp-route-organizationId="@Model.Id">
+                Voluntariar
+            </a>
+        </div>
+    </div>
+</div>
