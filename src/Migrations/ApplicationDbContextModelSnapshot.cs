@@ -129,10 +129,7 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("EventId1")
+                    b.Property<Guid?>("EventId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -147,7 +144,7 @@ namespace conectaOng.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId1");
+                    b.HasIndex("EventId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -179,15 +176,17 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.HasOne("conectaOng.Models.Entities.Event", null)
+                    b.HasOne("conectaOng.Models.Entities.Event", "Event")
                         .WithMany("Volunteers")
-                        .HasForeignKey("EventId1");
+                        .HasForeignKey("EventId");
 
                     b.HasOne("conectaOng.Models.Entities.User", "User")
                         .WithOne("Volunteer")
                         .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Event");
 
                     b.Navigation("User");
                 });

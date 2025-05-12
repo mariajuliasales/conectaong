@@ -12,8 +12,8 @@ using conectaOng.Data;
 namespace conectaOng.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250509210919_Conectaong")]
-    partial class Conectaong
+    [Migration("20250512013734_updateVolunteer")]
+    partial class updateVolunteer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,30 +132,25 @@ namespace conectaOng.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("EventId1")
+                    b.Property<Guid?>("EventId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Sex")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId1");
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Volunteer");
                 });
@@ -184,9 +179,19 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
-                    b.HasOne("conectaOng.Models.Entities.Event", null)
+                    b.HasOne("conectaOng.Models.Entities.Event", "Event")
                         .WithMany("Volunteers")
-                        .HasForeignKey("EventId1");
+                        .HasForeignKey("EventId");
+
+                    b.HasOne("conectaOng.Models.Entities.User", "User")
+                        .WithOne("Volunteer")
+                        .HasForeignKey("conectaOng.Models.Entities.Volunteer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
@@ -202,6 +207,9 @@ namespace conectaOng.Migrations
             modelBuilder.Entity("conectaOng.Models.Entities.User", b =>
                 {
                     b.Navigation("Organization")
+                        .IsRequired();
+
+                    b.Navigation("Volunteer")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

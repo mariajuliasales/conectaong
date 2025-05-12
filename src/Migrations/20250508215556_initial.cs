@@ -78,19 +78,25 @@ namespace conectaOng.Migrations
                     Cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Sex = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EventId = table.Column<int>(type: "int", nullable: false),
-                    EventId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    EventId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Volunteer", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Volunteer_Event_EventId1",
-                        column: x => x.EventId1,
+                        name: "FK_Volunteer_Event_EventId",
+                        column: x => x.EventId,
                         principalTable: "Event",
                         principalColumn: "Id");
+
+                    table.ForeignKey(
+                        name: "FK_Volunteer_Event_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id");
+
                 });
 
             migrationBuilder.CreateIndex(
@@ -105,9 +111,9 @@ namespace conectaOng.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Volunteer_EventId1",
+                name: "IX_Volunteer_EventId",
                 table: "Volunteer",
-                column: "EventId1");
+                column: "EventId");
         }
 
         /// <inheritdoc />
