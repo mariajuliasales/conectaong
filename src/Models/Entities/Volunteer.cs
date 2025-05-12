@@ -30,11 +30,10 @@ namespace conectaOng.Models.Entities
         [ForeignKey("UserId")]
         public User User { get; set; }
 
-        [Required]
-        public Guid EventId { get; set; }
+        public Guid? EventId { get; set; }
 
         [ForeignKey("EventId")]
-        public User Event { get; set; }
+        public Event? Event { get; set; }
 
     }
 }
