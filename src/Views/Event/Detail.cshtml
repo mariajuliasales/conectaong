@@ -14,8 +14,11 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var userIdString = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
     
+    Guid.TryParse(userIdString, out Guid userId);
+    
+
     // Verifica se o usuário já está inscrito no evento
     var isUserInscrito = Model.Volunteers.Any(v => v.UserId == userId);
     

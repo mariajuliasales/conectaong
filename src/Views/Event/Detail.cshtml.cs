@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace conectaOng.Views.Event
 {
-    public class AddModel : PageModel
+    public class getDetails : PageModel
     {
         public void OnGet()
         {

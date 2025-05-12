@@ -27,6 +27,15 @@ namespace conectaOng.Data
                 .WithOne(u => u.Organization)
                 .HasForeignKey<Organization>(o => o.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Volunteer>()
+                .HasOne(o => o.User)
+                .WithOne(u => u.Volunteer)
+                .HasForeignKey<Volunteer>(o => o.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+          
         }
     }
 }

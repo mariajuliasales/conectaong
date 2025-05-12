@@ -173,45 +173,52 @@ namespace conectaOng.Controllers
         // Inscrever voluntário (voluntário autenticado)
         [HttpPost]
         public async Task<IActionResult> RegisterVolunteer(Guid eventId)
-    {
-        if (!User.Identity.IsAuthenticated)
         {
-            return RedirectToAction("Login", "User");
-        }
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "User");
+            }
 
-        var volunteerUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var volunteerUserIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        // Verificar se o usuário já está inscrito no evento
-        var existingRegistration = await dbContext.Volunteer
-            .FirstOrDefaultAsync(v => v.UserId == volunteerUserId && v.EventId == eventId);
+            if (!Guid.TryParse(volunteerUserIdString, out Guid volunteerUserId))
+            {
+                // Tratar erro: ID inválido
+                return BadRequest("Usuário inválido.");
+            }
 
-        if (existingRegistration != null)
-        {
-            TempData["Message"] = "Você já está inscrito neste evento.";
+            // Verificar se o usuário já está inscrito no evento
+            var existingRegistration = await dbContext.Volunteer
+                .FirstOrDefaultAsync(v => v.UserId == volunteerUserId && v.EventId == eventId);
+
+            if (existingRegistration != null)
+            {
+                TempData["Message"] = "Você já está inscrito neste evento.";
+                return RedirectToAction("Details", new { id = eventId });
+            }
+
+            var eventToRegister = await dbContext.Event
+                .Include(e => e.Organization)
+                .FirstOrDefaultAsync(e => e.Id == eventId);
+
+            if (eventToRegister == null)
+            {
+                return NotFound();
+            }
+
+            // Adicionar a inscrição do usuário no evento
+            var newVolunteer = new Volunteer
+            {
+                UserId = volunteerUserId,
+                EventId = eventId,
+//                RegistrationDate = DateTime.Now
+            };
+
+            await dbContext.Volunteer.AddAsync(newVolunteer);
+            await dbContext.SaveChangesAsync();
+
+            TempData["Message"] = "Inscrição realizada com sucesso!";
             return RedirectToAction("Details", new { id = eventId });
         }
-
-        var eventToRegister = await dbContext.Event
-            .Include(e => e.Organization)
-            .FirstOrDefaultAsync(e => e.Id == eventId);
-
-         if (eventToRegister == null)
-        {
-            return NotFound();
-        }
-
-        // Adicionar a inscrição do usuário no evento
-        var newVolunteer = new Volunteer
-        {
-            UserId = volunteerUserId,
-            EventId = eventId,
-            RegistrationDate = DateTime.Now
-        };
-
-        await dbContext.Volunteer.AddAsync(newVolunteer);
-        await dbContext.SaveChangesAsync();
-
-        TempData["Message"] = "Inscrição realizada com sucesso!";
-        return RedirectToAction("Details", new { id = eventId });
     }
 }

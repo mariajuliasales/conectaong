@@ -56,7 +56,6 @@ namespace conectaOng.Controllers
                 Sex = viewModel.Sex,
                 Description = viewModel.Description,
                 UserId = viewModel.UserId,
-
             };
 
             await dbContext.Volunteer.AddAsync(volunteer);
