@@ -8,15 +8,9 @@
 
 <div class="d-flex justify-content-between align-items-center mb-5">
     <h1>Lista de Eventos</h1>
-    @if (User.Identity.IsAuthenticated)
+    @if (ViewBag.IsOng == true)
     {
-        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-
-        // Verificar se o usuário é uma organização
-        if (Model.Any(e => e.Organization.UserId.ToString() == userId))
-        {
-            <a class="btn btn-success" asp-controller="Event" asp-action="Add">Criar Evento</a>
-        }
+        <a class="btn btn-success" asp-controller="Event" asp-action="Add">Criar Evento</a>
     }
 </div>
 

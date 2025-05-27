@@ -48,10 +48,12 @@
                                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Contato" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
                                        asp-area="" asp-controller="Contato" asp-action="Index">Contatos</a>
                                 </li>
+                                @* 
                                 <li class="nav-item">
                                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "User" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
                                        asp-area="" asp-controller="User" asp-action="List">Usuários</a>
                                 </li>
+                                *@
                             </ul>
                             @if (User.Identity.IsAuthenticated)
                             {

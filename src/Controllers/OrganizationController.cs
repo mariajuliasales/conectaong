@@ -2,6 +2,7 @@
 using conectaOng.Data;
 using conectaOng.Models;
 using conectaOng.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,29 +64,41 @@ namespace conectaOng.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Edit(Guid id)
         {
             var organization = await dbContext.Organization.FindAsync(id);
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (organization == null || organization.UserId.ToString() != userId)
+            {
+                return Forbid(); // ou RedirectToAction("AccessDenied", "User");
+            }
 
             return View(organization);
-
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Organization viewModel)
+        [Authorize]
+        public async Task<IActionResult> Edit(Organization model)
         {
-            var organization = await dbContext.Organization.FindAsync(viewModel.Id);
-            if (organization is not null)
-            {
-                organization.Name = viewModel.Name;
-                organization.CNPJ = viewModel.CNPJ;
-                organization.Categoria = viewModel.Categoria;
-                organization.Descricao = viewModel.Descricao;
+            var organization = await dbContext.Organization.FindAsync(model.Id);
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-                await dbContext.SaveChangesAsync();
+            if (organization == null || organization.UserId.ToString() != userId)
+            {
+                return Forbid();
             }
 
-            return RedirectToAction("List", "Organization");
+            // Atualize os campos permitidos
+            organization.Name = model.Name;
+            organization.CNPJ = model.CNPJ;
+            organization.Categoria = model.Categoria;
+            organization.Descricao = model.Descricao;
+            // ... outros campos
+
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("List");
         }
 
         [HttpPost]
