@@ -14,10 +14,21 @@
     }
 </div>
 
+<form method="get" class="row mb-4">
+    <div class="col-md-5">
+        <input type="text" name="searchTitle" class="form-control" placeholder="Título do evento" value="@(Context.Request.Query["searchTitle"])" />
+    </div>
+    <div class="col-md-5">
+        <input type="text" name="searchLocation" class="form-control" placeholder="Local" value="@(Context.Request.Query["searchLocation"])" />
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-dark w-100">Buscar</button>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Título</th>
             <th>Descrição</th>
             <th>Data</th>
@@ -29,10 +40,13 @@
         @foreach (var evento in Model)
         {
             <tr>
-                <td>@evento.Id</td>
                 <td>@evento.Title</td>
-                <td>@evento.Description</td>
-                <td>@evento.Date</td>
+                <td>
+                    @(evento.Description?.Length > 40
+                        ? evento.Description.Substring(0, 40) + "..."
+                        : evento.Description)
+                </td>
+                <td>@evento.Date.ToString("dd/MM/yyyy HH:mm")</td>
                 <td>@evento.Location</td>
                 <td>
 
