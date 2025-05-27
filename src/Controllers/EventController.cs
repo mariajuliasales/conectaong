@@ -25,6 +25,18 @@ namespace conectaOng.Controllers
                 .Include(e => e.Organization)
                 .Where(e => e.Date >= DateTime.Today)
                 .ToListAsync();
+
+            bool isOng = false;
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    isOng = await dbContext.Organization.AnyAsync(o => o.UserId.ToString() == userId);
+                }
+            }
+            ViewBag.IsOng = isOng;
+
             return View(events);
         }
 
