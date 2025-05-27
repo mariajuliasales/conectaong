@@ -19,13 +19,22 @@ namespace conectaOng.Controllers
 
         // Listar eventos (página pública)
         [HttpGet]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(string searchTitle = null, string searchLocation = null)
         {
-            var events = await dbContext.Event
+            var query = dbContext.Event
                 .Include(e => e.Organization)
                 .Where(e => e.Date >= DateTime.Today)
-                .ToListAsync();
+                .AsQueryable();
 
+            if (!string.IsNullOrEmpty(searchTitle))
+                query = query.Where(e => e.Title.Contains(searchTitle));
+
+            if (!string.IsNullOrEmpty(searchLocation))
+                query = query.Where(e => e.Location.Contains(searchLocation));
+
+            var events = await query.ToListAsync();
+
+            // Lógica para ViewBag.IsOng (mantenha como já está)
             bool isOng = false;
             if (User.Identity.IsAuthenticated)
             {
@@ -39,6 +48,7 @@ namespace conectaOng.Controllers
 
             return View(events);
         }
+
 
         // Criar evento (restrito à organização autenticada)
         [HttpGet]
