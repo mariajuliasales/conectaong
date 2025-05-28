@@ -16,11 +16,26 @@ namespace conectaOng.Data
 
         public DbSet<Organization> Organization { get; set; }
 
+        public DbSet<Vacancy> Vacancies { get; set; }
+
         public DbSet<Event> Event { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Vacancy>()
+               .HasKey(ev => new { ev.EventId, ev.VolunteerId });
+
+            modelBuilder.Entity<Vacancy>()
+              .HasOne(ev => ev.Event)
+              .WithMany(e => e.Registrations)
+              .HasForeignKey(ev => ev.EventId);
+
+            modelBuilder.Entity<Vacancy>()
+              .HasOne(ev => ev.Volunteer)
+              .WithMany(v => v.Registrations)
+              .HasForeignKey(ev => ev.VolunteerId);
 
             modelBuilder.Entity<Organization>()
                 .HasOne(o => o.User) 
