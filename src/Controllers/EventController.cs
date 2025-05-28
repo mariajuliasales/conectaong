@@ -220,7 +220,6 @@ namespace conectaOng.Controllers
             return RedirectToAction(nameof(Details), new { id });
         }
 
-
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Unregister(Guid id)
