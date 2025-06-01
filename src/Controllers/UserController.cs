@@ -27,6 +27,18 @@ namespace conectaOng.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddUserViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            // Validação extra para garantir que as senhas sejam iguais (por segurança extra, apesar do [Compare])
+            if (viewModel.Password != viewModel.ConfirmPassword)
+            {
+                ModelState.AddModelError("ConfirmPassword", "As senhas não coincidem.");
+                return View(viewModel);
+            }
+
             var user = new User
             {
                 Name = viewModel.Name,
@@ -51,7 +63,6 @@ namespace conectaOng.Controllers
         [HttpPost]
         public IActionResult ChooseRole(Guid userId, string role)
         {
-            
             if (role == "Volunteer")
             {
                 return RedirectToAction("Add", "Volunteer", new { userId = userId });
@@ -63,7 +74,6 @@ namespace conectaOng.Controllers
 
             // Caso inválido:
             return RedirectToAction("Add");
-
         }
 
         [HttpGet]
@@ -128,11 +138,11 @@ namespace conectaOng.Controllers
             {
                 // Criar as claims do usuário
                 var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Armazena o UserId como claim
-        };
+                {
+                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Armazena o UserId como claim
+                };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
