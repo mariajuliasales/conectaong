@@ -125,7 +125,14 @@ namespace conectaOng.Controllers
 
         public async Task<IActionResult> Details(Guid id)
         {
-            var volunteer = await dbContext.Volunteer.FindAsync(id);
+            var volunteer = await dbContext.Volunteer
+                .Include(v => v.User)
+                .FirstOrDefaultAsync(v => v.Id == id);
+
+            if (id == null || volunteer == null)
+            {
+                return NotFound();
+            }
 
             return View(volunteer);
 
