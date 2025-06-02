@@ -49,9 +49,16 @@ namespace conectaOng.Controllers
         public async Task<IActionResult> Add(AddVolunteerViewModel viewModel)
         {
 
+            var user = await dbContext.User.FindAsync(viewModel.UserId);
+
+            if (user == null)
+            {
+                return NotFound(); // ou outro tratamento adequado
+            }
+
             var volunteer = new Volunteer
             {
-                Name = viewModel.Name,
+                Name = user.Name,
                 Cpf = viewModel.Cpf,
                 Sex = viewModel.Sex,
                 Description = viewModel.Description,
