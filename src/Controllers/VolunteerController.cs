@@ -75,9 +75,11 @@ namespace conectaOng.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var volunteer = await dbContext.Volunteer.FindAsync(id);
+            var volunteer = await dbContext.Volunteer
+                .Include(v => v.User)
+                .FirstOrDefaultAsync(v => v.Id == id);
 
-            if(id == null ||volunteer == null)
+            if (id == null ||volunteer == null)
             {
                 return NotFound();
             }
@@ -87,25 +89,35 @@ namespace conectaOng.Controllers
                 .Select(e => new SelectListItem { Value = e.ToString(), Text = e.ToString() })
                 .ToList();
 
-            return View();
-
             return View(volunteer);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(Guid id, Volunteer viewModel)
+        public async Task<ActionResult> Edit(Guid id, Volunteer viewModel, string userName, string email)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(viewModel.Id);
 
-            if(volunteer is not null)
+            if (id == null || volunteer == null)
             {
-                volunteer.Name = viewModel.Name;
-                volunteer.Cpf = viewModel.Cpf;
-                volunteer.Sex = viewModel.Sex;
-                volunteer.Description = viewModel.Description;
-
-                await dbContext.SaveChangesAsync();
+                return NotFound();
             }
+
+            var user = await dbContext.User.FindAsync(volunteer.UserId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            volunteer.Name = userName;
+            volunteer.Cpf = viewModel.Cpf;
+            volunteer.Sex = viewModel.Sex;
+            volunteer.Description = viewModel.Description;
+
+            user.Name = userName;
+            user.Email = email;
+
+            await dbContext.SaveChangesAsync();
 
             return RedirectToAction("List", "Volunteer");
 
