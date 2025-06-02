@@ -49,9 +49,16 @@ namespace conectaOng.Controllers
         public async Task<IActionResult> Add(AddVolunteerViewModel viewModel)
         {
 
+            var user = await dbContext.User.FindAsync(viewModel.UserId);
+
+            if (user == null)
+            {
+                return NotFound(); // ou outro tratamento adequado
+            }
+
             var volunteer = new Volunteer
             {
-                Name = viewModel.Name,
+                Name = user.Name,
                 Cpf = viewModel.Cpf,
                 Sex = viewModel.Sex,
                 Description = viewModel.Description,
@@ -68,9 +75,11 @@ namespace conectaOng.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var volunteer = await dbContext.Volunteer.FindAsync(id);
+            var volunteer = await dbContext.Volunteer
+                .Include(v => v.User)
+                .FirstOrDefaultAsync(v => v.Id == id);
 
-            if(id == null ||volunteer == null)
+            if (id == null ||volunteer == null)
             {
                 return NotFound();
             }
@@ -80,25 +89,35 @@ namespace conectaOng.Controllers
                 .Select(e => new SelectListItem { Value = e.ToString(), Text = e.ToString() })
                 .ToList();
 
-            return View();
-
             return View(volunteer);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(Guid id, Volunteer viewModel)
+        public async Task<ActionResult> Edit(Guid id, Volunteer viewModel, string userName, string email)
         {
             var volunteer = await dbContext.Volunteer.FindAsync(viewModel.Id);
 
-            if(volunteer is not null)
+            if (id == null || volunteer == null)
             {
-                volunteer.Name = viewModel.Name;
-                volunteer.Cpf = viewModel.Cpf;
-                volunteer.Sex = viewModel.Sex;
-                volunteer.Description = viewModel.Description;
-
-                await dbContext.SaveChangesAsync();
+                return NotFound();
             }
+
+            var user = await dbContext.User.FindAsync(volunteer.UserId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            volunteer.Name = userName;
+            volunteer.Cpf = viewModel.Cpf;
+            volunteer.Sex = viewModel.Sex;
+            volunteer.Description = viewModel.Description;
+
+            user.Name = userName;
+            user.Email = email;
+
+            await dbContext.SaveChangesAsync();
 
             return RedirectToAction("List", "Volunteer");
 
@@ -106,7 +125,14 @@ namespace conectaOng.Controllers
 
         public async Task<IActionResult> Details(Guid id)
         {
-            var volunteer = await dbContext.Volunteer.FindAsync(id);
+            var volunteer = await dbContext.Volunteer
+                .Include(v => v.User)
+                .FirstOrDefaultAsync(v => v.Id == id);
+
+            if (id == null || volunteer == null)
+            {
+                return NotFound();
+            }
 
             return View(volunteer);
 
@@ -115,28 +141,42 @@ namespace conectaOng.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var volunteer = await dbContext.Volunteer.FindAsync(id);
+            var volunteer = await dbContext.Volunteer
+                .Include(v => v.User)
+                .FirstOrDefaultAsync(v => v.Id == id);
+
+            if (id == null || volunteer == null)
+            {
+                return NotFound();
+            }
+
             return View(volunteer);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Delete(Volunteer viewModel)
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id, Volunteer viewModel)
         {
-            var volunteer = await dbContext.Volunteer.AsNoTracking().FirstOrDefaultAsync(x => x.Id == viewModel.Id);
-            var user = await dbContext.User.AsNoTracking().FirstOrDefaultAsync(u => u.Id == viewModel.UserId);
+            var volunteer = await dbContext.Volunteer
+              .Include(v => v.User)
+              .FirstOrDefaultAsync(v => v.Id == id);
 
-            if (volunteer is not null)
+            if (volunteer == null)
             {
-                dbContext.Volunteer.Remove(volunteer);
-
-                if (user is not null)
-                {
-                    dbContext.User.Remove(user);    
-                }
-                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-                await dbContext.SaveChangesAsync();
+                return NotFound();
             }
+
+            dbContext.Volunteer.Remove(volunteer);
+
+            if (volunteer.User != null)
+            {
+                dbContext.User.Remove(volunteer.User);
+            }
+
+            await dbContext.SaveChangesAsync();
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");
 

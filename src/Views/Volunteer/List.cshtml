@@ -4,42 +4,37 @@
     ViewData["Title"] = "List";
 }
 
-<div class="container mt-4">
-    <h1 class="fw-bold mb-4">Voluntários Cadastrados</h1>
+<h1 class="mb-5">Voluntários cadastrados</h1>
 
-    <div class="card p-4 shadow-sm">
-        <table class="table table-borderless align-middle">
-            <thead class="fw-semibold">
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Sexo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var volunteer in Model)
+            {
                 <tr>
-                    <th>Nome:</th>
-                    <th>Descrição:</th>
-                    <th>Sexo:</th>
+                    <td>@volunteer.Name</td>
+                    <td>@volunteer.Description</td>
+                    <td>@volunteer.Sex</td>
+                    <td>
+                        <a class="btn btn-info me-2" asp-controller="Volunteer" asp-action="Details" asp-route-id="@volunteer.Id">Detalhes</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var volunteer in Model)
-                {
-                    <tr>
-                        <td>@volunteer.Name</td>
-                        <td>
-                                @(volunteer.Description?.Length > 60
-                                    ? volunteer.Description.Substring(0, 60) + "..."
-                                    : volunteer.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => volunteer.Sex)
-                        </td>
-                        <td>
-                            @*<a asp-action="Edit" asp-route-id="@volunteer.Id">Edit</a> |*@                            
-                            <a asp-action="Details" asp-route-id="@volunteer.Id">Detalhes</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-
-    <tr>
-        <td></td>
-    </tr>
-        </table>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning d-flex justify-content-center mt-5" role="alert">
+        Nenhum voluntário encontrado.
     </div>
-</div>
+}
