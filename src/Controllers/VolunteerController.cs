@@ -8,6 +8,7 @@ using conectaOng.Models.Enums;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 
 namespace conectaOng.Controllers
@@ -24,6 +25,13 @@ namespace conectaOng.Controllers
         public async Task<IActionResult> List()
         {
             var dados = await dbContext.Volunteer.ToListAsync();
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            bool isOng = await dbContext.Organization.AnyAsync(o => o.UserId.ToString() == userId);
+
+            ViewBag.IsOng = isOng;
+
             return View(dados);
         }
 
@@ -54,6 +62,12 @@ namespace conectaOng.Controllers
             if (user == null)
             {
                 return NotFound(); // ou outro tratamento adequado
+            }
+
+            if (!IsValidCpf(viewModel.Cpf))
+            {
+                TempData["CpfError"] = "CPF inválido.";
+                return RedirectToAction("Add", new { userId = viewModel.UserId });
             }
 
             var volunteer = new Volunteer
@@ -180,6 +194,37 @@ namespace conectaOng.Controllers
 
             return RedirectToAction("Index", "Home");
 
+        }
+
+        public static bool IsValidCpf(string cpf)
+        {
+            if (string.IsNullOrWhiteSpace(cpf))
+                return false;
+
+            cpf = new string(cpf.Where(char.IsDigit).ToArray());
+
+            if (cpf.Length != 11)
+                return false;
+
+            // Verifica se todos os dígitos são iguais
+            if (cpf.Distinct().Count() == 1)
+                return false;
+
+            // Valida os dois dígitos verificadores
+            for (int j = 9; j < 11; j++)
+            {
+                int sum = 0;
+                for (int i = 0; i < j; i++)
+                    sum += (cpf[i] - '0') * (j + 1 - i);
+
+                int mod = (sum * 10) % 11;
+                if (mod == 10) mod = 0;
+
+                if (mod != (cpf[j] - '0'))
+                    return false;
+            }
+
+            return true;
         }
     }
 }
