@@ -8,6 +8,7 @@ using conectaOng.Models.Enums;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 
 namespace conectaOng.Controllers
@@ -24,6 +25,13 @@ namespace conectaOng.Controllers
         public async Task<IActionResult> List()
         {
             var dados = await dbContext.Volunteer.ToListAsync();
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            bool isOng = await dbContext.Organization.AnyAsync(o => o.UserId.ToString() == userId);
+
+            ViewBag.IsOng = isOng;
+
             return View(dados);
         }
 
