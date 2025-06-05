@@ -3,7 +3,7 @@
 }
 
 <div class="container pb-5">
-        <div class="row align-items-center">
+    <div class="row align-items-center">
         <div class="col-md-8">
             <h2 class="display-6 fw-bolder text-left">Conecta ONG</h2>
             <p class="text-left">
@@ -16,8 +16,8 @@
 
         <div class="col-md-4 text-center">
             <img src="~/img/homeconecta.png" alt="Imagem Home ConectaONG" 
-                class="img-fluid rounded-circle shadow" 
-                style="max-width: 200px;" />
+            class="img-fluid rounded-circle shadow" 
+            style="max-width: 200px;" />
         </div>
     </div>
 
@@ -28,7 +28,11 @@
     <p class="w-50 text-left">
         O ConectaOng é uma plataforma que facilita a conexão entre ONGs e voluntários, oferecendo ferramentas práticas para uma gestão eficaz, programas de treinamento e estratégias de engajamento, contribuindo para fortalecer o impacto positivo dessas entidades.
     </p>
-    <a class="btn btn-dark" asp-area="" asp-controller="User" asp-action="Add">Cadastrar</a>
+
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-dark" asp-area="" asp-controller="User" asp-action="Add">Cadastrar</a>
+    }
 
     <h2 class="display-6 fw-bolder text-left mt-4">Eventos</h2>
     <p class="w-50 text-left">
