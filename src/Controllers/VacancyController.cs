@@ -65,6 +65,50 @@ namespace conectaOng.Controllers
             return RedirectToAction("List");
         }
 
+        // Inscrição em ONG
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> RegisterVolunteer(Guid organizationId)
+        {
+            // Obtém o UserId do usuário autenticado
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+                return Forbid();
+
+            // Busca o voluntário relacionado ao usuário autenticado
+            var volunteer = await dbContext.Volunteer
+                .FirstOrDefaultAsync(v => v.UserId.ToString() == userId);
+
+            if (volunteer == null)
+                return Forbid();
+
+            // Verifica se já está inscrito
+            var alreadyRegistered = await dbContext.Vacancy
+                .AnyAsync(v => v.OrganizationId == organizationId && v.VolunteerId == volunteer.Id);
+
+            if (alreadyRegistered)
+            {
+                TempData["Message"] = "Você já está inscrito para auxiliar esta ONG.";
+                return RedirectToAction("Details", "Organization", new { id = organizationId });
+            }
+
+            // Cria a inscrição
+            var vacancy = new Vacancy
+            {
+                Id = Guid.NewGuid(),
+                OrganizationId = organizationId,
+                VolunteerId = volunteer.Id,
+                RegisteredAt = DateTime.UtcNow,
+                Accepted = false // ou true, conforme sua lógica
+            };
+
+            await dbContext.Vacancy.AddAsync(vacancy);
+            await dbContext.SaveChangesAsync();
+
+            TempData["Message"] = "Inscrição realizada com sucesso!";
+            return RedirectToAction("Details", "Organization", new { id = organizationId });
+        }
+
         // Exibir formulário de edição
         [HttpGet]
         [Authorize]

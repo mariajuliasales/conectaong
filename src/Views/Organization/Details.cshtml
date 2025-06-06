@@ -1,7 +1,9 @@
 @model conectaOng.Models.Entities.Organization
 
+
 @{
     ViewData["Title"] = "Detalhes da ONG";
+    bool isOwner = ViewBag.IsOwner == true;
 }
 
 <div class="container mt-5">
@@ -14,9 +16,46 @@
         <p><strong>Descrição:</strong> @Model.Descricao</p>
 
         <div class="mt-4">
-            <a class="btn btn-success" asp-controller="Event" asp-action="RegisterVolunteer" asp-route-organizationId="@Model.Id">
-                Voluntariar
-            </a>
+            @if (ViewBag.IsVolunteer == true)
+            {
+                <form method="post" asp-controller="Vacancy" asp-action="RegisterVolunteer" asp-route-organizationId="@Model.Id">
+                    <button type="submit" class="btn btn-success">Voluntariar</button>
+                </form>
+            }
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-info mt-3">@TempData["Message"]</div>
+            }
         </div>
+
+
+        @if (isOwner)
+        {
+            <div class="mt-4">
+                <h2>Voluntários inscritos na ONG</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Volunteers != null)
+                        {
+                            foreach (var v in (IEnumerable<conectaOng.Models.Entities.Volunteer>)ViewBag.Volunteers)
+                            {
+                                <tr>
+                                    <td>@v.Name</td>
+                                    <td>@v.Cpf</td>
+                                    <td>@v.User?.Email</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>
 </div>

@@ -120,17 +120,66 @@ namespace conectaOng.Controllers
 
             return RedirectToAction("List", "Organization");
         }
-        
+
         [HttpGet]
         public async Task<IActionResult> Details(Guid id)
         {
-            var organization = await dbContext.Organization.FindAsync(id);
-            if (organization == null)
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            bool isVolunteer = false;
+            if (!string.IsNullOrEmpty(userId))
             {
+                isVolunteer = await dbContext.Volunteer.AnyAsync(v => v.UserId.ToString() == userId);
+            }
+            ViewBag.IsVolunteer = isVolunteer;
+
+            var organization = await dbContext.Organization
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (organization == null)
                 return NotFound();
+
+            // Verifica se o usuário autenticado é o dono da ONG
+            bool isOwner = organization.UserId.ToString() == userId;
+
+            if (isOwner)
+            {
+                var volunteers = await dbContext.Vacancy
+                    .Where(v => v.OrganizationId == id)
+                    .Include(v => v.Volunteer)
+                    .ThenInclude(vol => vol.User)
+                    .Select(v => v.Volunteer)
+                    .ToListAsync();
+
+                ViewBag.Volunteers = volunteers;
+            }
+            else
+            {
+                ViewBag.Volunteers = null;
             }
 
+            ViewBag.IsOwner = isOwner;
             return View(organization);
+        }
+
+
+
+        [Authorize]
+        public async Task<IActionResult> Volunteers(Guid id)
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var organization = await dbContext.Organization
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (organization == null || organization.UserId.ToString() != userId)
+                return Forbid();
+
+            var volunteers = await dbContext.Vacancy
+                .Where(v => v.OrganizationId == id)
+                .Include(v => v.Volunteer)
+                .Select(v => v.Volunteer)
+                .ToListAsync();
+
+            return View(volunteers);
         }
 
     }

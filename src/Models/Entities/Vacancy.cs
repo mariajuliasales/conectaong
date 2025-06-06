@@ -27,5 +27,7 @@ namespace conectaOng.Models.Entities
 
         [Required]
         public bool Accepted { get; set; }
+
+        public ICollection<Vacancy> Volunteers { get; set; }
     }
 }

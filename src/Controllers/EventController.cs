@@ -50,6 +50,37 @@ namespace conectaOng.Controllers
             return View(events);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var evt = await dbContext.Event
+                .Include(e => e.Organization)
+                .FirstOrDefaultAsync(e => e.Id == id);
+
+            if (evt == null)
+                return NotFound();
+
+            // Verifica se o usuário autenticado é o dono da ONG
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            bool isOwner = evt.Organization.UserId.ToString() == userId;
+
+            List<Volunteer> volunteers = null;
+            if (isOwner)
+            {
+                volunteers = await dbContext.Vacancy
+                    .Where(v => v.EventId == id)
+                    .Include(v => v.Volunteer)
+                    .ThenInclude(vol => vol.User)
+                    .Select(v => v.Volunteer)
+                    .ToListAsync();
+            }
+
+            ViewBag.IsOwner = isOwner;
+            ViewBag.Volunteers = volunteers;
+
+            return View(evt);
+        }
+
 
         // Criar evento (restrito à organização autenticada)
         [HttpGet]
@@ -195,130 +226,45 @@ namespace conectaOng.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Register(Guid id)
+        public async Task<IActionResult> RegisterVolunteer(Guid eventId)
         {
-            // Busca o evento pelo Guid
-            var evt = await dbContext.Event
-                .Include(e => e.Registrations)
-                .FirstOrDefaultAsync(e => e.Id == id);
-
-            if (evt == null)
-                return NotFound();
-
             // Obtém o UserId do usuário autenticado
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userId))
+            var userIdString = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (!Guid.TryParse(userIdString, out Guid userId))
                 return Forbid();
 
             // Busca o voluntário relacionado ao usuário autenticado
-            var volunteer = await dbContext.Volunteer
-                .FirstOrDefaultAsync(v => v.UserId.ToString() == userId);
-
+            var volunteer = await dbContext.Volunteer.FirstOrDefaultAsync(v => v.UserId == userId);
             if (volunteer == null)
                 return Forbid();
 
             // Verifica se já está inscrito
-            if (evt.Registrations.Any(r => r.VolunteerId == volunteer.Id.GetHashCode()))
-                return BadRequest("Já inscrito.");
+            var alreadyRegistered = await dbContext.Vacancy
+                .AnyAsync(v => v.EventId == eventId && v.VolunteerId == volunteer.Id);
 
-            // Verifica se há vagas disponíveis
-            if (evt.Registrations.Count >= evt.Capacity)
+            if (alreadyRegistered)
             {
-                TempData["Error"] = "Vagas esgotadas.";
-                return RedirectToAction(nameof(Details), new { id });
+                TempData["Message"] = "Você já está inscrito neste evento.";
+                return RedirectToAction("Details", new { id = eventId });
             }
 
-            // Adiciona a inscrição 
-            dbContext.Vacancies.Add(new Vacancy
+            // Cria a inscrição
+            var vacancy = new Vacancy
             {
-                EventId = evt.Id.GetHashCode(), // Converte Guid para int
-                Event = evt, // Define o evento requerido
-                VolunteerId = volunteer.Id.GetHashCode(), // Converte Guid para int
-                Volunteer = volunteer, // Define o voluntário requerido
-                RegisteredAt = DateTime.UtcNow
-            });
+                Id = Guid.NewGuid(),
+                EventId = eventId,
+                VolunteerId = volunteer.Id,
+                RegisteredAt = DateTime.UtcNow,
+                Accepted = false // ou true, conforme sua lógica
+            };
 
-            await dbContext.SaveChangesAsync();
-            return RedirectToAction(nameof(Details), new { id });
-        }
-
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Unregister(Guid id)
-        {
-            // Busca o evento pelo Guid
-            var evt = await dbContext.Event
-                .Include(e => e.Registrations)
-                .FirstOrDefaultAsync(e => e.Id == id);
-
-            if (evt == null)
-                return NotFound();
-
-            // Obtém o UserId do usuário autenticado
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userId))
-                return Forbid();
-
-            // Busca o voluntário relacionado ao usuário autenticado
-            var volunteer = await dbContext.Volunteer
-                .FirstOrDefaultAsync(v => v.UserId.ToString() == userId);
-
-            if (volunteer == null)
-                return Forbid();
-
-            // Converte os IDs para o formato esperado pela tabela Vacancy
-            int eventIdAsInt = evt.Id.GetHashCode();
-            int volunteerIdAsInt = volunteer.Id.GetHashCode();
-
-            // Busca a inscrição específica do voluntário neste evento
-            var registration = await dbContext.Vacancies
-                .FirstOrDefaultAsync(v => v.EventId == eventIdAsInt && v.VolunteerId == volunteerIdAsInt);
-
-            if (registration == null)
-                return BadRequest("Você não está inscrito neste evento.");
-
-            // Remove a inscrição
-            dbContext.Vacancies.Remove(registration);
+            await dbContext.Vacancy.AddAsync(vacancy);
             await dbContext.SaveChangesAsync();
 
-            TempData["Success"] = "Inscrição cancelada com sucesso!";
-
-            // Redireciona para a página de detalhes do evento
-            return RedirectToAction(nameof(Details), new { id });
+            TempData["Message"] = "Inscrição realizada com sucesso!";
+            return RedirectToAction("Details", new { id = eventId });
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Details(Guid id)
-        {
-            var evt = await dbContext.Event
-                .Include(e => e.Organization)
-                .Include(e => e.Registrations)
-                    .ThenInclude(r => r.Volunteer)
-                .FirstOrDefaultAsync(e => e.Id == id);
-
-            if (evt == null)
-                return NotFound();
-
-            // Verificar se o usuário está inscrito neste evento
-            if (User.Identity.IsAuthenticated)
-            {
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                if (!string.IsNullOrEmpty(userId))
-                {
-                    var volunteer = await dbContext.Volunteer
-                        .FirstOrDefaultAsync(v => v.UserId.ToString() == userId);
-
-                    if (volunteer != null)
-                    {
-                        int volunteerIdAsInt = volunteer.Id.GetHashCode();
-                        ViewBag.IsRegistered = evt.Registrations != null &&
-                            evt.Registrations.Any(r => r.VolunteerId == volunteerIdAsInt);
-                    }
-                }
-            }
-
-            return View(evt);
-        }
 
     }
 }
