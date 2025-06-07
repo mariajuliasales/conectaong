@@ -1,3 +1,4 @@
+using conectaOng.Data;
 using conectaOng.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,15 +8,18 @@ namespace conectaOng.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var eventos = _context.Event.ToList(); // Pegue todos os eventos
+            return View(eventos); // Passe os eventos para a view
         }
 
         public IActionResult Privacy()
