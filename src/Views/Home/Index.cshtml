@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!-- Bootstrap Icons (adicione isso no seu _Layout.cshtml se ainda não estiver) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 <div class="container pb-5">
     <div class="row align-items-center">
         <div class="col-md-8">
@@ -15,9 +18,9 @@
         </div>
 
         <div class="col-md-4 text-center">
-            <img src="~/img/homeconecta.png" alt="Imagem Home ConectaONG" 
-            class="img-fluid rounded-circle shadow" 
-            style="max-width: 200px;" />
+            <img src="~/img/homeconecta.png" alt="Imagem Home ConectaONG"
+                 class="img-fluid rounded-circle shadow"
+                 style="max-width: 200px;" />
         </div>
     </div>
 
@@ -38,5 +41,60 @@
     <p class="w-50 text-left">
         No ConectaOng, acreditamos que eventos fortalecem as relações entre voluntários e organizações, criando uma comunidade engajada e inspiradora. Aqui você encontra a divulgação de eventos promovidos por diversas ONGs, com oportunidades para trocar experiências, adquirir novas habilidades e construir conexões significativas. Confira a agenda, participe dos eventos e faça parte de uma rede comprometida com a transformação social.
     </p>
-    <a class="btn btn-dark" asp-area="" asp-controller="Event" asp-action="List">Veja mais</a>
+
+    <!-- Exemplo de um botão com ID de evento vindo do backend -->
+    <button class="btn btn-dark"
+            data-bs-toggle="modal"
+            data-bs-target="#shareModal"
+            data-event-id="cd98a33d-96d4-4135-3441-08dda5fe4181">
+        Compartilhar um evento
+    </button>
 </div>
+
+<!-- Modal de Compartilhamento -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shareModalLabel">Compartilhar um Evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Escolha uma rede social para compartilhar:</p>
+
+                <a class="btn btn-success m-2" target="_blank" id="whatsappShare">
+                    <i class="bi bi-whatsapp"></i> WhatsApp
+                </a>
+                <a class="btn btn-primary m-2" target="_blank" id="facebookShare">
+                    <i class="bi bi-facebook"></i> Facebook
+                </a>
+                <a class="btn btn-secondary m-2" target="_blank" id="instagramShare">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para gerar os links de compartilhamento com base no ID do evento -->
+<script>
+    let shareModal = document.getElementById('shareModal');
+
+    shareModal.addEventListener('show.bs.modal', function (event) {
+        let button = event.relatedTarget;
+        let eventId = button.getAttribute('data-event-id');
+
+        if (!eventId) return;
+
+        const fullUrl = `${window.location.origin}/Event/List/${eventId}`;
+
+        document.getElementById("whatsappShare").href =
+            "https://api.whatsapp.com/send?text=" + encodeURIComponent("Confira este evento: " + fullUrl);
+
+        document.getElementById("facebookShare").href =
+            "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
+
+        document.getElementById("instagramShare").href =
+            "https://www.instagram.com/"; // Instagram não aceita links diretos para post
+    });
+</script>
