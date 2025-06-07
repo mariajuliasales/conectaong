@@ -1,8 +1,9 @@
-﻿@{
+﻿@model List<conectaOng.Models.Entities.Event>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<!-- Bootstrap Icons (adicione isso no seu _Layout.cshtml se ainda não estiver) -->
+<!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 <div class="container pb-5">
@@ -42,24 +43,44 @@
         No ConectaOng, acreditamos que eventos fortalecem as relações entre voluntários e organizações, criando uma comunidade engajada e inspiradora. Aqui você encontra a divulgação de eventos promovidos por diversas ONGs, com oportunidades para trocar experiências, adquirir novas habilidades e construir conexões significativas. Confira a agenda, participe dos eventos e faça parte de uma rede comprometida com a transformação social.
     </p>
 
-    <!-- Exemplo de um botão com ID de evento vindo do backend -->
-    <button class="btn btn-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#shareModal"
-            data-event-id="cd98a33d-96d4-4135-3441-08dda5fe4181">
-        Compartilhar um evento
-    </button>
+    <button class="btn btn-dark mb-3" data-bs-toggle="modal" data-bs-target="#eventListModal">Compartilhar um Evento</button>
 </div>
 
-<!-- Modal de Compartilhamento -->
-<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+<!-- Modal 1: Listagem de Eventos -->
+<div class="modal fade" id="eventListModal" tabindex="-1" aria-labelledby="eventListModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content rounded-4 shadow">
             <div class="modal-header">
-                <h5 class="modal-title" id="shareModalLabel">Compartilhar um Evento</h5>
+                <h5 class="modal-title" id="eventListModalLabel">Escolha um Evento para Compartilhar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    @foreach (var ev in Model)
+                    {
+                        <li class="list-group-item list-group-item-action"
+                            style="cursor:pointer;"
+                            data-event-id="@ev.Id"
+                            data-event-title="@ev.Title">
+                            @ev.Title
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Opções de Compartilhamento -->
+<div class="modal fade" id="shareOptionsModal" tabindex="-1" aria-labelledby="shareOptionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shareOptionsModalLabel">Compartilhar o Evento</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body text-center">
+                <p id="selectedEventTitle" class="fw-bold fs-5"></p>
                 <p>Escolha uma rede social para compartilhar:</p>
 
                 <a class="btn btn-success m-2" target="_blank" id="whatsappShare">
@@ -76,25 +97,54 @@
     </div>
 </div>
 
-<!-- Script para gerar os links de compartilhamento com base no ID do evento -->
 <script>
-    let shareModal = document.getElementById('shareModal');
+    document.querySelectorAll('#eventListModal .list-group-item').forEach(item => {
+            item.addEventListener('click', function (event) {
+            event.preventDefault();
 
-    shareModal.addEventListener('show.bs.modal', function (event) {
-        let button = event.relatedTarget;
-        let eventId = button.getAttribute('data-event-id');
+            const eventId = this.getAttribute('data-event-id');
+                const eventTitle = this.getAttribute('data-event-title');
 
-        if (!eventId) return;
+                document.getElementById('selectedEventTitle').textContent = eventTitle;
 
-        const fullUrl = `${window.location.origin}/Event/List/${eventId}`;
+                const fullUrl = `${window.location.origin}/Event/List/${eventId}`;
 
-        document.getElementById("whatsappShare").href =
-            "https://api.whatsapp.com/send?text=" + encodeURIComponent("Confira este evento: " + fullUrl);
+            document.getElementById("whatsappShare").href =
+                    "https://api.whatsapp.com/send?text=" + encodeURIComponent("Confira este evento: " + fullUrl);
 
-        document.getElementById("facebookShare").href =
-            "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
+            document.getElementById("facebookShare").href =
+                    "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
 
-        document.getElementById("instagramShare").href =
-            "https://www.instagram.com/"; // Instagram não aceita links diretos para post
-    });
+            document.getElementById("instagramShare").href =
+                "https://www.instagram.com/"; // Instagram não permite links diretos
+
+                var eventListModalEl = document.getElementById('eventListModal');
+                var shareOptionsModalEl = document.getElementById('shareOptionsModal');
+
+                var eventListModal = bootstrap.Modal.getInstance(eventListModalEl);
+                var shareOptionsModal = bootstrap.Modal.getInstance(shareOptionsModalEl);
+
+                if (!eventListModal) {
+                    eventListModal = new bootstrap.Modal(eventListModalEl);
+                }
+                if (!shareOptionsModal) {
+                    shareOptionsModal = new bootstrap.Modal(shareOptionsModalEl);
+                }
+
+                const onHidden = function () {
+                    shareOptionsModal.show();
+                    eventListModalEl.removeEventListener('hidden.bs.modal', onHidden);
+                };
+
+                eventListModalEl.addEventListener('hidden.bs.modal', onHidden);
+
+                eventListModal.hide();
+            });
+        });
+
+        // Remove backdrop após fechar a segunda modal para evitar travamento
+        document.getElementById('shareOptionsModal').addEventListener('hidden.bs.modal', () => {
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            backdrops.forEach(bd => bd.remove());
+        });
 </script>
