@@ -24,9 +24,14 @@
                     <td>@volunteer.Name</td>
                     <td>@volunteer.Description</td>
                     <td>@volunteer.Sex</td>
-                    <td>
-                        <a class="btn btn-info me-2" asp-controller="Volunteer" asp-action="Details" asp-route-id="@volunteer.Id">Detalhes</a>
-                    </td>
+
+                    @if (ViewBag.IsOng == true)
+                    {
+                        <td>
+                            <a class="btn btn-info me-2" asp-controller="Volunteer" asp-action="Details" asp-route-id="@volunteer.Id">Detalhes</a>
+                        </td>
+                    }
+
                 </tr>
             }
         </tbody>
