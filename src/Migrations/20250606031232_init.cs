@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace conectaOng.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,7 +56,8 @@ namespace conectaOng.Migrations
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    OrganizationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    OrganizationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,9 +79,8 @@ namespace conectaOng.Migrations
                     Cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Sex = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EventId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EventId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,13 +90,44 @@ namespace conectaOng.Migrations
                         column: x => x.EventId,
                         principalTable: "Event",
                         principalColumn: "Id");
-
                     table.ForeignKey(
-                        name: "FK_Volunteer_Event_UserId",
+                        name: "FK_Volunteer_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
+            migrationBuilder.CreateTable(
+                name: "Vacancy",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EventId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    OrganizationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    VolunteerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RegisteredAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Accepted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vacancy", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vacancy_Event_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Event",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Vacancy_Organization_OrganizationId",
+                        column: x => x.OrganizationId,
+                        principalTable: "Organization",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Vacancy_Volunteer_VolunteerId",
+                        column: x => x.VolunteerId,
+                        principalTable: "Volunteer",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -111,14 +142,38 @@ namespace conectaOng.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Vacancy_EventId",
+                table: "Vacancy",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vacancy_OrganizationId",
+                table: "Vacancy",
+                column: "OrganizationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vacancy_VolunteerId",
+                table: "Vacancy",
+                column: "VolunteerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Volunteer_EventId",
                 table: "Volunteer",
                 column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Volunteer_UserId",
+                table: "Volunteer",
+                column: "UserId",
+                unique: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Vacancy");
+
             migrationBuilder.DropTable(
                 name: "Volunteer");
 

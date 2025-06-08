@@ -31,6 +31,10 @@ namespace conectaOng.Models.Entities
 
         public List<Volunteer> Volunteers { get; set; }
 
+        public int Capacity { get; set; }
+
+        public ICollection<Vacancy> Registrations { get; set; }
+
         public static ValidationResult ValidateFutureDate(DateTime date, ValidationContext context)
         {
             if (date < DateTime.Now)

@@ -12,8 +12,8 @@ using conectaOng.Data;
 namespace conectaOng.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250601132133_updateDatabase")]
-    partial class updateDatabase
+    [Migration("20250606031232_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace conectaOng.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -117,6 +120,38 @@ namespace conectaOng.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("conectaOng.Models.Entities.Vacancy", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Accepted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("EventId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OrganizationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("RegisteredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("VolunteerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("OrganizationId");
+
+                    b.HasIndex("VolunteerId");
+
+                    b.ToTable("Vacancy");
+                });
+
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
                     b.Property<Guid>("Id")
@@ -177,6 +212,29 @@ namespace conectaOng.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("conectaOng.Models.Entities.Vacancy", b =>
+                {
+                    b.HasOne("conectaOng.Models.Entities.Event", "Event")
+                        .WithMany("Registrations")
+                        .HasForeignKey("EventId");
+
+                    b.HasOne("conectaOng.Models.Entities.Organization", "Organization")
+                        .WithMany()
+                        .HasForeignKey("OrganizationId");
+
+                    b.HasOne("conectaOng.Models.Entities.Volunteer", "Volunteer")
+                        .WithMany("Registrations")
+                        .HasForeignKey("VolunteerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+
+                    b.Navigation("Organization");
+
+                    b.Navigation("Volunteer");
+                });
+
             modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
                 {
                     b.HasOne("conectaOng.Models.Entities.Event", "Event")
@@ -196,6 +254,8 @@ namespace conectaOng.Migrations
 
             modelBuilder.Entity("conectaOng.Models.Entities.Event", b =>
                 {
+                    b.Navigation("Registrations");
+
                     b.Navigation("Volunteers");
                 });
 
@@ -211,6 +271,11 @@ namespace conectaOng.Migrations
 
                     b.Navigation("Volunteer")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("conectaOng.Models.Entities.Volunteer", b =>
+                {
+                    b.Navigation("Registrations");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,79 @@
+﻿@model conectaOng.Models.Entities.Event
+
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <h1>Detalhes do Evento</h1>
+    <a class="btn btn-secondary" href="@Url.Action("List", "Event")">Voltar</a>
+</div>
+
+<div>
+    <h3>@Model.Title</h3>
+    <p><strong>Descrição:</strong> @Model.Description</p>
+    <p><strong>Data:</strong> @Model.Date.ToString("dd/MM/yyyy HH:mm")</p>
+    <p><strong>Local:</strong> @Model.Location</p>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    var userIdString = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    Guid.TryParse(userIdString, out Guid userId);
+
+    // Busca o id do voluntário do usuário autenticado
+    var isUserInscrito = false;
+    if (ViewBag.Volunteers != null)
+    {
+        foreach (var v in (IEnumerable<conectaOng.Models.Entities.Volunteer>)ViewBag.Volunteers)
+        {
+            if (v.UserId == userId)
+            {
+                isUserInscrito = true;
+                break;
+            }
+        }
+    }
+
+    if (!isUserInscrito && !(ViewBag.IsOwner ?? false))
+    {
+        <form method="post" asp-action="RegisterVolunteer" asp-route-eventId="@Model.Id">
+            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+        </form>
+    }
+    else if (isUserInscrito)
+    {
+        <button class="btn btn-success" disabled>Inscrito</button>
+    }
+}
+else
+{
+    <p>Você precisa estar logado para se inscrever no evento.</p>
+}
+
+@if (ViewBag.IsOwner == true && ViewBag.Volunteers != null)
+{
+    <h2 class="mt-4">Voluntários inscritos neste evento</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in (IEnumerable<conectaOng.Models.Entities.Volunteer>)ViewBag.Volunteers)
+            {
+                <tr>
+                    <td>@v.Name</td>
+                    <td>@v.Cpf</td>
+                    <td>@v.User?.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info mt-3">
+        @TempData["Message"]
+    </div>
+}
