@@ -28,7 +28,7 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | 20 |6 | Sim | Na primeira vez se inscreveu em um evento que já estava inscrito | Processo foi feito de forma clara e intuitiva, gostei da mensagem avisando que já estava inscrito e que consegui me inscrever com sucesso. Poderia avisar antes que já estava inscrito no primeiro | |  
+| Usuário 1 | 20 |6 | Sim | Na primeira vez tentou se inscrever em um evento que já estava inscrito | Processo foi feito de forma clara e intuitiva, gostei da mensagem avisando que já estava inscrito e que consegui me inscrever com sucesso. Poderia avisar antes que já estava inscrito no primeiro | |  
 | Usuário 2 | | | | | | |  
 | Usuário 3 | | | | | | |  
 | Usuário 4 | | | | | | |
