@@ -21,16 +21,16 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
 | Usuário 1 | 120 | 12 | Sim | Nenhum | Passos de cadastro na plataforma fáceis e intuitivos, não tive problema para realizar | |  
 | Usuário 2 | 90 | 12 | Sim | Nenhum | Cadastro fácil e intuitivo, sem problemas para utilizar | |  
-| Usuário 3 | | | | | | |  
+| Usuário 3 | 70 | 15 | Sim | Nenhum | Foi simples e intuitivo, consegui realizar sem dificuldades | |  
 | Usuário 4 | | | | | | |
 | Usuário 5 | | | | | | |
 
 **Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | 20 |6 | Sim | Na primeira vez tentou se inscrever em um evento que já estava inscrito | Processo foi feito de forma clara e intuitiva, gostei da mensagem avisando que já estava inscrito e que consegui me inscrever com sucesso. Poderia avisar antes que já estava inscrito no primeiro | |  
+| Usuário 1 | | | | | | |  
 | Usuário 2 | | | | | | |  
-| Usuário 3 | | | | | | |  
+| Usuário 3 | 31 | 7 | Sim | Nenhum | Foi simples e intuitivo, consegui realizar a inscrição sem dificuldades | |  
 | Usuário 4 | | | | | | |
 | Usuário 5 | | | | | | |
 
@@ -39,16 +39,16 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
 | Usuário 1 | 60 | 7 | Sim | Nenhum | Cadastro de um novo evento foi realizado sem nenhum problema, de forma clara e intuitiva | |  
 | Usuário 2 | | | | | | |  
-| Usuário 3 | | | | | | |  
+| Usuário 3 | 68 | 10 | Sim | Nenhum | Consegui realizar o cadastro de um evento sem dificuldades| |  
 | Usuário 4 | | | | | | |
 | Usuário 5 | | | | | | |
 
 **Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 |20 | 5 | Sim | Nenhum | Processo simples e intuitivo, foi realizado de forma clara e efetiva | |  
+| Usuário 1 | | | | | | |  
 | Usuário 2 | | | | | | |  
-| Usuário 3 | | | | | | |  
+| Usuário 3 | 44 | 5 | Sim | Nenhum | Consegui encontrar os vonluntários cadastrados no meu evento de maneira intuitiva | |  
 | Usuário 4 | | | | | | |
 | Usuário 5 | | | | | | |
 
@@ -57,31 +57,46 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
 | Usuário 1 | 60 | 4 | Sim | Nenhum | Foi bem claro e intuitivo encontrar os passoas para atualizar uma ONG registrada, não tive nenhum problema | |  
 | Usuário 2 | 35 | 3 | Sim | Nenhum | Processo foi realizado de forma clara e efetiva | |  
-| Usuário 3 | | | | | | |  
+| Usuário 3 | 47 | 6 | Sim | Nenhum | O processo de atualizar os dados do meu perfil de voluntário foi fácil e intuitivo | |  
 | Usuário 4 | | | | | | |
 | Usuário 5 | | | | | | |
 
 ## Registro de testes
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
-**Usuário 1**:  
-https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62
 
-**Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento   
-**Usuário 1**:  
-https://github.com/user-attachments/assets/e7bf2240-0e9c-4fbc-aa72-432b6fc6a161
+**Usuário 1**: [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62)
 
-**Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento  
-**Usuário 1**:  
-https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6
+**Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/47d04342-e545-4f7c-b7e4-ab96fb86efd5)
 
-**Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento  
-**Usuário 1**:  
-https://github.com/user-attachments/assets/19b2502d-429b-49b7-9bfc-af07e5f722ac
 
-**Cenário 5**: Um usuário deseja atualizar suas informações de perfil  
-**Usuário 1**:  
-https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516
+**Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento
+
+**Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/03c74176-416b-4356-8688-5eabc19be370)
+
+
+
+
+**Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento 
+
+**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6)
+
+**Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/23f3c5d2-d32b-4e36-b0c0-2f521b69436e)
+
+
+
+**Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento
+
+**Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/5339586a-5744-4de8-a2e8-078411c3f2c2)
+
+
+
+
+**Cenário 5**: Um usuário deseja atualizar suas informações de perfil 
+
+**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516)
+
+**Usuário 3**: [Asista ao video do Usuário 3](https://github.com/user-attachments/assets/316fd84f-78ee-446b-8f52-45e953d183bb)
 
 
 **Cenário 1 e 5**: O usuário deseja se cadastrar na plataforma, atualiza informações de perfil e cadastra um voluntário.  
