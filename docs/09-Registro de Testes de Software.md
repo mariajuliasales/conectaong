@@ -58,6 +58,12 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-009 - O sistema deve permitir a exclusão de Eventos |
 |Registro de evidência | ![image](img/DelecaoDeEvento.png) |
 
+| **Caso de Teste** 	| **CT12 – Compartilhamento de eventos via redes sociais** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-012 - Compartilhamento de eventos via redes sociais |
+|Registro de evidência | ![image](https://github.com/user-attachments/assets/c0583972-dd47-4c57-b866-a65b041af7ce)
+ |
+
 ## Relatório de testes de software
 
 Apresente e discuta detalhadamente os resultados obtidos nos testes realizados, destacando tanto os pontos fortes quanto as fragilidades identificadas na solução. Explique como os aspectos positivos contribuem para o desempenho e a usabilidade do sistema, e como os pontos fracos impactam sua eficácia.
