@@ -29,17 +29,24 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 | **Caso de Teste** 	| **CT04 – Cadastro de Voluntario** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-004 - O sistema deve permitir o cadastro de voluntários |
-|Registro de evidência | [Asista o video no Youtube](https://youtu.be/rpWU99cjywg) |
+|Registro de evidência | [Assista o video](https://github.com/user-attachments/assets/e7a0f9fa-5ff9-4daa-b2ba-cdcb61ff8959) |
+
 
  | **Caso de Teste** 	| **CT-005 - Editar um Voluntário** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-005 - O sistema deve permitir editar um voluntário |
-|Registro de evidência | [Asista o video no Youtube](https://youtu.be/Sjke6CZBnDU) |
+|Registro de evidência | [Assista o video](https://github.com/user-attachments/assets/15aa372c-719a-42f4-bd8f-856b149af083) |
+
+
+
 
  | **Caso de Teste** 	| **CT-006 - Excluir um Voluntário** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-006 - O sistema deve permitir a exclusão de voluntários |
-|Registro de evidência | [Asista o video no Youtube](https://youtu.be/JYblxpuG1v0)) |
+|Registro de evidência | [Asista o video](https://github.com/user-attachments/assets/d4bbad00-b30b-4f4b-a18f-ac7f8311dedc) |
+
+
+
 
 
 
