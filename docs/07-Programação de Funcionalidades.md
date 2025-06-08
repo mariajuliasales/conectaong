@@ -24,6 +24,7 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 |RF-001| O sistema deve permitir o cadastro de ONGs| Tela de cadastro, formulário de entrada de dados, rota de API POST /Organization/Add, model Otrganization | Amanda  |
 |RF-002| O sistema deve permitir a edição de ONGs | Tela de edição, formulário pré-preenchido, rota de API POST /Organization/Edit/{id}  | Amanda |
 |RF-003| O sistema deve permitir a exclusão de ONGs | Botão de exclusão na tela de edição, rota de API POST /Organization/{id}  | Amanda |
+|RF-012| O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento | Botão na tela home para compartilhamento de eventos, criação de modal com lista de eventos disponíveis e botões de compartilhamento de rede social (whatsapp, facebook e instagram)  | Guilherme |
 
 
 # Instruções de acesso
