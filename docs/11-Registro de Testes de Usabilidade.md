@@ -64,15 +64,17 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 ## Registro de testes
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
-**Usuário 1**: https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62
+**Usuário 1**: [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62)
 
 
 
 **Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento 
-**Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=uV_Fmij7gV0)
+**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6)
+
 
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil  
-**Usuário 1**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=pM5EvpPvExg)
+**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516)
+
 
 **Cenário 1 e 5**: O usuário deseja se cadastrar na plataforma, atualiza informações de perfil e cadastra um voluntário.
 **Usuário 2**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=av4thKHkEcA)
