@@ -79,6 +79,8 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 1 e 5**: O usuário deseja se cadastrar na plataforma, atualiza informações de perfil e cadastra um voluntário.
 **Usuário 2**: [Assista ao video no YouTube](https://www.youtube.com/watch?v=av4thKHkEcA)
 
+https://github.com/user-attachments/assets/202ef802-a5d6-4cde-b4bd-46dda93028f5
+
 ## Relatório dos testes de usabilidade
 
 O relatório de testes de usabilidade deve ser um documento claro e estruturado, contendo análises dos testes realizados, identificação de problemas, propostas de correção, melhorias e sugestões para a evolução do sistema.
