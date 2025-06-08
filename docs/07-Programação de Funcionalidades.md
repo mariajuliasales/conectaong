@@ -21,9 +21,12 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
-|RF-001| O sistema deve permitir o cadastro de ONGs| Tela de cadastro, formulário de entrada de dados, rota de API POST /Organization/Add, model Otrganization | Amanda  |
+|RF-001| O sistema deve permitir o cadastro de ONGs| Tela de cadastro, formulário de entrada de dados, rota de API POST /Organization/Add, model Organization | Amanda  |
 |RF-002| O sistema deve permitir a edição de ONGs | Tela de edição, formulário pré-preenchido, rota de API POST /Organization/Edit/{id}  | Amanda |
 |RF-003| O sistema deve permitir a exclusão de ONGs | Botão de exclusão na tela de edição, rota de API POST /Organization/{id}  | Amanda |
+|RF-004| O sistema deve permitir o cadastro de voluntários | Tela de cadastro de voluntários, formulário de entrada de dados, rota de API POST /Volunteer/Add, model Volunteer | Maria Julia |
+|RF-005| O sistema deve permitir editar um voluntário | Tela de edição de voluntários, formulário pré-preenchido com dados existentes, rota de API POST /Volunteer/Edit/{id} | Maria Julia |
+|RF-006| O sistema deve permitir a exclusão de voluntários | Botão de exclusão na tela de detalhes de voluntários, tela de confirmação antes da exclusão, rota de API DELETE /Volunteer/Delete/{id} | Maria Julia |
 |RF-012| O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento | Botão na tela home para compartilhamento de eventos, criação de modal com lista de eventos disponíveis e botões de compartilhamento de rede social (whatsapp, facebook e instagram)  | Guilherme |
 
 
