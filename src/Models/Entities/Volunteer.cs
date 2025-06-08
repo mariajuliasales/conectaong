@@ -34,6 +34,7 @@ namespace conectaOng.Models.Entities
 
         [ForeignKey("EventId")]
         public Event? Event { get; set; }
+        public ICollection<Vacancy> Registrations { get; set; }
 
     }
 }
