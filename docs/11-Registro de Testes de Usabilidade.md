@@ -64,24 +64,28 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 ## Registro de testes
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
-**Usuário 1**: [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62
 
 **Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento   
-**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/e7bf2240-0e9c-4fbc-aa72-432b6fc6a161)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/e7bf2240-0e9c-4fbc-aa72-432b6fc6a161
 
 **Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento  
-**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6
 
 **Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento  
 **Usuário 1**:  
 https://github.com/user-attachments/assets/19b2502d-429b-49b7-9bfc-af07e5f722ac
 
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil  
-**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516
 
 
-**Cenário 1 e 5**: O usuário deseja se cadastrar na plataforma, atualiza informações de perfil e cadastra um voluntário.
-Usuário 2:
+**Cenário 1 e 5**: O usuário deseja se cadastrar na plataforma, atualiza informações de perfil e cadastra um voluntário.  
+Usuário 2:  
 https://github.com/user-attachments/assets/202ef802-a5d6-4cde-b4bd-46dda93028f5
 
 ## Relatório dos testes de usabilidade
