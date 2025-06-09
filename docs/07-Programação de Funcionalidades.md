@@ -27,6 +27,11 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 |RF-004| O sistema deve permitir o cadastro de voluntários | Tela de cadastro de voluntários, formulário de entrada de dados, rota de API POST /Volunteer/Add, model Volunteer | Maria Julia |
 |RF-005| O sistema deve permitir editar um voluntário | Tela de edição de voluntários, formulário pré-preenchido com dados existentes, rota de API POST /Volunteer/Edit/{id} | Maria Julia |
 |RF-006| O sistema deve permitir a exclusão de voluntários | Botão de exclusão na tela de detalhes de voluntários, tela de confirmação antes da exclusão, rota de API DELETE /Volunteer/Delete/{id} | Maria Julia |
+|RF-007| 	O sistema deve permitir o cadastro de Eventos | Botão de criar na tela de listagem de eventos, caso o usuário logado seja uma ONG, rota de API POST /Event/Add | Eric Martins |
+|RF-008| O sistema deve permitir editar Eventos | Botão de editar na tela de listagem de eventos, rota de API POST /Event/List | Eric Martins |
+|RF-009| O sistema deve permitir deletar Eventos | Botão de deletar na tela de listagem de eventos, caso o usuário logado seja uma ONG e seja a criadora do evento, rota de API DELETE /Event/Delete | Eric Martins |
+|RF-010| O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse. | Botão de inscrever-se na tela de detalhes do evento, caso o usuário logado seja um voluntario, rota de API POST /Event/Details/[id] | Eric Martins |
+|RF-011| 	O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | Botão de busca na tela de listagem de eventos | Eric Martins |
 |RF-012| O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento | Botão na tela home para compartilhamento de eventos, criação de modal com lista de eventos disponíveis e botões de compartilhamento de rede social (whatsapp, facebook e instagram)  | Guilherme |
 
 
