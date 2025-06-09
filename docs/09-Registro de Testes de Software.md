@@ -65,6 +65,11 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-009 - O sistema deve permitir a exclusão de Eventos |
 |Registro de evidência | ![image](img/DelecaoDeEvento.png) |
 
+| **Caso de Teste** 	| **CT10 – Realizar deleção de um Evento** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-007 - O sistema deve permitir a inscrição de voluntários em eventos |
+|Registro de evidência | ![image](img/InscricaoEmEvento.png) |
+
 | **Caso de Teste** 	| **CT12 – Compartilhamento de eventos via redes sociais** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-012 - Compartilhamento de eventos via redes sociais |
