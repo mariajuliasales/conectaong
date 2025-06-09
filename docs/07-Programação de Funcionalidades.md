@@ -33,7 +33,7 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 |RF-010| O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse. | Botão de inscrever-se na tela de detalhes do evento, cria um objeto vacancy relacionando Voluntario e Evento | Frederico Amantino |
 |RF-011| 	O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | Botão de busca na tela de listagem de eventos | Eric Martins |
 |RF-012| O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento | Botão na tela home para compartilhamento de eventos, criação de modal com lista de eventos disponíveis e botões de compartilhamento de rede social (whatsapp, facebook e instagram)  | Guilherme |
-|RF-010| O sistema deve permitir que apenas voluntários cadastrados possam inscrever em eventos. | Botão de inscrever-se na tela de detalhes do evento, caso o usuário logado seja um voluntario, rota de API POST /Event/Details/[id] | Frederico Amantino |
+|RF-013| O sistema deve permitir que apenas voluntários cadastrados possam inscrever em eventos. | Botão de inscrever-se na tela de detalhes do evento, caso o usuário logado seja um voluntario, rota de API POST /Event/Details/[id] | Frederico Amantino |
 
 
 # Instruções de acesso
