@@ -37,12 +37,7 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 
 
 # Instruções de acesso
-
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
-
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
-
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+link de acesso: (https://conectaong.azurewebsites.net/)
 
 > **Links Úteis**:
 >
