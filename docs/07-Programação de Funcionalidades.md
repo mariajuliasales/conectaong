@@ -30,7 +30,7 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 |RF-007| 	O sistema deve permitir o cadastro de Eventos | Botão de criar na tela de listagem de eventos, caso o usuário logado seja uma ONG, rota de API POST /Event/Add | Eric Martins |
 |RF-008| O sistema deve permitir editar Eventos | Botão de editar na tela de listagem de eventos, rota de API POST /Event/Edit/[id] | Eric Martins |
 |RF-009| O sistema deve permitir deletar Eventos | Botão de deletar na tela de listagem de eventos, caso o usuário logado seja uma ONG e seja a criadora do evento, rota de API DELETE /Event/Delete | Eric Martins |
-|RF-010| O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse. | Botão de inscrever-se na tela de detalhes do evento, caso o usuário logado seja um voluntario, rota de API POST /Event/Details/[id] | Eric Martins |
+|RF-010| O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse. | Botão de inscrever-se na tela de detalhes do evento, caso o usuário logado seja um voluntario, rota de API POST /Event/Details/[id] | Frederico Amantino |
 |RF-011| 	O sistema deve possibilitar que voluntários façam busca por eventos de acordo com filtros como área de interesse, localização e data. | Botão de busca na tela de listagem de eventos | Eric Martins |
 |RF-012| O sistema deve permitir o compartilhamento de eventos em redes sociais para promover o engajamento | Botão na tela home para compartilhamento de eventos, criação de modal com lista de eventos disponíveis e botões de compartilhamento de rede social (whatsapp, facebook e instagram)  | Guilherme |
 
