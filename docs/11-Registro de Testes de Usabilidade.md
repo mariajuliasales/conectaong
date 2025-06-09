@@ -7,59 +7,69 @@ O registro de testes de usabilidade é um documento ou planilha onde são coleta
 - Usuário 1: 30 anos, nível superior completo, conhecimento avançado tecnologia
 - Usuário 2: 37 anos, nível superior e pós-graduação completa, conhecimento avançado em tecnologia
 - Usuário 3: 27 anos, nível superior completo, conhecimento intermediário em tecnologia
-- Usuário 4:
-- Usuário 5:
-- Usuário 6:
--
+- Usuário 4: 35 anos, nível superior completo, conhecimento básico em tecnologia
+- Usuário 5: 52 anos, nível superior e pós-graduação completa, conhecimento intermediário em tecnologia
+- Usuário 6: 18 anos, nível médio completo, conhecimento intermediário em tecnologia
 
 ## Exemplo de tabela de registro dos testes de usabilidade
 
 Para registrar os indicadores de cada cenário, é preciso manter a coerência com os critérios quantitativos e qualitativos que foram definidos no plano de testes de usabilidade.
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
-| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
-|-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | 120 | 12 | Sim | Nenhum | Passos de cadastro na plataforma fáceis e intuitivos, não tive problema para realizar | |  
-| Usuário 2 | 90 | 12 | Sim | Nenhum | Cadastro fácil e intuitivo, sem problemas para utilizar | |  
-| Usuário 3 | 70 | 15 | Sim | Nenhum | Foi simples e intuitivo, consegui realizar sem dificuldades | |  
-| Usuário 4 | | | | | | |
-| Usuário 5 | | | | | | |
+| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                      | **Feedback do Usuário**                                                                                                   |
+| ----------- | --------------------- | ------------------------- | ----------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Usuário 1   | 120                   | 12                        | Sim                                 | Nenhum                                                   | Passos de cadastro na plataforma fáceis e intuitivos, não tive problema para realizar                                     |
+| Usuário 2   | 90                    | 12                        | Sim                                 | Nenhum                                                   | Cadastro fácil e intuitivo, sem problemas para utilizar                                                                   |
+| Usuário 3   | 70                    | 15                        | Sim                                 | Nenhum                                                   | Foi simples e intuitivo, consegui realizar sem dificuldades                                                               |
+| Usuário 4   | 190                   | 20                        | Sim                                 | Teve dificuldade para localizar o botão de "Cadastrar"   | Fiquei um pouco confuso com o início do processo, mas consegui concluir. Poderia ter mais destaque nos botões principais. |
+| Usuário 5   | 130                   | 16                        | Sim                                 | Um erro de digitação no e-mail impediu o envio do código | Consegui me cadastrar, mas quase desisti por causa de um erro com o e-mail. Seria bom ter um aviso mais claro.            |
+| Usuário 6   | 110                   | 13                        | Sim                                 | Nenhum                                                   | Achei tranquilo, o botão era fácil de achar e o processo foi direto.                                                      |
+
+
 
 **Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento  
-| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
-|-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | | | | | | |  
-| Usuário 2 | | | | | | |  
-| Usuário 3 | 31 | 7 | Sim | Nenhum | Foi simples e intuitivo, consegui realizar a inscrição sem dificuldades | |  
-| Usuário 4 | | | | | | |
-| Usuário 5 | | | | | | |
+| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                 | **Feedback do Usuário**                                                                                   |
+| ----------- | --------------------- | ------------------------- | ----------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Usuário 1   |                       |                           |                                     |                                                     |                                                                                                           |
+| Usuário 2   |                       |                           |                                     |                                                     |                                                                                                           |
+| Usuário 3   | 31                    | 7                         | Sim                                 | Nenhum                                              | Foi simples e intuitivo, consegui realizar a inscrição sem dificuldades                                   |
+| Usuário 4   | 210                   | 22                        | Não                                 | Clicou no banner errado e não encontrou como voltar | Não consegui me inscrever. Fiquei perdido nos menus. Poderia ter um botão mais visível com “Inscreva-se”. |
+| Usuário 5   | 140                   | 17                        | Sim                                 | Tentou se inscrever em um evento já encerrado       | Depois de tentar em um evento encerrado, consegui encontrar outro. A navegação poderia ser mais clara.    |
+| Usuário 6   | 95                    | 11                        | Sim                                 | Nenhum                                              | Foi fácil, achei o evento rápido e me inscrevi sem problemas. Bem direto.                                 |
+
 
 **Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento  
-| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
-|-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | 60 | 7 | Sim | Nenhum | Cadastro de um novo evento foi realizado sem nenhum problema, de forma clara e intuitiva | |  
-| Usuário 2 | | | | | | |  
-| Usuário 3 | 68 | 10 | Sim | Nenhum | Consegui realizar o cadastro de um evento sem dificuldades| |  
-| Usuário 4 | | | | | | |
-| Usuário 5 | | | | | | |
+| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                       | **Feedback do Usuário**                                                                                                  |
+| ----------- | --------------------- | ------------------------- | ----------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Usuário 1   | 60                    | 7                         | Sim                                 | Nenhum                                                    | Cadastro de um novo evento foi realizado sem nenhum problema, de forma clara e intuitiva                                 |
+| Usuário 2   | 55                    | 8                         | Sim                                 | Nenhum                                                    | Tudo funcionou corretamente, o formulário é direto e fácil de preencher                                                  |
+| Usuário 3   | 68                    | 10                        | Sim                                 | Nenhum                                                    | Consegui realizar o cadastro de um evento sem dificuldades                                                               |
+| Usuário 4   | 120                   | 15                        | Sim                                 | Teve dúvida sobre onde clicar após preencher o formulário | Achei um pouco confuso no final, não sabia se tinha cadastrado mesmo, poderia ter uma mensagem de confirmação mais clara |
+| Usuário 5   | 90                    | 12                        | Sim                                 | Tentou subir uma imagem com tamanho maior que o permitido | Demorou um pouco pra entender o que estava errado com a imagem, mas depois consegui terminar o cadastro                  |
+| Usuário 6   | 78                    | 11                        | Sim                                 | Nenhum                                                    | Foi de boa, achei fácil cadastrar, só podia ter uma dica explicando o que colocar em “descrição do evento”               |
+
 
 **Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento  
-| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
-|-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | | | | | | |  
-| Usuário 2 | | | | | | |  
-| Usuário 3 | 44 | 5 | Sim | Nenhum | Consegui encontrar os vonluntários cadastrados no meu evento de maneira intuitiva | |  
-| Usuário 4 | | | | | | |
-| Usuário 5 | | | | | | |
+| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                   | **Feedback do Usuário**                                                                                     |
+| ----------- | --------------------- | ------------------------- | ----------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Usuário 1   | 40                    | 6                         | Sim                                 | Nenhum                                                | Tudo certo, achei os voluntários rapidamente, bem direto                                                    |
+| Usuário 2   | 35                    | 5                         | Sim                                 | Nenhum                                                | Interface clara, acessei a lista sem dificuldades                                                           |
+| Usuário 3   | 44                    | 5                         | Sim                                 | Nenhum                                                | Consegui encontrar os voluntários cadastrados no meu evento de maneira intuitiva                            |
+| Usuário 4   | 85                    | 11                        | Não                                 | Clicou em abas erradas antes de achar a seção correta | Fiquei um pouco perdido, poderia ter um botão com nome mais direto tipo “Ver voluntários”                   |
+| Usuário 5   | 70                    | 9                         | Sim                                 | Nenhum                                                | Encontrei os voluntários, mas levei um tempinho pra achar o botão certo. Talvez ele possa ter mais destaque |
+| Usuário 6   | 50                    | 6                         | Sim                                 | Nenhum                                                | Achei rápido, tava bem visível onde clicar pra ver os inscritos                                             |
+
 
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil  
-| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
-|-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1 | 60 | 4 | Sim | Nenhum | Foi bem claro e intuitivo encontrar os passoas para atualizar uma ONG registrada, não tive nenhum problema | |  
-| Usuário 2 | 35 | 3 | Sim | Nenhum | Processo foi realizado de forma clara e efetiva | |  
-| Usuário 3 | 47 | 6 | Sim | Nenhum | O processo de atualizar os dados do meu perfil de voluntário foi fácil e intuitivo | |  
-| Usuário 4 | | | | | | |
-| Usuário 5 | | | | | | |
+| **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                               | **Feedback do Usuário**                                                                                   |
+| ----------- | --------------------- | ------------------------- | ----------------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Usuário 1   | 60                    | 4                         | Sim                                 | Nenhum                                            | Foi bem claro e intuitivo encontrar os passos para atualizar uma ONG registrada, não tive nenhum problema |
+| Usuário 2   | 35                    | 3                         | Sim                                 | Nenhum                                            | Processo foi realizado de forma clara e efetiva                                                           |
+| Usuário 3   | 47                    | 6                         | Sim                                 | Nenhum                                            | O processo de atualizar os dados do meu perfil de voluntário foi fácil e intuitivo                        |
+| Usuário 4   | 95                    | 10                        | Sim                                 | Demorou para encontrar a opção de "editar perfil" | Consegui, mas tive dificuldade no início pra achar onde atualiza. O botão podia ser mais visível          |
+| Usuário 5   | 80                    | 8                         | Sim                                 | Nenhum                                            | Consegui atualizar tudo, só achei que podia ter um botão “salvar” mais evidente no final                  |
+| Usuário 6   | 60                    | 5                         | Sim                                 | Nenhum                                            | Achei tranquilo de fazer, tava tudo em lugar fácil de entender                                            |
+
 
 ## Registro de testes
 
