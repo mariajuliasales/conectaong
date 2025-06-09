@@ -30,7 +30,7 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 **Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                 | **Feedback do Usuário**                                                                                   |
 | ----------- | --------------------- | ------------------------- | ----------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Usuário 1   |                       |                           |                                     |                                                     |                                                                                                           |
+| Usuário 1 | 20 |6 | Sim | Na primeira vez se inscreveu em um evento que já estava inscrito | Processo foi feito de forma clara e intuitiva, gostei da mensagem avisando que já estava inscrito e que consegui me inscrever com sucesso. Poderia avisar antes que já estava inscrito no primeiro | |                                                |
 | Usuário 2   |                       |                           |                                     |                                                     |                                                                                                           |
 | Usuário 3   | 31                    | 7                         | Sim                                 | Nenhum                                              | Foi simples e intuitivo, consegui realizar a inscrição sem dificuldades                                   |
 | Usuário 4   | 210                   | 22                        | Não                                 | Clicou no banner errado e não encontrou como voltar | Não consegui me inscrever. Fiquei perdido nos menus. Poderia ter um botão mais visível com “Inscreva-se”. |
@@ -75,12 +75,15 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
 
-**Usuário 1**: [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/0d003a7c-3eba-41da-b43b-e5933442be62
 
 **Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/47d04342-e545-4f7c-b7e4-ab96fb86efd5)
 
 
-**Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento
+**Cenário 2**: O usuário deseja encontrar e fazer a sua inscrição em um evento  
+**Usuário 1**:  
+https://github.com/user-attachments/assets/e7bf2240-0e9c-4fbc-aa72-432b6fc6a161
 
 **Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/03c74176-416b-4356-8688-5eabc19be370)
 
@@ -89,13 +92,16 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 
 **Cenário 3**: Um usuário do tipo ONG deseja cadastrar um novo evento 
 
-**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/50af0627-7da1-406a-a134-2dde865462c6
 
 **Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/23f3c5d2-d32b-4e36-b0c0-2f521b69436e)
 
 
 
-**Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento
+**Cenário 4**: Uma ONG deseja verificar os voluntários inscritos em um evento  
+**Usuário 1**:  
+https://github.com/user-attachments/assets/19b2502d-429b-49b7-9bfc-af07e5f722ac
 
 **Usuário 3**: [Assista ao video do Usuário 3](https://github.com/user-attachments/assets/5339586a-5744-4de8-a2e8-078411c3f2c2)
 
@@ -104,7 +110,9 @@ Para registrar os indicadores de cada cenário, é preciso manter a coerência c
 
 **Cenário 5**: Um usuário deseja atualizar suas informações de perfil 
 
-**Usuário 1**:  [Assista ao video do Usuário 1](https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516)
+**Usuário 1**:  
+https://github.com/user-attachments/assets/1cdcfa01-ba80-4d0c-bd6f-2f94f0cc8516
+
 
 **Usuário 3**: [Asista ao video do Usuário 3](https://github.com/user-attachments/assets/316fd84f-78ee-446b-8f52-45e953d183bb)
 
