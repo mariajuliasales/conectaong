@@ -1,29 +1,26 @@
-message: Please cite this software using these metadata.
-title:
+message: Sistema para conectar voluntarios e ongs
+title: ConectaOng
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: de Andrade Castro Vieira
+    given-names: Guilherme
+  - family-names: Julia Gonçalves Maia Sales
+    given-names: Maria
+  - family-names: Esteves Martins
+    given-names: Eric
+  - family-names: Vitor Lopes
+    given-names: Amanda
+  - family-names: Bricio Alvarenga Sampaio
+    given-names: Bruna
+  - family-names: Furtado Amantino Vieira
+    given-names: Frederico
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+  - family-names: Ribeiro da Mota
+    given-names: Rosilane
 keywords:
-  - 
-  - 
-repository-code: 
+  - ong
+  - conectar
+  - voluntario
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e2-proj-int-t1-conectaong
 version: 1.0.0
-date-released: 2023-10-31
+date-released: 2025-06-17
