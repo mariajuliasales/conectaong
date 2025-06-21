@@ -77,7 +77,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
  |
 
 ## Relatório de testes de software
-
+Intruções:
 Apresente e discuta detalhadamente os resultados obtidos nos testes realizados, destacando tanto os pontos fortes quanto as fragilidades identificadas na solução. Explique como os aspectos positivos contribuem para o desempenho e a usabilidade do sistema, e como os pontos fracos impactam sua eficácia.
 
 Descreva as principais falhas detectadas durante os testes, fornecendo exemplos concretos e evidências que sustentem essas observações. Explicite os impactos dessas falhas na experiência do usuário, na funcionalidade do sistema e nos objetivos do projeto.
@@ -88,3 +88,41 @@ Por fim, apresente e/ou proponha as melhorias a partir dos testes realizados, de
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+>
+
+### Relatório
+✅ CT01 – Realizar cadastro de uma ONG  
+Resultado: Teste bem-sucedido. O sistema permitiu o cadastro completo de uma ONG com todos os campos obrigatórios.  
+Ponto forte: A validação dos campos funcionou corretamente, impedindo envio com campos vazios.    
+Melhoria sugerida: Adicionar uma verificação de CNPJ mais precisa, pois atualmente aceita alguns formatos inválidos.  
+Ação futura: Incluir uma validação extra do CNPJ com regex e integração com base pública para verificação, além de incluir um toast de sucesso informando que deu tudo certo com o registro.  
+
+✅ CT02 – Realizar edição de uma ONG  
+Resultado: Teste bem-sucedido. A funcionalidade de edição carregou os dados corretamente e permitiu a atualização sem erros.  
+Ponto forte: O formulário pré-preenche os dados da ONG de forma rápida e responsiva.  
+Ação futura: Melhorar a visibilidade do feedback visual, confirmando antes de editar uma informação e mostrando mensagem de sucesso ao salvar as alterações.  
+
+✅ CT03 – Exclusão de ONG  
+Resultado: Teste realizado com sucesso. A ONG foi excluída após a confirmação.  
+Melhoria sugerida: Adicionar uma mensagem de confirmação antes de permitir a exclusão da ONG.  
+Ação futura: Adicionar toasts de confirmação, informando sobre as ações dos usuários.  
+
+✅ CT04 – Cadastro de Voluntário  
+Resultado: Teste concluído com sucesso. Cadastro realizado com todos os campos preenchidos.  
+Ponto forte: Campos intuitivos, formulário acessível e responsivo.  
+Fragilidade: Não há verificação de duplicidade de CPF ou e-mail, não é possível adicionar um CPF com formatação.  
+Ação futura: Adicionar checagem de duplicidade antes do envio do formulário para evitar dados repetidos no banco. Além disso adicionar validacao de CPF com os numeros formatados (000.000.000-00), atualmente só é possível apenas com números.  
+
+✅ CT05 – Edição de Voluntário  
+Resultado: Teste bem-sucedido. Voluntário editado com sucesso.  
+Ponto forte: Interface simples e clara para edição.  
+Falha detectada: Campo de CPF aceita qualquer caractere, inclusive letras.  
+Ação futura: Adicionar input type="number" com máscara e validação regex para CPF.
+
+✅ CT06 – Exclusão de Voluntário  
+Resultado: Teste bem-sucedido. Voluntário excluído com sucesso.  
+Ponto forte: Fluxo semelhante ao da exclusão de ONG, apenas o usuário que está logado tem acesso ao botão de exclusão.  
+Fragilidade: Mesma de ONG, falta mensagens de confirmação. Além disso, após excluir um voluntário o logout não é feito automaticamente, e ao tentar clicar no perfil do voluntário novamente apresenta um erro.  
+Ação futura: Adcicionar mensagens de confirmação e toast de sucesso e erro, além disso fazer o logout do usuário após a exclusão.  
+
+
