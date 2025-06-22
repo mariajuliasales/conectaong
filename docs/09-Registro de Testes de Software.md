@@ -65,7 +65,7 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 |	Requisito Associado 	| RF-009 - O sistema deve permitir a exclusão de Eventos |
 |Registro de evidência | ![image](img/DelecaoDeEvento.png) |
 
-| **Caso de Teste** 	| **CT10 – Realizar deleção de um Evento** 	|
+| **Caso de Teste** 	| **CT10 – O sistema deve permitir que os voluntários se inscrevam em eventos de seu interesse** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-007 - O sistema deve permitir a inscrição de voluntários em eventos |
 |Registro de evidência | ![image](img/InscricaoEmEvento.png) |
@@ -123,6 +123,38 @@ Ação futura: Adicionar input type="number" com máscara e validação regex pa
 Resultado: Teste bem-sucedido. Voluntário excluído com sucesso.  
 Ponto forte: Fluxo semelhante ao da exclusão de ONG, apenas o usuário que está logado tem acesso ao botão de exclusão.  
 Fragilidade: Mesma de ONG, falta mensagens de confirmação. Além disso, após excluir um voluntário o logout não é feito automaticamente, e ao tentar clicar no perfil do voluntário novamente apresenta um erro.  
-Ação futura: Adcicionar mensagens de confirmação e toast de sucesso e erro, além disso fazer o logout do usuário após a exclusão.  
+Ação futura: Adcicionar mensagens de confirmação e toast de sucesso e erro, além disso fazer o logout do usuário após a exclusão. 
+
+
+✅ CT07 – Realizar cadastro de um evento  
+Resultado: Teste realizado com sucesso. O sistema permitiu o cadastro de um novo evento ao preencher todos os campos corretamente.  
+Ponto forte: O formulário é intuitivo e responsivo. O campo de data utiliza um componente de calendário, que facilita a seleção de datas de forma prática e visual.  
+Fragilidade: Ao deixar a descrição em branco ou incompleta, o sistema lança uma exception em vez de exibir uma mensagem de validação. Ao inserir uma data no passado, não há um alerta — o sistema redireciona o usuário para fora da tela de eventos.  
+Ação futura: Implementar tratamento de erro para campos obrigatórios, exibindo mensagens claras ao usuário. Incluir validação de data para impedir eventos com datas anteriores e manter o usuário na tela em caso de erro, exibindo um alerta.  
+
+✅ CT08 – Realizar edição de um evento  
+Resultado: Teste realizado com sucesso. Foi possível editar os dados de um evento existente.  
+Ponto forte: O formulário é pré-preenchido com os dados atuais do evento e o campo de data continua utilizando o calendário interativo.   
+Fragilidade: Ao deixar um ou mais campos em branco, o sistema dispara uma exception sem apresentar uma mensagem de erro ao usuário. Ao alterar a data para um valor passado, o sistema retira o usuário da tela de edição e exclui o evento da lista de eventos cadastrados, comportamento semelhante ao observado no CT07.  
+Ação futura: Implementar tratamento de erro com mensagens para campos obrigatórios. Adicionar validação para impedir seleção de datas passadas. Corrigir o comportamento inesperado que remove o evento sem confirmação, mantendo o usuário na tela de edição em caso de erro.  
+
+✅ CT09 – Realizar deleção de um evento  
+Resultado: Teste realizado com sucesso. Foi possível realizar a deleção de um evento existente.  
+Ponto forte: Um toast de confirmação é exibido e a lista de eventos é atualizada. O botão de exclusão aparece apenas para a ONG responsável pelo evento.  
+Fragilidade: Atualmente, o botão de deletar só está disponível na lista de eventos cadastrados. Para melhorar a usabilidade, seria ideal que esse botão também estivesse acessível na aba de edição do evento.  
+Ação futura: Adicionar o botão de deleção na tela de edição de evento, permitindo que a ONG responsável possa excluir diretamente ao editar, sem precisar voltar à lista de eventos cadastrados.  
+
+✅ CT10 – Realizar inscrição de voluntário em evento  
+Resultado: Teste realizado com sucesso. Foi possível realizar a inscrição em um evento como voluntário.  
+Ponto forte: O sistema impede que o voluntário se inscreva duas vezes no mesmo evento, exibindo uma mensagem clara ao tentar repetir a inscrição.  
+Fragilidade: É possível se inscrever em dois eventos que ocorrem no mesmo dia e horário, sem um alerta ou restrição.  
+Melhoria sugerida: Alterar o texto do botão para “Inscrito” após a inscrição bem-sucedida, para indicar o status do usuário no evento.  
+Ação futura: Implementar verificação para avisar sobre conflitos de dia e horário entre eventos no momento da inscrição e atualizar dinamicamente o texto do botão para refletir o status do voluntário.  
+
+✅ CT12 – Compartilhamento de eventos via redes sociais  
+Resultado: Teste realizado com sucesso. Foi possível realizar o compartilhamento de eventos nas redes sociais.  
+Ponto forte: Ao clicar no botão “Compartilhar um Evento”, é possível escolher qual evento deseja compartilhar e em qual rede social.   
+Melhoria sugerida: Atualmente, o link enviado direciona para a página de lista de eventos cadastrado, e não para a tela de detalhes do evento específico compartilhado.  
+Ação futura: Ajustar o link gerado para que direcione diretamente para a página de detalhes do evento selecionado.  
 
 
