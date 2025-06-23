@@ -11,6 +11,6 @@
 [📽️ Apresentação Final (PowerPoint)](./ConectaONG-Conectando-Propositos-Transformando-Vidas.pptx)
 
 ## Vídeo da Apresentação
-[▶️ Vídeo de Apresentação (YouTube)](https://youtu.be/13cR1ygvVdE)
-[▶️ Vídeo de Apresentação da Aplicação (YouTube)](https://youtu.be/0eo2XT4SQ0o)
+>- [▶️ Vídeo de Apresentação (YouTube)](https://youtu.be/13cR1ygvVdE)
+>- [▶️ Vídeo de Apresentação da Aplicação (YouTube)](https://youtu.be/0eo2XT4SQ0o)
 
