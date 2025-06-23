@@ -13,8 +13,6 @@ O registro de testes de usabilidade é um documento ou planilha onde são coleta
 
 ## Exemplo de tabela de registro dos testes de usabilidade
 
-Para registrar os indicadores de cada cenário, é preciso manter a coerência com os critérios quantitativos e qualitativos que foram definidos no plano de testes de usabilidade.
-
 **Cenário 1**: O usuário deseja se cadastrar na plataforma  
 | **Usuário** | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos**                                      | **Feedback do Usuário**                                                                                                   |
 | ----------- | --------------------- | ------------------------- | ----------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -123,32 +121,88 @@ https://github.com/user-attachments/assets/202ef802-a5d6-4cde-b4bd-46dda93028f5
 
 ## Relatório dos testes de usabilidade
 
-O relatório de testes de usabilidade deve ser um documento claro e estruturado, contendo análises dos testes realizados, identificação de problemas, propostas de correção, melhorias e sugestões para a evolução do sistema.
-Ele servirá como base para refinamentos no sistema e futuras iterações de testes.
-Deve incluir:
+Este relatório consolida os resultados dos testes de usabilidade realizados com seis usuários, avaliando cinco cenários-chave da plataforma: cadastro, inscrição em evento, cadastro de evento (ONG), verificação de voluntários e atualização de perfil. O objetivo é identificar dificuldades, medir indicadores de sucesso e gerar propostas de melhoria para guiar a próxima iteração do sistema.
 
-- Taxa de sucesso por cenário
-- Tempo médio para completar cada cenário
-- Número médio de erros cometidos por tarefa
-- Taxa de abandono (usuários que não conseguiram concluir a tarefa do cenário)
-- Feedback qualitativo
+---
 
-A partir disso, organize os resultados e identifique padrões:
+**1. Metodologia**  
+- **Participantes**: 6 usuários com perfis variados de idade (18–52 anos) e níveis de conhecimento em tecnologia (básico a avançado).  
+- **Cenários testados**:  
+  1. Cadastro na plataforma  
+  2. Inscrição em um evento  
+  3. Cadastro de evento (ONG)  
+  4. Verificação de voluntários inscritos  
+  5. Atualização de perfil  
+- **Métricas coletadas**:  
+  - Taxa de sucesso (conclusão da tarefa)  
+  - Tempo médio de conclusão (somente casos concluídos)  
+  - Erros cometidos (contagem de incidentes por usuário)  
+  - Taxa de abandono (usuários que não concluíram)  
+  - Feedback qualitativo (comentários livres)  
 
-- Principais dificuldades enfrentadas pelos usuários.
-- Quais tarefas foram concluídas sem problemas e quais apresentaram falhas.
-- Sugestões de melhorias para interface, navegação e acessibilidade.
+---
 
-Dica: Agrupe problemas em níveis de prioridade:
+**2. Resultados Quantitativos**
 
-- Crítico: Impede o uso do sistema.
-- Moderado: Dificulta a experiência, mas não impede o uso.
-- Leve: Pode ser melhorado, mas não compromete a usabilidade.
+| **Cenário**                       | **N** | **Sucesso** | **Taxa de Sucesso** | **Tempo Médio (s)** | **Erros Médios** | **Taxa de Abandono** |
+|-----------------------------------|:-----:|:-----------:|:-------------------:|:-------------------:|:----------------:|:--------------------:|
+| 1. Cadastro na plataforma         |   6   | 6/6         | 100 %               | 118,3               | 0,33             | 0 %                  |
+| 2. Inscrição em evento            |   5*  | 4/5         | 80 %                | 99,2                | 0,60             | 20 %                 |
+| 3. Cadastro de evento (ONG)       |   6   | 6/6         | 100 %               | 78,5                | 0,33             | 0 %                  |
+| 4. Verificação de voluntários     |   6   | 5/6         | 83,3 %              | 47,8                | 0,20             | 16,7 %               |
+| 5. Atualização de perfil          |   6   | 6/6         | 100 %               | 62,8                | 0,17             | 0 %                  |
 
-Apresente propostas de ações para corrigir os problemas críticos e recorrentes identificados e proponha melhorias incrementais para otimizar a experiência do usuário.
+> *N=5 no cenário 2: dados do Usuário 2 não estavam disponíveis, cálculos feitos sobre os registros completos.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Registro de Testes de Usabilidade”.
+---
 
-> **Links Úteis**:
->
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+**3. Feedback Qualitativo (síntese)** 
+- **Aspectos positivos**  
+  - Fluxos de cadastro e criação de eventos são considerados claros e diretos pela maioria.  
+  - Layout geral e quantidade de passos estão adequados ao perfil dos usuários.  
+- **Pontos de atrito recorrentes**  
+  - **Localização de botões principais**: “Cadastrar” (Cenário 1), “Inscreva-se” (Cenário 2) e “Editar perfil” (Cenário 5) não estavam suficientemente destacados.  
+  - **Mensagens de erro**: falta de indicação clara de erro de digitação no e-mail (Cenário 1), upload de imagem acima do limite (Cenário 3) e tentativa de inscrição em evento encerrado (Cenário 2).  
+  - **Navegação ambígua**: abas pouco descritivas em “Ver voluntários” (Cenário 4) e banners que levam a caminhos incorretos (Cenário 2).  
+
+---
+
+**4. Padrões Identificados** 
+- **Principais dificuldades**  
+  1. Encontrar e distinguir o CTA correto em cada tela.  
+  2. Compreender restrições (e-mail, tamanho de imagem, status de evento).  
+  3. Retornar ao fluxo correto após erro de navegação (banner/cliques incorretos).  
+- **Tarefas sem problemas**  
+  - Cenários 1, 3 e 5 (100 % de sucesso; baixo índice de erros).  
+- **Tarefas com falhas**  
+  - Cenário 2 (80 % de sucesso; maior tempo e erros de fluxo).  
+  - Cenário 4 (83,3 % de sucesso; incidente de navegação).
+
+---
+
+**5. Priorização de Problemas**
+
+| **Nível**   | **Problemas Identificados**                                                                                  |
+|-------------|--------------------------------------------------------------------------------------------------------------|
+| **Crítico** | - Ausência de botão “Inscreva-se” evidente, impedindo conclusão (Cenário 2).<br>- Aba “Voluntários” pouco clara (Cenário 4). |
+| **Moderado**| - Botão “Cadastrar” e “Editar perfil” com baixa visibilidade.<br>- Mensagens de erro genéricas ou tardias (e-mail, evento encerrado, upload de imagem). |
+| **Leve**    | - Falta de confirmação visual pós-formulário (Cenários 1, 3).<br>- Sugestões de campo “descrição” poderiam ajudar novatos. |
+
+---
+
+**6. Propostas de Ação**
+
+1. **Problemas críticos**  
+   - Destacar CTAs: aplicar cor/contraste diferenciados e aumentar tamanho dos botões “Inscreva-se” e “Voluntários”.  
+   - Renomear aba de voluntários para “Ver voluntários” e garantir consistência de ícones.  
+2. **Problemas moderados**  
+   - Mensagens de validação inline: avisar imediatamente sobre e-mail inválido, tamanho de imagem e status de evento antes do envio.  
+   - Tutorial rápido (tooltips): exibir dica sobre campos obrigatórios ou limites (ex.: upload máximo).  
+3. **Problemas leves**  
+   - Feedback de sucesso: inserir modal ou toast confirmando cadastro/atualização, reforçando confiança do usuário.  
+   - Exemplos de preenchimento: placeholder ou texto de ajuda em “Descrição do evento”.
+
+---
+
+**8. Considerações Finais**
+Os testes mostraram que a base da interface é sólida, mas carece de refinamentos em visibilidade de ações e feedbacks de erro. Ao priorizar as correções críticas e implementar melhorias moderadas logo em seguida, espera-se reduzir abandonos em ~20 % dos cenários mais problemáticos e elevar a satisfação geral dos usuários.
