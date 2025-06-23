@@ -7,6 +7,9 @@ Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do proje
 ## Projeto ConectaOng
 
 [📽️ Apresentação do Projeto (PowerPoint)](../presentation/ConectaONG-Conectando-Propositos-Transformando-Vidas.pptx)
+[📽️ Assista a apresentação no youtube](https://www.youtube.com/)
+[📽️ Assista a apresentação do Projeto no youtube](https://www.youtube.com/)
+
 
 
 ## Conjunto de Slides (Estrutura)
