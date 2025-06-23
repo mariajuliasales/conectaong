@@ -5,3 +5,10 @@
 
 ## Vídeo da Apresentação
 [Vídeo de Apresentação](./video-etapa1.mp4)
+
+# Apresentação Final do Projeto
+## Arquivo PowerPoint
+[📽️ Apresentação Final (PowerPoint)](./ConectaONG-Conectando-Propositos-Transformando-Vidas.pptx)
+
+## Vídeo da Apresentação
+[▶️ Vídeo de Apresentação (YouTube)](https://www.youtube.com/watch?v=sgC6HdAJ6ik)
