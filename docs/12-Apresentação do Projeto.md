@@ -8,6 +8,8 @@ Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do proje
 
 > - [📽️ Apresentação do Projeto (PowerPoint)](../presentation/ConectaONG-Conectando-Propositos-Transformando-Vidas.pptx)
 > - [📽️ Assista a apresentação no youtube](https://www.youtube.com/watch?v=13cR1ygvVdE&feature=youtu.be)
+>- [▶️ Vídeo de Apresentação da Aplicação (YouTube)](https://youtu.be/0eo2XT4SQ0o)
+
 
 
 
