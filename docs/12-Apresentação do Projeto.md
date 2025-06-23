@@ -4,9 +4,9 @@
 
 Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do projeto contemplando todos os itens trabalhados nos demais artefatos.
 
-## Título do Projeto
+## Projeto ConectaOng
 
-Nome e marca do projeto
+[📽️ Apresentação do Projeto (PowerPoint)](../presentation/ConectaONG-Conectando-Propositos-Transformando-Vidas.pptx)
 
 ## Identidade Visual (Marca, Design)
 
