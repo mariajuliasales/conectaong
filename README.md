@@ -1,6 +1,27 @@
+
 # ConectaONG
 
-`Análise e Desenvolvimento de Sistemas`
+Este projeto foi desenvolvido em grupo como parte da disciplina Desenvolvimento de uma Aplicação Interativa, do curso de Análise e Desenvolvimento de Sistemas.
+O repositório original está em uma conta institucional e é privado; realizei um clone para o meu perfil pessoal no GitHub, mantendo todo o histórico de commits.
+
+A aplicação apresenta uma solução web voltada para facilitar a conexão entre ONGs, voluntários e eventos/atividades promovidos pelas organizações.
+
+A seguir, mantive o conteúdo original do README e adicionei esta seção introdutória, juntamente com uma lista resumida das tecnologias e ferramentas utilizadas.
+
+
+
+## Tecnologias e ferramentas utilizadas (resumo)
+
+- C#, .NET 8 (ASP.NET Core MVC com Razor Views)
+- Entity Framework Core (migrations) + SQL Server
+- Autenticação por cookie (Cookie Authentication)
+- Front-end: Bootstrap e jQuery =
+- Estrutura: padrão MVC (Controllers, Views, Models) e assets em `wwwroot/`
+- Ferramentas: dotnet CLI / Visual Studio
+
+
+##
+ `Análise e Desenvolvimento de Sistemas`
 
 `Projeto: Desenvolvimento de uma Aplicação Interativa`
 
